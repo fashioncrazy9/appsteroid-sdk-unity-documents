@@ -1,0 +1,115 @@
+# FASPlayVideo Specifications
+
+last update at　2015/03/05
+
+----------
+
+## Introduction
+
+## <a name ="FASPlayVideo">FASPlayVideo Class</a>
+**<font color='red'>このクラスは、Ver.0.7.0 現在、iOS のみ利用可能です。Android は未対応です。</font>**
+
+ゲームプレイビデオの録画、再生、アップロードなどを操作するクラスです。
+
+**現在、AppSteroidでは Open GL ES 3.0 の録画機能に対応しています。
+Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings -> Graphics API を Open GL ES 3.0 に設定してください。**
+
+
+![](../Images/VideoRecordingSetting.png)
+----------
+
+## Classes
+
+|Namespace|Class|Description|
+|-------|------|-----|
+|Fresvii.AppSteroid|[FASPlayVideo](#FASPlayVideo)|ゲームプレイビデオの録画、再生、アップロードなどを操作するクラス|
+
+----------
+
+### Methods
+
+|Name|内容|
+|------|-----|
+|[FASPlayVideo.StartRecording](#FASPlayVideo.StartRecording)| ビデオ録画を開始する|
+|[FASPlayVideo.StopRecording](#FASPlayVideo.StopRecording)| ビデオ録画を終了する|
+|[FASPlayVideo.ShowLatestVideoSharingGUIWithUGUI](#FASPlayVideo.ShowLatestVideoSharingGUIWithUGUI)| 録画した最新ビデオをシェアするGUIを表示する。UGUIの上にダイアログを表示する。 |
+|[FASPlayVideo.ShowLatestVideoSharingGUIWithLegacyGUI](#FASPlayVideo.ShowLatestVideoSharingGUIWithLegacyGUI)|録画した最新ビデオをシェアするGUIを表示する。LegacyGUIの上にダイアログを表示する。|
+|[FASPlayVideo.LatestVideoExists](#FASPlayVideo.LatestVideoExists)| 録画したビデオが存在するか確認する |
+|[FASPlayVideo.SetMaxRecordingSecondsLength](#FASPlayVideo.SetMaxRecordingSecondsLength)| ビデオ録画を最大時間（秒）を設定する|
+|[FASPlayVideo.GetMaxRecordingSecondsLength](#FASPlayVideo.GetMaxRecordingSecondsLength)| ビデオ録画を最大時間（秒）を取得する|
+|[FASPlayVideo.IsRecording](#FASPlayVideo.IsRecording)| ビデオ録画の録画状態を取得する|
+|[FASPlayVideo.GetLatestRecordedVideoPath](#FASPlayVideo.GetLatestRecordedVideoPath)| 録画した最新ビデオのパスを取得する|
+
+
+### <a name ="FASPlayVideo.StartRecording">FASPlayVideo.StartRecording</a>
+ビデオ録画を開始します。ビデオ録画最大時間に達するか、`StopRecording`　を呼び出すと、ビデオ録画は終了します。録画したビデオは、アプリの一時保存領域に保存されます。録画処理終了後、`ShowLatestVideoSharingGUI` を呼び出してビデオをAppSteroidサーバにアップロードします。録画したビデオはアプリを閉じるとOSが任意のタイミングで削除します。
+
+    public static bool StartRecording()
+
+#### Return
+|Type|内容|
+|------|-----|
+|bool| 録画開始処理の成否|
+
+### <a name ="FASPlayVideo.StopRecording">FASPlayVideo.StopRecording</a>
+ビデオ録画を終了します。
+
+    public static void StopRecording()
+
+### <a name ="FASPlayVideo.ShowLatestVideoSharingGUI">FASPlayVideo.ShowLatestVideoSharingGUI</a>
+録画した最新のビデオをシェアするGUIを表示します。
+
+    public static bool ShowLatestVideoSharingGUI(string returnSceneName)
+    public static bool ShowLatestVideoSharingGUI(string returnSceneName, Action guiEndedCallback)
+
+#### Return
+|Type|内容|
+|------|-----|
+|bool| false = 最新のビデオファイルが存在しない場合, true = GUIの表示に成功 |
+
+#### Parameters
+|Name|Type|内容|
+|------|------|-----|
+|returnSceneName| string | AppSteroid 画面に遷移した場合、GUI画面終了時（アプリアイコン押下時）に復帰するシーン名称。復帰するシーンが未設定の場合は、呼び出し元のシーンに戻ります。|
+|guiEndedCallback| Action | GUI表示が終了時に呼び出されます。ビデオシェアおよびアップロードはuGUIで表示されます。このとき、uGUI のモーダルGUIの下でuGUI, legacy GUI 以外の操作を行っている場合は、コールバックが呼び出されるまでゲーム入力処理を抑制するために使用してください。|
+
+### <a name ="FASPlayVideo.LatestVideoExists">FASPlayVideo.LatestVideoExists</a>
+録画した最新のビデオが存在するか確認します。
+
+    public static bool LatestVideoExists()
+
+#### Return
+|Type|内容|
+|------|-----|
+|bool| false = 最新のビデオファイルが存在しない, true = 最新のビデオファイルが存在する |
+
+
+### <a name ="FASPlayVideo.IsRecording">FASPlayVideo.IsRecording</a>
+ビデオ録画の録画状態を取得します。
+
+    public static bool IsRecording()
+
+#### Return
+|Type|内容|
+|------|-----|
+|bool| true = ビデオ録画中 |
+
+### <a name ="FASPlayVideo.SetMaxRecordingSecondsLength">FASPlayVideo.SetMaxRecordingSecondsLength</a>
+ビデオ録画を最大時間（秒）を設定します。ただし、最大録画時間は３０秒以下です。
+
+    public static void SetMaxRecordingSecondsLength(float sec)
+
+### <a name ="FASPlayVideo.GetMaxRecordingSecondsLength">FASPlayVideo.GetMaxRecordingSecondsLength</a>
+ビデオ録画を最大時間（秒）を取得します。
+
+    public static float GetMaxRecordingSecondsLength()
+
+### <a name ="FASPlayVideo.GetLatestRecordedVideoPath">FASPlayVideo.GetLatestRecordedVideoPath</a>
+録画した最新ビデオのパスを取得します。
+
+    public static string GetLatestRecordedVideoPath()
+
+#### Return
+|Type|内容|
+|------|-----|
+|string| ビデオファイルパス。存在しない場合、空文字列（""）。 |
