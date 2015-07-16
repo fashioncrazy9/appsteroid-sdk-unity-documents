@@ -28,14 +28,14 @@ GUI シーンの表示操作をするクラスです。GUI はシーンとして
 
 |Name|内容|
 |------|-----|
-|[FASGui.ShowGUI](#FASGui.ShowGUI)| GUIを表示します。このメソッドを呼び出し "FresviiGUI" シーンをロードします。このメソッドを利用する際は、ビルド設定に "FresviiGUI" を加えてください。 |
-|[FASGui.ShowGUIWithLogin](#FASGui.ShowGUIWithLogin)| ログインを行い、GUIを表示します。ShowGUIよりも、すぐにシーンを遷移し、ローディング画面に遷移します。このメソッドを呼び出し "FresviiGUI" シーンをロードします。このメソッドを利用する際は、ビルド設定に "FresviiGUI" "FresviiGUILoading" を加えてください。 |
+|[FASGui.ShowGUI](#FASGui.ShowGUI)| GUIを表示します。このメソッドを呼び出しGUIのシーンをロードします。このメソッドを利用する際は、ビルド設定に "AppSteroidUI" を加えてください。 |
+|[FASGui.ShowGUIWithLogin](#FASGui.ShowGUIWithLogin)| ログインを行い、GUIを表示します。このメソッドを利用する際は、ビルド設定に "AppSteroidUI" を加えてください。 |
 |[FASGui.ShowMatchMakingGui](#FASGui.ShowMatchMakingGui)| マッチメイキングパラメータを指定してマッチメイキングGUIを表示します。|
-|[FASGui.SetLeaderboardId](#FASGui.SetLeaderboardId)| GUIで表示するリーダーボードのIDを設定します。リーダーボードは Web Console で作成し、設定します。|
+|[FASGui.SetLeaderboardId](#FASGui.SetLeaderboardId)| バージョン 0.7.3 以下で有効です。GUIで表示するリーダーボードのIDを設定します。リーダーボードは Web Console で作成し、設定します。|
 
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
 
-GUIを表示するシーンをロードします。
+GUIを表示するシーンをロードします。 selectedMode を使用した最初に表示されるタブを指定する機能は、バージョン 0.7.3 以下で有効です。
 
     public static void ShowGUI(FASGui.Mode modeFlgs)
     public static void ShowGUI(string returnSceneName)
@@ -100,6 +100,8 @@ GUIを表示するシーンをロードします。
 
 
 ### <a name ="FASGui.SetLeaderboardId">FASGui.SetLeaderboardId</a>
+
+バージョン 0.7.3 以下で有効です。
 
 GUIで表示するリーダーボードのIDを設定します。リーダーボード名は Web Console で設定します。このメソッドでIDを設定していない場合は、Webコンソールで作成された０番目のリーダーボードが表示されます。
 
