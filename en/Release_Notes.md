@@ -1,11 +1,19 @@
 # AppSteroid for Unity Release Notes
 ------
+#1.0.1
+- Performance improvements
+    - GUI layout on certain pages are tweaked
+- Fixed
+    - Page view bug
+- Existing problem
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+
 #1.0.0
 - Performance improvements
   - New GUI
 
 ## 0.7.3
-- Fix
+- Fixed
 	- GUI bug occurs when canceling image selection on iOS.
   
 - Existing problem
@@ -33,7 +41,7 @@
 	- Ability to continue voice chat even after the app moves to the background. Please check the document ["Use Group Conference(VoiceChat)"](Use Group Conference(VoiceChat).md) for details.
 - Performance improvements
 	- Ability to set timeframe for ranking on leaderboard on the WebConsole.
-- Fix
+- Fixed
 	- Cannot post video on thread comment.
 - Existing problem
   - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
@@ -44,7 +52,7 @@
 - Performance improvements
 	- [iOS] Improve post build process.
 	- Error message for matchmake have changed.
-- Fix
+- Fixed
 	- Unable to sign up when using Unity 5.
 	- Error occurs when installing AppSteroid on Unity 4.6.
 	- Player who sent a match invitation crashes on certain circumstance.

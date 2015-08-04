@@ -28,14 +28,14 @@ Class to operate display GUI Scene. GUI will be load as a scene. Save the scene 
 
 |Name|Description|
 |------|-----|
-|[FASGui.ShowGUI](#FASGui.ShowGUI)| Method to Show GUI. Call this method and load "FresviiGUI" scene. To use this method, add "FresviiGUI" to build setting. |
-|[FASGui.ShowGUIWithLogin](#FASGui.ShowGUIWithLogin)| Process login and show GUI. It will shorten loading time compare to "ShowGUI". Call this method and than load the "FresviiGUI" scene. To use this method, please add "FresviiGUI" and "FresviiGUILoading" to build settings. |
+|[FASGui.ShowGUI](#FASGui.ShowGUI)| Method to Show GUI. Call this method and load GUI scene. To use this method, add "AppSteroidUI" to build setting. |
+|[FASGui.ShowGUIWithLogin](#FASGui.ShowGUIWithLogin)| Process login and show GUI. Call this method and than load the "AppSteroidUI" scene. To use this method, please add "AppSteroidUI" to build settings. |
 |[FASGui.ShowMatchMakingGui](#FASGui.ShowMatchMakingGui)| Specify a matchmaking parameter to show GUI for matchmaking.|
-|[FASGui.SetLeaderboard](#FASGui.SetLeaderboard)|Setup Leaderboard that will be shown on GUI. Select a name for Leaderboard on Web Console. |
+|[FASGui.SetLeaderboard](#FASGui.SetLeaderboard)|Available on version lower than 0.7.3.. Setup Leaderboard that will be shown on GUI. Select a name for Leaderboard on Web Console. |
 
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
 
-Load a scene to show GUI
+Load a scene to show GUI. The function to specify which tab to show, "selectedmode" is available on version lower than 0.7.3..
 
    public static void ShowGUI(FASGui.Mode modeFlgs)
    public static void ShowGUI(string returnSceneName)
@@ -99,6 +99,8 @@ Specify a matchmaking parameter to show GUI for matchmaking.
 
 
 ### <a name ="FASGui.SetLeaderboard">FASGui.SetLeaderboard</a>
+
+Available on version lower than 0.7.3..
 
 Setup Leaderboard that will be shown on GUI. You can setup a name for the Leaderboard on Web Console.
 
