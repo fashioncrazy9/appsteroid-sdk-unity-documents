@@ -1,5 +1,22 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.0.2
+- Performance improvements
+    - GUI layout on certain pages are tweaked
+- Fixed
+    - Page view bugs on few more pages.
+    - App icon do not show up on Apps tab when launching the app at the very first time.
+- Existing problem
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+
+#1.0.1
+- Performance improvements
+    - GUI layout on certain pages are tweaked
+- Fixed
+    - Page view bug
+- Existing problem
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+
 #1.0.0
 - Performance improvements
   - New GUI
