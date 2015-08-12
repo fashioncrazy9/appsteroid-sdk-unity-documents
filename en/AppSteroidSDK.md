@@ -16,11 +16,7 @@ Please check the [Fresvii Website](https://fresvii.com/features/social) for deta
 You must follow these two steps indicated below before using the AppSteroid SDK.
 
 1. [Register your app on the WebConsole](AppRegistrationOnWebConsole.md)
-2. [Implementing AppSteroidSDK](GettingStarted.md)
+2. [Implementing AppSteroidSDK](GetStarted.md)
 
 ## <a name="Features">AppSteroid SDK Feature List</a>
 Please refer to [feature list document](FeatureList.md).
-
-
-
-
