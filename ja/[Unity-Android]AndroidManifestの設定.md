@@ -32,6 +32,12 @@ Push 通知を使用するために、以下の XML をAndroidManifest.xml フ�
     
     <service android:name="com.fresvii.sdk.unity.GCMIntentService" />
 
+    <receiver android:name="com.fresvii.sdk.unity.BcReceiver">
+      <intent-filter>
+        <action android:name="INPUT_YOUR_BUNDLE_IDENTIFIER.NotificationTap" />
+      </intent-filter>
+    </receiver>
+
 アプリのメインアクティビティの \<activity> タグに以下の XML を追加してください。プッシュ通知の通知をタップしたあと、メインアクティビティを立ち上げるために必要となります。"INPUT_YOUR_BUNDLE_IDENTIFIER" の箇所はご利用になるアプリの bundle Identifier に置換してください。
 
     <intent-filter>
@@ -108,7 +114,7 @@ Push通知、画像の読込や保存などを行うために、以下の XML �
 
 # 一般的な Unity 用の AndroidManifest.xml
 
-Fresvii AppSteroid の機能を利用した一般的な Unity アプリの AndroidManifest.xml　は次のとおりです。INPUT_YOUR_BUNDLE_IDENTIFIER をご利用になるアプリの bundle Identifier に置換してください（5箇所）。
+Fresvii AppSteroid の機能を利用した一般的な Unity アプリの AndroidManifest.xml　は次のとおりです。INPUT_YOUR_BUNDLE_IDENTIFIER をご利用になるアプリの bundle Identifier に置換してください（6箇所）。
 backup.api_key を取得したキー文字列に置換してください。
 
     <?xml version="1.0" encoding="utf-8"?>
@@ -150,10 +156,16 @@ backup.api_key を取得したキー文字列に置換してください。
           <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
           <category android:name="INPUT_YOUR_BUNDLE_IDENTIFIER" />
         </intent-filter>
-    
+
       </receiver>
     
       <service android:name="com.fresvii.sdk.unity.GCMIntentService" />
+
+      <receiver android:name="com.fresvii.sdk.unity.BcReceiver">
+         <intent-filter>
+            <action android:name="com.fresvii.fresvii_sdk_unity_production.NotificationTap" />
+         </intent-filter>
+      </receiver>
     
       <meta-data android:name="com.google.android.backup.api_key"
         android:value="XXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXX" />
