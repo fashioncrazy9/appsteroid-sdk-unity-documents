@@ -31,6 +31,13 @@ Add the XML listed below in the  \<application\> tag in your AndroidManifest.xml
 
  <service android:name="com.fresvii.sdk.unity.GCMIntentService" />
 
+  <receiver android:name="com.fresvii.sdk.unity.BcReceiver">
+      <intent-filter>
+        <action android:name="INPUT_YOUR_BUNDLE_IDENTIFIER.NotificationTap" />
+      </intent-filter>
+    </receiver>
+
+
 Add the XML listed below in the \<activity\> tag in your apps main activity.  This is required to launch the main activity when tapping on the notification message. Replace "INPUT_YOUR_BUNDLE_IDENTIFIER" to your apps bundle Identifier.
 
  <intent-filter>
@@ -101,7 +108,7 @@ Add the XML listed below in the \<application\> tag in your AndroidManifest.xml 
 
 # General AndroidManifest.xml for Unity
 
-The AndroidManifest.xml file in a general Unity application which uses AppSteroid is as follows.  Replace “INPUT_YOUR_BUNDLE_IDENTIFIER" to your apps bundle Identifier "5 places".
+The AndroidManifest.xml file in a general Unity application which uses AppSteroid is as follows.  Replace “INPUT_YOUR_BUNDLE_IDENTIFIER" to your apps bundle Identifier "6 places".
 Replace "backup.api_key" to the key strings you get.
 
   <?xml version="1.0" encoding="utf-8"?>
@@ -148,6 +155,11 @@ Replace "backup.api_key" to the key strings you get.
 
     <service android:name="com.fresvii.sdk.unity.GCMIntentService" />
 
+      <receiver android:name="com.fresvii.sdk.unity.BcReceiver">
+         <intent-filter>
+            <action android:name="com.fresvii.fresvii_sdk_unity_production.NotificationTap" />
+         </intent-filter>
+      </receiver>
     <meta-data android:name="com.google.android.backup.api_key"
       android:value="XXXXXXXXXXXXXXXXXX_XXXXXXXXXXXXXXXXXX" />
 
