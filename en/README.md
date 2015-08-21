@@ -24,6 +24,7 @@
 * [How to use WebConsole](https://fresvii.zendesk.com/hc/en-us/articles/204946850)
 * [How to setup APNS Certificate](https://fresvii.zendesk.com/hc/en-us/articles/203512810-APNS-Certificate-Tutorial) 
 * [Group Conference(VoiceChat) Manual](Use Group Conference(VoiceChat).md)
+* [About Development Mode](Development_Mode.md)
 * [MatchMaking Manual](Use MatchMaking.md)
 * [Customizing GUI](GUI_Color_Setting.md)
 * [Leaderboard Manual](Use Leaderboard.md)
