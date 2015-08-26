@@ -1,5 +1,19 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.0.4
+- Performance improvements
+    - Improved thread, comment and message GUI behavior of when deleting an uploaded video
+    - Add steps to fix video capture bug [iOS] on FAQ document
+
+- Fixed
+    - When opening AppSteroid GUI on low memory, there is a small chance of app crashing
+    - Menu does not show up properly when long pressing on a comment
+    - GUI layout fix
+    
+- Existing problem
+	  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+
+
 ## 1.0.3
 - New Feature
     - Group hiding. App users can hide groups.

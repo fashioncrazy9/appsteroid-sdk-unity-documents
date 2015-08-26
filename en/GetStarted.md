@@ -26,16 +26,16 @@ You can get the AppId and SecretKey on the Web Console. Please check the documen
 #### AppSteroid GUI settings
 |Data|Type|Description|
 |-------|------|-----|
-|GUI type||Choose from Version1 / Legacy. Please note that Legacy will not be supported at the later update.|
-|Light font||Light font|
-|Regular font||Regular font|
-|Semibold font||Semibold font|
-|Bold font||Bold font|
-|Extrabold font||Extrabold font|
-|App Steroid GUI orientation||Set up device rotation of AppSteroid GUI |
+|GUI type|enum|Choose from Version1 / Legacy. Please note that Legacy will not be supported at the later update.|
+|Light font|Font|Light font|
+|Regular font|Font|Regular font|
+|Semibold font|Font|Semibold font|
+|Bold font|Font|Bold font|
+|Extrabold font|Font|Extrabold font|
+|App Steroid GUI orientation|Orientation|Set up device rotation of AppSteroid GUI |
 |CSR|bool|Whether to use CSR Chat (Live Help, Customer Support) feature or not. |
 |Log level|FASSettings.LogLevel|Log export level. Select from { Verbose, Warning, Error, None }. It will still export error log for `None` when there was an input omission for required parameter. |
-|Auto relogin silently on resume|Whether to relogin or not when relaunching the app.|
+|Auto relogin silently on resume|bool|Whether to relogin or not when relaunching the app.|
 
 #### Push notification
 |Data|Type|Description|
