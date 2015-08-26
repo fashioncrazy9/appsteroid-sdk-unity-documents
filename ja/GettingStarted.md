@@ -26,16 +26,16 @@ AppIdとSecretKeyはWebコンソールより取得できます。詳しくは[We
 #### AppSteroid GUI settings
 |Data|Type|Description|
 |-------|------|-----|
-|GUI type||Version1 / Legacy から選択します。ただし、Legacy は今後のアップデートはサポートされません。|
-|Light font||Light font|
-|Regular font||Regular font|
-|Semibold font||Semibold font|
-|Bold font||Bold font|
-|Extrabold font||Extrabold font|
-|App Steroid GUI orientation||AppSteroid の GUI のデバイスローテーションを設定します。|
+|GUI type| enum |Version1 / Legacy から選択します。ただし、Legacy は今後のアップデートはサポートされません。|
+|Light font|Font|Light font|
+|Regular font|Font|Regular font|
+|Semibold font|Font|Semibold font|
+|Bold font|Font|Bold font|
+|Extrabold font|Font|Extrabold font|
+|App Steroid GUI orientation| Orientation |AppSteroid の GUI のデバイスローテーションを設定します。|
 |CSR|bool|CSR（Live Help、カスタマーサポート）機能を利用するか、否か|
 |Log level|FASSettings.LogLevel|ログ出力レベル。{ Verbose, Warning, Error, None } のいずれかを選択。None の場合も必須のパラメータ入力漏れなどではエラーログ出力します。|
-|Auto relogin silently on resume|アプリ再開時に自動で再ログインを行うか、否か。|
+|Auto relogin silently on resume|bool|アプリ再開時に自動で再ログインを行うか、否か。|
 
 #### Push notification
 |Data|Type|Description|
