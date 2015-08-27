@@ -5,8 +5,8 @@
 
 #### Which versions of Unity are supported?
 
-The supported versions of Unity are 4.6.4 and later. Unity Pro is not required.
-<span style="color:red">If you are using Unity 5, please use hot fix version 5.0.1p or later.</span>
+The supported versions of Unity are 4.6.7 and later. Unity Pro is not required.
+If you are using Unity 5, please use version 5.1.2 or higher.
 
 #### What do I need to do to update the AppSteroid SDK?
 Please check [Updating the SDK](Updating AppSteroidSDK.md) for instructions.
@@ -32,9 +32,23 @@ If you see an error on `FASGTMHTPFetcher` like the following image, Set the `Ena
 #### Play video is alway black after the video capture on iOS. Any solution?
 
 AppSteroid currently support Open GL ES 3.0 for recording function.
-If you are using Unity 4.6.2p2 or later, go to Player Setting -> Other Settings and change the Graphics API to Open GL ES 3.0.
+Go to Player Setting -> Other Settings and change the Graphics API to Open GL ES 3.0.
 
+- Unity 4.6.7
 ![](Images/VideoRecordingSetting.png)
+
+
+- Unity 5.1.2
+![](Images/VideoRecordingSettingUnity5.png)
+
+In the generated Xcode project, in GLESHelper. mm, find CreateSystemRenderingSurfaceGLES, and change:
+
+    [NSNumber numberWithBool:FALSE], kEAGLDrawablePropertyRetainedBacking,
+
+to:
+
+    [NSNumber numberWithBool:TRUE], kEAGLDrawablePropertyRetainedBacking,
+
 
 #### Screen transition is very slow when loading a new scene. Any solution to speed it up?
 
@@ -50,6 +64,8 @@ Also, if you are using Unity pro, you can speed up screen transition with asynch
 ![](Images/invalid_SDK_Version.png)
 
 ![](Images/invalid_SDK_Version2.png)
+
+**Case 3.** If you see an error indicating that there is a missing file or class does not exist, you may have failed importing the package and the files. Please try reinstalling it again.
 
 Please check the document, [SDK Update](Updating AppSteroidSDK.md), for error involved on updating the SDK. 
 

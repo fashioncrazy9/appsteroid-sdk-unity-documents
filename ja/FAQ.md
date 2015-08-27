@@ -5,9 +5,8 @@
 
 #### Unity の対応バージョンはいくつですか？
 
-AppSteroid が利用している Unity の API の対応バージョンは、4.6.4 以上です。Pro は必要ありません。
-
-<span style="color:red">Unity 5 用をご利用になる場合は、パッチリリース版の Unity 5.0.1p1 以上をご利用ください。</span>
+AppSteroid が利用している Unity の API の対応バージョンは、4.6.7 以上です。Pro は必要ありません。
+Unity 5 用をご利用になる場合は、Unity 5.1.2 以上をご利用ください。
 
 #### AppSteroid SDKをアップデートするにはどうすればいいですか？
 AppSteroidをアップデートする場合は、[SDKのアップデート](AppSteroidSDKのアップデート.md) をご参照ください。
@@ -34,9 +33,21 @@ AppSteroid SDKのアップデートパッケージをインストール直後に
 #### iOS のビデオ録画が真っ黒なビデオが作成されます。どうしたら良いですか？
 
 現在、AppSteroidでは Open GL ES 3.0 の録画機能に対応しています。
-Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings -> Graphics API を Open GL ES 3.0 に設定してください。
+Player Setting -> Other Settings -> Graphics API を Open GL ES 3.0 に設定してください。
 
+- Unity 4.6.7
 ![](Images/VideoRecordingSetting.png)
+
+- Unity 5.1.2
+![](Images/VideoRecordingSettingUnity5.png)
+
+また、Unityでビルド後のXcodeプロジェクトにて、`GLESHelper. mm` ファイルの `CreateSystemRenderingSurfaceGLES` 内の
+
+    [NSNumber numberWithBool:FALSE], kEAGLDrawablePropertyRetainedBacking,
+
+という行を以下のように FALSE -> TRUE に編集してください。
+
+    [NSNumber numberWithBool:TRUE], kEAGLDrawablePropertyRetainedBacking,
 
 #### シーンロード時の画面遷移が遅いのですが、どうすれば良いですか？
 
@@ -52,6 +63,8 @@ AppSteroid for Unityには、シーンロードを高速化するメソッドが
 ![](Images/invalid_SDK_Version.png)
 
 ![](Images/invalid_SDK_Version2.png)
+
+**Case 3.** ファイルが不足している、もしくは、クラスが存在しないというようなエラーが出た場合は、パッケージのインポート時に不具合があり、ファイルをインポートに失敗している可能性があります。その場合は、再度パッケージをインストールしてください。
 
 アップデート後にエラーが出た場合は、[SDKのアップデート](AppSteroidSDKのアップデート.md) をご参照ください。
 
