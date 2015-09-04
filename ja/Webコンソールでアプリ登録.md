@@ -21,5 +21,5 @@
 ここで表示される、ID及びシークレットキーは、[GettingStarted](GettingStarted.md)にて使用します。
 ![DLL Duplicate](./Images/dashboard.png)
 
-4.以上でWeb上での初期設定は完了です。
+4. 以上でWeb上での初期設定は完了です。
 ユーザーの情報はダッシュボード上から随時確認することができます。
