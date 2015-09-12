@@ -35,6 +35,7 @@
 * [Android プッシュ通知の設定方法]([Unity-Android]プッシュ通知の設定方法.md)
 * [iOS プッシュ通知の設定方法]([Unity-iOS]プッシュ通知の設定方法.md)
 * [プッシュイベントについて](https://github.com/fresvii/appsteroid-documents/blob/master/ja/EventList.md)
+* [ユーザー名重複時の挙動に関して](ユーザー名重複時の挙動に関して.md)
 * [エラーコード仕様書](エラー仕様書.md)
 * [FAQ](FAQ.md)
 * [リリースノート](リリースノート.md)
