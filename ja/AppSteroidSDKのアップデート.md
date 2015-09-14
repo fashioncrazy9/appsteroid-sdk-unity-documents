@@ -11,7 +11,7 @@ AppSteroid のアップデート方法について説明します。新規でイ
 
 ## Unity 4.6.x から Unity 5.x.x にアップデートする方法
 1. **<span style="color:red">作業の前にプロジェクトのバックアップを行ってください。</span>**
-2. Unity５にて該当プロジェクトを開いて、プロジェクトをアップデートしてください。この時点では、Unity 4.6用の AppSteroid SDK が適用されていますので、インポート後にエラーが出る可能性があります。エラーが出ていない場合も Unity 5 用の AppSteroid の適用が必要ですので、以下の手順を引き続き行ってください。
+2. Unity 5 にて該当プロジェクトを開いて、プロジェクトをアップデートしてください。この時点では、Unity 4.6用の AppSteroid SDK が適用されていますので、インポート後にエラーが出る可能性があります。エラーが出ていない場合も Unity 5 用の AppSteroid の適用が必要ですので、以下の手順を引き続き行ってください。
 3. `Assets/Fresvii/AppSteroid/Resources/FASSettings.asset`ファイルを`Assets/Fresvii`フォルダ以外にコピーして保存してください。`FASSettings.asset`ファイルは AppID や Secret Key などの AppSteroid の設定情報が保存されたファイルです。`Assets/Fresvii/AppSteroid/Scripts/FASSettings.cs`ではないのでご注意ください。
 4. `Assets/Fresvii`フォルダを削除してください。
 5. `Assets/Plugins`フォルダ内に、`Android/AppSteroidAndroid.dll`,`Android/AppSteroidWithVoiceChatAndroid.dll`,`iOS/AppSteroidIOS.dll`,`iOS/AppSteroidWithVoiceChatIOS.dll`のいずれかがありますので、それを削除してください。
@@ -40,7 +40,7 @@ AppSteroid のアップデート方法について説明します。新規でイ
 
 ![DLL Duplicate](./Images/ImportDuplicateError.png)
 
-Unity 5　にて、unitypackage からアセットがインポートされたときの挙動が変更されました。Asset の GUIDが一致しない場合、Unity が " 1" をファイル名に追加して重複したファイルを生成します。AppSteroid をアップデートした際、GUIDが一致しない場合があります。この場合は以下の対応を行ってください。
+Unity 5 にて、unitypackage からアセットがインポートされたときの挙動が変更されました。Asset の GUIDが一致しない場合、Unity が " 1" をファイル名に追加して重複したファイルを生成します。AppSteroid をアップデートした際、GUIDが一致しない場合があります。この場合は以下の対応を行ってください。
 
 1. `Assets/Plugins/Android/AppSteroidAndroid.dll` と `Assets/Plugins/Android/AppSteroidAndroid　1.dll`、および、`Assets/Plugins/iOS/AppSteroidIOS.dll` と `Assets/Plugins/iOS/AppSteroidIOS　1.dll` が存在している場合、`AppSteroidAndroid.dll`,`AppSteroidAndroid 1.dll`, `AppSteroidIOS.dll`,`AppSteroidIOS 1.dll` の４つのファイルを削除してください。
 2. 再度、AppSteroid の該当パッケージをインストールしてください。インポート後、エラーが出ていなければ正常にアップデートが完了です。

@@ -1,6 +1,6 @@
 # Models Specifications
 
-last update at 2014/10/15
+last update at 2015/09/04
 
 ----------
 
@@ -34,8 +34,8 @@ last update at 2014/10/15
 |Fresvii.AppSteroid.Models|[SnsAccount](#SnsAccount)|SnsAccount モデル用クラス|
 |Fresvii.AppSteroid.Models|[Thread](#Thread)|Thread モデル用クラス|
 |Fresvii.AppSteroid.Models|[User](#UserClass)| ユーザーモデル用クラス|
-
-
+|Fresvii.AppSteroid.Models|[GameEvent](#GameEventClass)| ゲームイベントモデル用クラス|
+|Fresvii.AppSteroid.Models|[Eventboard](#EventboardClass)| イベントボードモデル用クラス|
 
 ----------
 ----------
@@ -332,8 +332,8 @@ SNSアカウント用クラス。
 |string|Id|ID|
 |string|Provider|プロバイダ 　例) "facebook", "twitter"|
 |string|Uid|ユーザーID|
-|string|CreatedAt|作成日時|
-|string|UpdatedAt|更新日時|
+|DateTime|CreatedAt|作成日時|
+|DateTime|UpdatedAt|更新日時|
 
 --------------------------
 ## <a name ="Player">Player Class</a>
@@ -364,5 +364,45 @@ SNSアカウント用クラス。
 |string|Name|ユーザー名|
 |string|FriendCode|フレンドコード|
 |string|Id|ユーザーID|
-|string|CreatedAt|作成日時|
-|string|UpdatedAt|更新日時|
+|DateTime|CreatedAt|作成日時|
+|DateTime|UpdatedAt|更新日時|
+
+
+--------------------------
+## <a name ="GameEventClass">GameEvent Class</a>
+
+ゲームイベントデータ用クラス。
+
+### Defines
+
+#### enum Status
+|Value|Description|
+|-|-|
+|Upcoming|開催予定|
+|Ongoing|開催中|
+|Past|過去のアーカイブ|
+
+### Properties
+|Type|Name|Description|
+|---|---|---|
+|string|Id|ゲームイベントID|
+|string|Name|イベント名|
+|DateTime|StartAt|イベント開始日時|
+|DateTime|EndAt|イベント終了日時|
+|string|Description|詳細テキスト|
+|DateTime|CreatedAt|作成日時|
+|string|ImageUrl|イベント画像のURL|
+|string|ImageLargeUrl|イベント画像（大）のURL|
+|string|WebSiteUrl|イベントのWebサイトURL|
+|Fresvii.AppSteroid.Models.App|App|イベントが開催されるアプリ情報|
+
+## <a name ="Eventboard">Eventboard Class</a>
+
+イベントボードデータ用クラス。
+
+### Properties
+|Type|Name|Description|
+|---|---|---|
+|string|Id|イベントボードID|
+|Fresvii.AppSteroid.Models.Leaderboard|Leaderboard|リーダーボード|
+|Fresvii.AppSteroid.Models.GameEvent|GameEvent|ゲームイベント|

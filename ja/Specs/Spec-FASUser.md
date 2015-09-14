@@ -24,30 +24,39 @@
 
 |Name|内容|
 |------|-----|
-|[FASUser.SignUp](#FASUser.SignUp)| アプリに紐付けられたユーザが作成される |
-|[FASUser.LogIn](#FASUser.LogIn)| サインアップで作成したユーザで何らかの操作をするための Session Token を返す |
+|[FASUser.SignUp](#FASUser.SignUp)| アプリに紐付けられたユーザーが作成される |
+|[FASUser.LogIn](#FASUser.LogIn)| サインアップで作成したユーザーで何らかの操作をするための Session Token を返す |
 |[FASUser.LogOut](#FASUser.LogOut)| ログアウトする |
 |[FASUser.LoadSignedUpUsers](#FASUser.LoadSignedUpUsers)|サインアップ済みのユーザー一覧を取得する|
-|[FASUser.GetSnsAccountList](#FASUser.GetSnsAccountList)| ユーザに登録されている SNS 認証情報一覧を取得する |
-|[FASUser.SetSnsAccount](#FASUser.SetSnsAccount)| SNS 認証で得られた SNS 内でユーザを識別するための uid と SNS サービス名をサインインユーザと結びつけて保存する |
+|[FASUser.GetSnsAccountList](#FASUser.GetSnsAccountList)| ユーザーに登録されている SNS 認証情報一覧を取得する |
+|[FASUser.SetSnsAccount](#FASUser.SetSnsAccount)| SNS 認証で得られた SNS 内でユーザーを識別するための uid と SNS サービス名をサインインユーザと結びつけて保存する |
 |[FASUser.DeleteSnsAccount](#FASUser.DeleteSnsAccount)| id で指定した、SNS 認証情報を削除する |
-|[FASUser.GetAccount](#FASUser.GetAccount)|サインインしているユーザ情報を取得する |
-|[FASUser.PatchAccount](#FASUser.PatchAccount)| サインインしているユーザ情報を設定する |
-|[FASUser.GetUser](#FASUser.GetUser)| id で指定した、ユーザ情報を取得する |
+|[FASUser.GetAccount](#FASUser.GetAccount)|サインインしているユーザー情報を取得する |
+|[FASUser.PatchAccount](#FASUser.PatchAccount)| サインインしているユーザー情報を設定する |
+|[FASUser.GetUser](#FASUser.GetUser)| id で指定した、ユーザー情報を取得する |
 |[FASUser.GetUserList](#FASUser.GetUserList)| 条件で指定したユーザ一覧を取得する |
 
 -----------------
 ### <a name ="FASUser.SignUp">FASUser.SignUp</a>
-アプリに紐付けられたユーザが作成されます。結果は、User,　Error を引数としたコールバックで返します。 作成されたユーザーIDは暗号化してローカルストレージに保存されます。
+アプリに紐付けられたユーザーが作成されます。結果は、`User`,　`Error` を引数としたコールバックで返します。 作成されたユーザーIDは暗号化してローカルストレージに保存されます。
+オプションでユーザー名設定なしの場合、または、 `userName` が `null` または empty の場合の挙動は、"[ユーザー名重複時の挙動に関して](../ユーザー名重複時の挙動に関して.md)"に記載のとおりです。
 
-    public static void SignUp(string userName, Action<User, Error> callback)
+```C#
+public static void SignUp(Action<User, Error> callback)
+public static void SignUp(string userName, Action<User, Error> callback)
+public static void SignUp(string userName, string description, Action<User, Error> callback)
+public static void SignUp(string userName, Texture2D profileImage, Action<User, Error> callback)
+public static void SignUp(string userName, string description, Texture2D profileImage, Action<User, Error> callback)
+        
+
+```
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
-|userName|string|サインアップするユーザーネーム。ユーザーネームがない場合は null を設定する|
-|description|string|サインアップするユーザーのプロフィール文。コメントがない場合は、null を設定する|
-|profileImage|Texture2D|サインアップするユーザー画像。画像がない場合は、 null を設定する|
+|userName|string|(Option)サインアップするユーザーネーム。ユーザーネームがない場合は null を設定する|
+|description|string|(Option)サインアップするユーザーのプロフィール文。コメントがない場合は、null を設定する|
+|profileImage|Texture2D|(Option)サインアップするユーザー画像。画像がない場合は、 null を設定する|
 |callback|Action<User, Error>|サインアップ処理後に呼び出されるデリゲート|
 
 #### Errors
@@ -217,6 +226,7 @@ id で指定した、SNS 認証情報を削除します。結果は、Error を�
 -----------------
 ### <a name ="FASUser.PatchAccount">FASUser.PatchAccount</a>
 サインインしているユーザの名前、プロフィール画像を設定します。結果は、User,　Error を引数としたコールバックで返します。
+"[ユーザー名重複時の挙動に関して](../ユーザー名重複時の挙動に関して.md)"も参照ください。
 
     public static void PatchAccount(string name,　Action<User, Error> callback)
     public static void PatchAccount(Texture2D profileImage,　Action<User, Error> callback)
