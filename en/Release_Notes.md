@@ -1,5 +1,19 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.0.5
+- Fixed
+    - Very slow performance at network error
+    - Bug occurs when playing a deleted video
+    
+- Performance improvements
+    - when tapping the user icon on group message, the destination is changed to user profile
+    - GUI usability
+    - Updated SNS share context and URL
+    - Updated Object hideFlags created by AppSteroid
+    
+- Existing problem
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+
 ## 1.0.4
 - Performance improvements
     - Improved thread, comment and message GUI behavior of when deleting an uploaded video
@@ -12,7 +26,6 @@
     
 - Existing problem
 	  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
-
 
 ## 1.0.3
 - New Feature

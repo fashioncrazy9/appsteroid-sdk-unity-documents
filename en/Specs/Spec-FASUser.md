@@ -39,16 +39,17 @@ Basic settings and user setting class
 
 -----------------
 ### <a name ="FASUser.SignUp">FASUser.SignUp</a>
-Creates a user associated with the app. The result is returned by the callback with the arguments of User and Error. The created user ID is encrypted and saved in the local storage。
+Creates an user associated with the app. The result is returned by the callback with the arguments of User and Error. The created user ID is encrypted and saved in the local storage.
+For the behavior of when an user name is not setup, or when an `userName` is `null` or empty, please check the "[name duplication](../DuplicatedUserName.md)" document.
 
     public static void SignUp(string userName, Action<User, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
 |------|------|-----|
-|userName|string|Name of the signup user. If there is no user name, set null. |
-|description|string|Profile of the signup user. If there is no comment, set null. |
-|profileImage|Texture2D|Image of the signup user. If there is no image, set null. |
+|userName|string|(Optional) Name of the signup user. If there is no user name, set null. |
+|description|string|(Optional) Profile of the signup user. If there is no comment, set null. |
+|profileImage|Texture2D|(Optional) Image of the signup user. If there is no image, set null. |
 |callback|Action<User, Error>|Delegate to be called after the signup process. |
 
 #### Errors
@@ -273,6 +274,7 @@ Get the signed in users status. The result is returned by the callback with the 
 -----------------
 ### <a name ="FASUser.PatchAccount">FASUser.PatchAccount</a>
 Set up the name and profile image of the signed in user. The result is returned by the callback with the arguments of User and Error.
+Please also check the "[duplicated user name](../DuplicatedUserName.md)" document.
 
     public static void PatchAccount(string name,　Action<User, Error> callback)
     public static void PatchAccount(Texture2D profileImage,　Action<User, Error> callback)

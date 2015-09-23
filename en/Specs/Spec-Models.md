@@ -1,6 +1,6 @@
 # Models Specifications
 
-last update at 2014/10/15
+last update at 2015/09/04
 
 ----------
 
@@ -33,6 +33,8 @@ Model Class for each Data
 |Fresvii.AppSteroid.Models|[SnsAccount](#SnsAccount)|SnsAccount model class |
 |Fresvii.AppSteroid.Models|[Thread](#Thread)|Thread model class |
 |Fresvii.AppSteroid.Models|[User](#UserClass)|User model class |
+|Fresvii.AppSteroid.Models|[GameEvent](#GameEventClass)| Game event model class|
+|Fresvii.AppSteroid.Models|[Eventboard](#EventboardClass)| Eventboard model class|
 
 
 ----------
@@ -319,8 +321,8 @@ SNS account class
 |string|Id|ID|
 |string|Provider|Provider string such as "Facebook" or "Twitter"|
 |string|Uid|User ID|
-|string|CreatedAt|Creation date and time|
-|string|UpdatedAt|Update date and time|
+|DateTime|CreatedAt|Creation date and time|
+|DateTime|UpdatedAt|Update date and time|
 
 --------------------------
 ## <a name ="Player">Player Class</a>
@@ -351,5 +353,45 @@ User data class
 |string|Name|User name|
 |string|FriendCode|Friend code|
 |string|Id|User ID|
-|string|CreatedAt|Creation date and time|
-|string|UpdatedAt|Update date and time|
+|DateTime|CreatedAt|Creation date and time|
+|DateTime|UpdatedAt|Update date and time|
+
+
+--------------------------
+## <a name ="GameEventClass">GameEvent Class</a>
+
+Game event data class
+
+### Defines
+
+#### enum Status
+|Value|Description|
+|-|-|
+|Upcoming|Upcoming Event|
+|Ongoing|Ongoing Event|
+|Past|Past Event|
+
+### Properties
+|Type|Name|Description|
+|---|---|---|
+|string|Id|Game Event ID|
+|string|Name|Event Name|
+|DateTime|StartAt|Start date of the event|
+|DateTime|EndAt|End date of the event|
+|string|Description|Description text|
+|DateTime|CreatedAt|Created date|
+|string|ImageUrl|URL of event image|
+|string|ImageLargeUrl|URL of event image (big)|
+|string|WebSiteUrl|URL of event web site|
+|Fresvii.AppSteroid.Models.App|App|App information of the event|
+
+## <a name ="Eventboard">Eventboard Class</a>
+
+Eventboard data class
+
+### Properties
+|Type|Name|Description|
+|---|---|---|
+|string|Id|Eventboard ID|
+|Fresvii.AppSteroid.Models.Leaderboard|Leaderboard|Leaderboard|
+|Fresvii.AppSteroid.Models.GameEvent|GameEvent|Game Event|
