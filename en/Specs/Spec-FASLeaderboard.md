@@ -21,19 +21,32 @@ Class to operate Leaderboard
 
 ### Methods
 
+
+#### Leaderboard
 |Name|Description|
 |------|-----|
 |[FASLeaderboard.SetTotalizationClockUtcOffset](#FASLeaderboard.SetTotalizationClockUtcOffset)| Setup UTC offset for time to tally Leaderboard. (Default = 0) |
 |[FASLeaderboard.SetDailyTotalizationStartTime](#FASLeaderboard.SetDailyTotalizationStartTime)| Setup Daily Starting time to tally Leaderboard. (Default = 00:00) |
 |[FASLeaderboard.SetWeeklyTotalizationStartTime](#FASLeaderboard.SetWeeklyTotalizationStartTime)| Setup Weekly starting time to tally Leaderboard. (Default = Sunday, 00:00) |
-|[FASLeaderboard.GetLeaderboards](#FASLeaderboard.GetLeaderboards)| Get list of leaderboards from app. You can creat leaderboards from the web console. |
+|[FASLeaderboard.GetLeaderboardList](#FASLeaderboard.GetLeaderboardList)| Get list of leaderboards from app. You can creat leaderboards from the web console. |
 |[FASLeaderboard.GetLeaderboard](#FASLeaderboard.GetLeaderboard)| Get Leaderboard|
 |[FASLeaderboard.ReportScore](#FASLeaderboard.ReportScore)| Report Score|
 |[FASLeaderboard.GetScore](#FASLeaderboard.GetScore)| Get Score|
 |[FASLeaderboard.DeleteScore](#FASLeaderboard.DeleteScore)| Delete Score|
-|[FASLeaderboard.GetUserScores](#FASLeaderboard.GetUserScores)| Get list of Score|
-|[FASLeaderboard.GetRanking](#FASLeaderboard.GetRanking)|Get Ranking (list of ranks)|
-|[FASLeaderboard.GetUserRanking](#FASLeaderboard.GetUserRanking)|Get User Ranking (list of ranks)|
+|[FASLeaderboard.GetUserScores](#FASLeaderboard.GetUserScores)| Get score list from specific user|
+|[FASLeaderboard.GetRanking](#FASLeaderboard.GetRanking)| Get score list|
+|[FASLeaderboard.GetUserRank](#FASLeaderboard.GetUserRank)| Get user rank|
+
+#### Eventboard
+|Name|Description|
+|------|-----|
+|[FASLeaderboard.GetEventList](#FASLeaderboard.GetEventList)|Get event list|
+|[FASLeaderboard.GetEvent](#FASLeaderboard.GetEvent)|Get detail info from a specified event|
+|[FASLeaderboard.GetEventboardList](#FASLeaderboard.GetEventboardList)|Get eventboard list from a specified event|
+|[FASLeaderboard.GetAllEventboardList](#FASLeaderboard.GetAllEventboardList)|Get event board list from all event|
+|[FASLeaderboard.GetEventboard](#FASLeaderboard.GetEventboard)|Get detail info from a specified eventboard|
+|[FASLeaderboard.GetEventboardRanking](#FASLeaderboard.GetEventboardRanking)|Get score list from eventboard|
+|[FASLeaderboard.GetEventboardUserRank](#FASLeaderboard.GetEventboardRanking)|Get rank from a specific user|
 
 ### <a name ="FASLeaderboard.SetTotalizationClockUtcOffset">FASLeaderboard.SetTotalizationClockUtcOffset</a>
 
@@ -71,12 +84,12 @@ Setup Weekly starting time to tally Leaderboard. (Default = Sunday, 00:00)
 |hour|int|hour (Default = 0)|
 |minute|int|minute (Default = 0)|
 
-### <a name ="FASLeaderboard.GetLeaderboards">FASLeaderboard.GetLeaderboards</a>
+### <a name ="FASLeaderboard.GetLeaderboardList">FASLeaderboard.GetLeaderboardList</a>
 
 Get Leaderboard List
 
-   public static void GetLeaderboards(Action<IList<Leaderboard>, Error> callback)
-   public static void GetLeaderboards(uint page, Action<IList<Leaderboard>, Error> callback)
+   public static void GetLeaderboardList(Action<IList<Leaderboard>, Error> callback)
+   public static void GetLeaderboardList(uint page, Action<IList<Leaderboard>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -86,7 +99,7 @@ Get Leaderboard List
 
 #### Example
 
-   FASLeaderboard.GetLeaderboards(delegate(IList<Leaderboard> leaderboards, Error error)
+   FASLeaderboard.GetLeaderdList(delegate(IList<Leaderboard> leaderboards, Error error)
    {
      if(error == null)
      {
@@ -237,11 +250,11 @@ Get Ranking
    });
 
 
-### <a name ="FASLeaderboard.GetUserRanking">FASLeaderboard.GetUserRanking</a>
+### <a name ="FASLeaderboard.GetUserRank">FASLeaderboard.GetUserRank</a>
 
-Get User Ranking
+Get User Rank
 
- public static void GetUserRanking(string leaderboardId, string userId, System.DateTime startTime, bool onlyFriends, Action<Rank, Error> callback)
+ public static void GetUserRank(string leaderboardId, string userId, System.DateTime startTime, bool onlyFriends, Action<Rank, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -255,10 +268,180 @@ Get User Ranking
 
 #### Example
 
-   FASLeaderboard.GetUserRanking(leaderboardId, userId, startTime, delegate(Rank rank, Error error)
+   FASLeaderboard.GetUserRank(leaderboardId, userId, startTime, delegate(Rank rank, Error error)
    {
       if(error == null)
      {
       //　To go through process
    }
    });
+
+### <a name ="FASLeaderboard.GetEventList">FASLeaderboard.GetEventList</a>
+
+Get event list
+
+    public static void GetEventList(Fresvii.AppSteroid.Models.GameEvent.Status status, Action<IList<Fresvii.AppSteroid.Models.GameEvent>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventList(uint page, Fresvii.AppSteroid.Models.GameEvent.Status status, Action<IList<Fresvii.AppSteroid.Models.GameEvent>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|page|uint|(optional) page number to get|
+|status|Fresvii.AppSteroid.Models.GameEvent.Status|Game event status（Upcoming, Ongoing, Past）|
+|callback|Action \<IList \<Leaderboard>,  Fresvii.AppSteroid.Models.ListMeta, Error>|This is a Delegate with an argument of GameEvent model list, error info and meta info that will be called when the process to get game event list is completed.|
+
+#### Example
+
+    FASLeaderboard.GetEventList((gameEvents, listMeta, error) =>
+    {
+        if(error == null)
+        {
+            // To go through process
+        }
+    });
+
+### <a name ="FASLeaderboard.GetEvent">FASLeaderboard.GetEvent</a>
+
+Get detail info of game event
+
+    public static void GetEvent(string eventId, Action<Fresvii.AppSteroid.Models.GameEvent, Fresvii.AppSteroid.Models.Error> callback)
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|eventId|string|ID of GameEvent to get|
+|callback|Action \<GameEvent, Error>|This is a Delegate with an argument of GameEvent model and error info that will be called when the process to get game event info is completed.|
+
+#### Example
+
+    FASLeaderboard.GetEvent((gameEvent, error) =>
+    {
+        if(error == null)
+        {
+            // To go through process
+        }
+    });
+
+
+### <a name ="FASLeaderboard.GetEventboardList">FASLeaderboard.GetEventboardList</a>
+
+Get eventboard list
+
+    public static void GetEventboardList(string gameEventId, Action<IList<Fresvii.AppSteroid.Models.Eventboard>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventboardList(uint page, string gameEventId, Action<IList<Fresvii.AppSteroid.Models.Eventboard>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|page|uint|(Optional) page number to get|
+|gameEventId|string|game event ID|
+|callback|Action \<IList \<Eventboard>,  Fresvii.AppSteroid.Models.ListMeta, Error>|This is a Delegate with an argument of eventboard model list, error info and meta info that will be called when the process to get eventboard list is completed.|
+
+#### Example
+
+    FASLeaderboard.GetEventboardList(gameEvent.Id, (eventboards, listMeta, error) =>
+    {
+        if(error == null)
+        {
+            // To go through process
+        }
+    });
+
+### <a name ="FASLeaderboard.GetAllEventboardList">FASLeaderboard.GetAllEventboardList</a>
+
+Get all eventboard list
+
+    public static void GetAllEventboardList(Action<IList<Fresvii.AppSteroid.Models.Eventboard>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+
+    public static void GetAllEventboardList(uint page, Action<IList<Fresvii.AppSteroid.Models.Eventboard>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)    
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|page|uint|(Optional) page number to get|
+|callback|Action \<IList \<Eventboard>,  Fresvii.AppSteroid.Models.ListMeta, Error>|This is a Delegate with an argument of eventboard model list, error info and meta info which will be called when the process to get eventboard model list is completed.|
+
+#### Example
+
+    FASLeaderboard.GetEventboardList(gameEvent.Id, (eventboards, listMeta, error) =>
+    {
+        if(error == null)
+        {
+            // To go through process
+        }
+    });
+
+
+### <a name ="FASLeaderboard.GetEventboard">FASLeaderboard.GetEventboard</a>
+
+Get eventboard
+
+    public static void GetEventboard(string eventboardId, Action<Fresvii.AppSteroid.Models.Eventboard, Fresvii.AppSteroid.Models.Error> callback)
+    
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|leaderboardId|string|ID of eventboard to get|
+|callback|Action\<Eventboard, Error>|This is a Delegate with an argument of eventboard model and error info which will be called when the process to get eventboard is completed.|
+
+#### Example
+
+    FASLeaderboard.GetEventboard(eventboardId, (eventboard, error) =>
+    {
+        if(error == null)
+        {
+            //  To go through process
+        }
+    });
+
+
+### <a name ="FASLeaderboard.GetRanking">FASLeaderboard.GetEventboardRanking</a>
+
+Get Eventboard ranking (Score list)
+
+    public static void GetEventboardRanking(string eventboardId, Action<IList<Fresvii.AppSteroid.Models.Score>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventboardRanking(string eventboardId, uint page, Action<IList<Fresvii.AppSteroid.Models.Score>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventboardRanking(string eventboardId, bool onlyFriends, Action<IList<Fresvii.AppSteroid.Models.Score>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventboardRanking(string eventboardId, bool onlyFriends, uint page, Action<IList<Fresvii.AppSteroid.Models.Score>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|eventboardId|string|ID of eventboard to get the ranking from|
+|page|uint|(Optional) page number to get|
+|onlyFriends|bool|(Optional) Only display friends' result (Default is false)|
+|callback| Action\<IList\<Score>, Error> |This is a Delegate with an argument of Score model list and error info which will be called when the process to get score list is completed.|
+
+#### Example
+
+    FASLeaderboard.GetEventboardRanking(eventboardId, 1, true, (scores, error) =>
+    {
+        if(error == null)
+        {
+            // To go through process
+        }
+    });
+
+### <a name ="FASLeaderboard.GetEventboardUserRank">FASLeaderboard.GetEventboardUserRank</a>
+
+Get rank from a specific user on eventboard
+
+    public static void GetEventboardUserRank(string eventboardId, string userId, Action<Fresvii.AppSteroid.Models.Rank, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventboardUserRank(string eventboardId, string userId, bool onlyFriends, Action<Fresvii.AppSteroid.Models.Rank, Fresvii.AppSteroid.Models.Error> callback)
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|leaderboardId|string|ID of Event to get the rank from|
+|userId|string|User ID to get the rank from|
+|callback| Action\<Rank, Error>|This is a Delegate with an argument of Score model and error info which will be called when the process to get score is completed.|
+
+#### Example
+
+    FASLeaderboard.GetEventboardUserRank(leaderboardId, userId, (rank, error) =>
+    {
+        if(error == null)
+        {
+            //　To go through process
+        }
+    });
