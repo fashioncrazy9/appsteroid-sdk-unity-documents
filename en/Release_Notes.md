@@ -1,5 +1,21 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.0.6
+- Fixed
+    - Badge count for unread message is incorrect
+    - Localized alert message would not be shown
+    - Call icon on voice chat do not behave properly during voice call 
+    - No store URL when sharing an event on SNS
+    - GUI bug on match making screen
+
+- Performance improvements
+    - Layout fix and GUI improvements
+    - Ability to access initialization method for video recording
+
+- Existing problem
+    - iOS Devices will crash when using Group Conference (Voice Chat).  Please use the SDK without Voice Chat. Android devices will operate correctly.
+    - 2015/10/05 There are many problem found on Unity 5.2.​*. Please avoid using Unity 5.2.*​.
+
 ## 1.0.5
 - Fixed
     - Very slow performance at network error
