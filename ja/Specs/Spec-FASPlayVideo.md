@@ -1,13 +1,13 @@
 # FASPlayVideo Specifications
 
-last update at　2015/03/05
+last update at　2015/10/02
 
 ----------
 
 ## Introduction
 
 ## <a name ="FASPlayVideo">FASPlayVideo Class</a>
-**<font color='red'>このクラスは、Ver.0.7.0 現在、iOS のみ利用可能です。Android は未対応です。</font>**
+**<font color='red'>このクラスは、Ver.1.0.6 現在、iOS のみ利用可能です。Android は未対応です。</font>**
 
 ゲームプレイビデオの録画、再生、アップロードなどを操作するクラスです。
 
@@ -30,6 +30,7 @@ Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings 
 
 |Name|内容|
 |------|-----|
+|[FASPlayVideo.InitializeRecording](#FASPlayVideo.InitializeRecording)| ビデオ録画機能を初期化する|
 |[FASPlayVideo.StartRecording](#FASPlayVideo.StartRecording)| ビデオ録画を開始する|
 |[FASPlayVideo.StopRecording](#FASPlayVideo.StopRecording)| ビデオ録画を終了する|
 |[FASPlayVideo.ShowLatestVideoSharingGUIWithUGUI](#FASPlayVideo.ShowLatestVideoSharingGUIWithUGUI)| 録画した最新ビデオをシェアするGUIを表示する。UGUIの上にダイアログを表示する。 |
@@ -40,6 +41,18 @@ Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings 
 |[FASPlayVideo.IsRecording](#FASPlayVideo.IsRecording)| ビデオ録画の録画状態を取得する|
 |[FASPlayVideo.GetLatestRecordedVideoPath](#FASPlayVideo.GetLatestRecordedVideoPath)| 録画した最新ビデオのパスを取得する|
 
+
+### <a name ="FASPlayVideo.InitializeRecording">FASPlayVideo.InitializeRecording</a>
+ビデオ録画機能を初期化します。ビデオ録画開始前に、初期化する必要があります。
+初期化後、端末を回転した場合、録画が正常に行われなくなります。端末の回転を許可している場合は、端末の回転後の適切なタイミングで録画開始前に初期化を行ってください。また、ビデオ録画中は端末の回転を行わないように設定してください。
+初期化処理には多少時間がかかります。そのため、ゲームプレイ中などに初期化を行うと遅延が発生します。適切なタイミングで初期化を行うようにご注意ください。
+
+    public static bool InitializeRecording()
+
+#### Return
+|Type|内容|
+|------|-----|
+|bool| 録画機能の初期化処理の成否|
 
 ### <a name ="FASPlayVideo.StartRecording">FASPlayVideo.StartRecording</a>
 ビデオ録画を開始します。ビデオ録画最大時間に達するか、`StopRecording`　を呼び出すと、ビデオ録画は終了します。録画したビデオは、アプリの一時保存領域に保存されます。録画処理終了後、`ShowLatestVideoSharingGUI` を呼び出してビデオをAppSteroidサーバにアップロードします。録画したビデオはアプリを閉じるとOSが任意のタイミングで削除します。
