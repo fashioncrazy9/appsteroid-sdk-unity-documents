@@ -14,7 +14,7 @@
 
 - Existing problem
     - iOS Devices will crash when using Group Conference (Voice Chat).  Please use the SDK without Voice Chat. Android devices will operate correctly.
-    - 2015/10/05 There are many problem found on Unity 5.2.​*. Please avoid using Unity 5.2.*​.
+    - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 2015/10/05
 
 ## 1.0.5
 - Fixed
