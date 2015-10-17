@@ -21,7 +21,7 @@
   * [FASStorage Class: Key Value Store Operation](Specs/Spec-FASStorage.md)
   * [FASUser Class: User Management](Specs/Spec-FASUser.md)
   * [Models: Data model](Specs/Spec-Models.md)
-* [How to use WebConsole](https://fresvii.zendesk.com/hc/en-us/articles/204946850)
+* [How to use WebConsole](WebConsole.md)
 * [How to setup APNS Certificate](https://fresvii.zendesk.com/hc/en-us/articles/203512810-APNS-Certificate-Tutorial) 
 * [Group Conference(VoiceChat) Manual](Use Group Conference(VoiceChat).md)
 * [About Development Mode](Development_Mode.md)

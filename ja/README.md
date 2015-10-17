@@ -21,7 +21,7 @@
   * [FASStorage Class キーバリューストア関連クラス](Specs/Spec-FASStorage.md)
   * [FASUser Class　ユーザー管理関連クラス](Specs/Spec-FASUser.md)
   * [Models　各種データモデルクラス](Specs/Spec-Models.md)
-* [WebConsoleの使い方](https://fresvii.zendesk.com/hc/en-us/articles/204946850)
+* [WebConsoleの使い方](Webコンソールとは.md)
 * [開発モードについて](開発モード.md)
 * [APNS証明書の設定方法](APNSCertificateTutorial.md)
 * [チャンネルの利用方法](チャンネルの利用方法.md)
