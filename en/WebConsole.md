@@ -63,9 +63,11 @@ After you have logged in, and selected an Application from the App Dashboard, cl
 ######Push Notification
 We will now set up Push Notifications for your app.  Select the Push Notifications tab at the top of the page. 
 
-For Android devices, you need to provide your GCM API Key.  If you haven’t got a GCM Key, we would suggest going here https://support.google.com/googleplay/android-developer/answer/2663268?hl=en and following the directions to get your GCM API Key.
+For Android devices, you need to provide your GCM API Key.  If you haven’t got a GCM Key, we would suggest go to [this page] (https://support.google.com/googleplay/android-developer/answer/2663268?hl=en) and following the directions to get your GCM API Key.
 
-For iOS devices, you will need to enter a key for production, and if you want to use the Sandbox test environment, you will also need a key for Development as well.  You can learn about getting these keys from here.  https://fresvii.zendesk.com/hc/en-us/articles/203512810-APNS-Certifiate-Tutorial
+For iOS devices, you will need to enter a key for production, and if you want to use the Sandbox test environment, you will also need a key for Development as well.  You can learn about getting these keys from [this page] (https://fresvii.zendesk.com/hc/en-us/articles/203512810-APNS-Certifiate-Tutorial).
+
+Please see [this document](https://github.com/fresvii/appsteroid-documents/blob/master/en/EventList.md) to check the definition of push event.
 
 ######CSR
 Lastly, configuring your Customer Support options.  You can do this from the CSR tab.  You can select an image, choose a Name, and a Description.  This description will show up on the profile page of a CSR user within AppSteroid.
@@ -132,12 +134,12 @@ To send a push notification manually, click on the “Send a Message” button o
 Works similarly to Direct Messages, only it will keep sending these messages as the users move into the new User Group.  To create a new Automated Direct message, click on “Schedule an Automated Direct Message”.  These automated messages keep going until you decide to delete them.  To delete a scheduled automated direct message, click on the down arrow to the right of the “Edit” button, and select delete.  If you want to change the content, or timing of the message you can also edit this, by pressing the “edit “ button. 
 
 #####Channels
-are a way to get code to respond to a SNS push notification, and act accordingly.   Read more about Channels and push notifications here.  https://fresvii.zendesk.com/hc/en-us/articles/203866590
+Channels are way to get code to respond to a SNS push notification, and act accordingly.  Read more about Channels and push notifications [here](https://fresvii.zendesk.com/hc/en-us/articles/203866590).
 
 
 
 ####Leaderboards
-If you haven’t read about Leaderboards, you can read about them here for iOS https://github.com/fresvii/appsteroid-sdk-ios-documents/blob/master/en/GetStarted/GetStarted-Leaderboard.md and here for Unity.  The important thing to note if you didn’t read those, is that Leaderboards work on a weekly basis.  And events are a different grouping of leaderboards.  You can have multiple leaderboards for you App.  All scores are kept, and the “Leaderboard”, is just a particular view and sorting order of all the scores in that leaderboards time period.
+If you haven’t read about Leaderboards, you can read about them [here](https://github.com/fresvii/appsteroid-sdk-ios-documents/blob/master/en/GetStarted/GetStarted-Leaderboard.md) for iOS and here for Unity.  The important thing to note if you didn’t read those, is that Leaderboards work on a weekly basis.  And events are a different grouping of leaderboards.  You can have multiple leaderboards for you App.  All scores are kept, and the “Leaderboard”, is just a particular view and sorting order of all the scores in that leaderboards time period.
 
 ######Leaderboards
 To actually see the ranking on a leaderboard, you must select it by clicking the name from the leaderboard list, or clicking on the “Show” button, and then clicking on the “Rankings” tab.  This will show you the leaderboard ranked in the configuration chosen for that leaderboard.  If you wish to change the configuration of that leaderboard, you need to click on the leaderboard tab, and then click on Edit.  Clicking on the “Scores” tab will show you all the “scores” recorded that are selected for evaluation by that particular leaderboard you have selected.
@@ -224,9 +226,9 @@ You can set up each content on this page per local language. Click the "Add New 
 This is where you will enter your APNS, and GCM certificates and keys.  
 For Android devices, you need to provide your GCM API Key.
 
-  * If you haven’t got a GCM Key, we would suggest going here https://support.google.com/googleplay/android-developer/answer/2663268?hl=en and following the directions to get your GCM API Key.
+  * If you haven’t got a GCM Key, we would suggest to go [here] (https://support.google.com/googleplay/android-developer/answer/2663268?hl=en) and follow the directions to get your GCM API Key.
   
-  * For iOS devices, you will need to enter a key for production, and if you want to use the Sandbox test environment, you will also need a key for Development as well.  You can learn about getting these keys from here.  https://fresvii.zendesk.com/hc/en-us/articles/203512810-APNS-Certifiate-Tutorial
+  * For iOS devices, you will need to enter a key for production, and if you want to use the Sandbox test environment, you will also need a key for Development as well.  You can learn about getting these keys from [here] (https://fresvii.zendesk.com/hc/en-us/articles/203512810-APNS-Certifiate-Tutorial)
 
 ######CSR
 The CSR user is just like any other user for you game, except…. you have admin control and power to edit, and delete comments, ban users, etc…  You should make sure your community understand that this user represents your company.  You can configure the name, Icon, and some other options from this tab.
