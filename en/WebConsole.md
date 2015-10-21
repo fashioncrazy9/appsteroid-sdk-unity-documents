@@ -74,7 +74,7 @@ Lastly, configuring your Customer Support options.  You can do this from the CSR
 
 There are additional options you can set for how to manage Friend Requests, and Group messages for CSR members.
 
-Related Document: [AppRegistration on Web Console](2_AppRegistration.md)
+Related Document: [AppRegistration on Web Console](AppRegistrationOnWebConsole.md)
 
 
 ----------
@@ -90,7 +90,7 @@ If you don’t see the application you are looking for, you may need to go back 
 
 ####App Information
 Here you will see the ID of your App, also referred to as the Uuid, along with the Secret Token.  This information needs to be entered into your SDK, so that your application can communicate correctly with the AppSteroid Backend services.
-Related Document: [GetStarted with AppSteroid](3_GetStarted.md)
+Related Document: [GetStarted with AppSteroid](GetStarted.md)
 Additional metrics, such as # of users, number of forum threads, number of Videos, and playback counts are also found here on this page.
 
 
@@ -139,7 +139,7 @@ Channels are way to get code to respond to a SNS push notification, and act acco
 
 
 ####Leaderboards
-If you haven’t read about Leaderboards, you can read about them [here](https://github.com/fresvii/appsteroid-sdk-ios-documents/blob/master/en/GetStarted/GetStarted-Leaderboard.md) for iOS and here for Unity.  The important thing to note if you didn’t read those, is that Leaderboards work on a weekly basis.  And events are a different grouping of leaderboards.  You can have multiple leaderboards for you App.  All scores are kept, and the “Leaderboard”, is just a particular view and sorting order of all the scores in that leaderboards time period.
+If you haven’t read about Leaderboards, you can read about them [here](https://github.com/fresvii/appsteroid-sdk-ios-documents/blob/master/en/GetStarted/GetStarted-Leaderboard.md) for iOS and [here](https://github.com/fresvii/appsteroid-sdk-unity-documents/blob/master/en/Use%20Leaderboard.md) for Unity.  The important thing to note if you didn’t read those, is that Leaderboards work on a weekly basis.  And events are a different grouping of leaderboards.  You can have multiple leaderboards for you App.  All scores are kept, and the “Leaderboard”, is just a particular view and sorting order of all the scores in that leaderboards time period.
 
 ######Leaderboards
 To actually see the ranking on a leaderboard, you must select it by clicking the name from the leaderboard list, or clicking on the “Show” button, and then clicking on the “Rankings” tab.  This will show you the leaderboard ranked in the configuration chosen for that leaderboard.  If you wish to change the configuration of that leaderboard, you need to click on the leaderboard tab, and then click on Edit.  Clicking on the “Scores” tab will show you all the “scores” recorded that are selected for evaluation by that particular leaderboard you have selected.
