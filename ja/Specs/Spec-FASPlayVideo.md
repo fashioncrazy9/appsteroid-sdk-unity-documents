@@ -1,13 +1,13 @@
 # FASPlayVideo Specifications
 
-last update at　2015/10/02
+last update at　2015/10/21
 
 ----------
 
 ## Introduction
 
 ## <a name ="FASPlayVideo">FASPlayVideo Class</a>
-**<font color='red'>このクラスは、Ver.1.0.6 現在、iOS のみ利用可能です。Android は未対応です。</font>**
+**<font color='red'>このクラスは、Ver.1.0.7 現在、iOS のみ利用可能です。Android は未対応です。</font>**
 
 ゲームプレイビデオの録画、再生、アップロードなどを操作するクラスです。
 
@@ -74,6 +74,7 @@ Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings 
 
     public static bool ShowLatestVideoSharingGUI(string returnSceneName)
     public static bool ShowLatestVideoSharingGUI(string returnSceneName, Action guiEndedCallback)
+    public static bool ShowLatestVideoSharingGUI(string returnSceneName, Action guiEndedCallback, bool sceneTransition)
 
 #### Return
 |Type|内容|
@@ -85,6 +86,7 @@ Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings 
 |------|------|-----|
 |returnSceneName| string | AppSteroid 画面に遷移した場合、GUI画面終了時（アプリアイコン押下時）に復帰するシーン名称。復帰するシーンが未設定の場合は、呼び出し元のシーンに戻ります。|
 |guiEndedCallback| Action | GUI表示が終了時に呼び出されます。ビデオシェアおよびアップロードはuGUIで表示されます。このとき、uGUI のモーダルGUIの下でuGUI, legacy GUI 以外の操作を行っている場合は、コールバックが呼び出されるまでゲーム入力処理を抑制するために使用してください。|
+|sceneTransition| bool | ビデオシェア完了後、GUIからAppSteroidのGUIへの遷移するかどうかを選択します。デフォルト = true です。 true の場合、ビデオシェアのアップロード処理完了後、アップロード完了GUIが表示され、ユーザーがコミュニティへの遷移を選択した場合にAppSteroidのGUIシーンに遷移します。false の場合は、ビデオシェアのアップロード完了後、完了ダイアログが表示されるのみでAppSrteroidのGUIシーンへの遷移しません。|
 
 ### <a name ="FASPlayVideo.LatestVideoExists">FASPlayVideo.LatestVideoExists</a>
 録画した最新のビデオが存在するか確認します。
