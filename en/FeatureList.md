@@ -155,8 +155,7 @@ Open a new thread operated by the developer, and distribute app information to t
  
 Contents that can be shared:	 
 - App Info<br>
-- Event<br>
-- Videos
+- Event<br>- Videos
 
 - What can be done on the Web Console
   - Localization setting can be done in `Localization` tab.
