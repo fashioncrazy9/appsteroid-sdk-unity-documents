@@ -6,7 +6,7 @@
 #### Which versions of Unity are supported?
 
 The supported versions of Unity are 4.6.7 and later. Unity Pro is not required.
-If you are using Unity 5, please use version 5.1.2 or higher.
+If you are using Unity 5, please use version 5.1.3 or higher. However, there are many existing problems found on Unity 5.2.​*. today. Please avoid using Unity 5.2.*​. 10/20/2015
 
 #### What do I need to do to update the AppSteroid SDK?
 Please check [Updating the SDK](Updating AppSteroidSDK.md) for instructions.

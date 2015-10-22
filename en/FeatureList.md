@@ -14,10 +14,10 @@
 		- [Push Notification](#PushNotificationForSetting)
 	- [App Promotion Service](#PromotionService)
     	- [App Info](#AppsInfo)
-		- [Official Forum](#OfficialForum)
+      	- [Official Forum](#OfficialForum)
     	- [Social Share](#SocialShare)
     	- [Event Promotion](#EventManagement)
-		- [Push Notification](#PushNotificationForPromotion)
+      	- [Push Notification](#PushNotificationForPromotion)
     	- [App Gallery](#AppGallery)
 	- [Game Management Support Service](#SupportService)
 		- [Leaderboard](#Leaderboard)
@@ -100,14 +100,11 @@ Please check the related API for method to use video recording GUI or video shar
 	- [FASPlayVideo](./Specs/Spec-FASPlayVideo.md)
 
 #### <a name="PushNotificationForSetting">- Push Notification</a>
-- Direct Message
-This can be used to announce event and important game information to the entire user community from the Web Console.
+- Direct Message: This can be used to announce event and important game information to the entire user community from the Web Console.
 
-- Automated Messages
-Works similarly to Direct Messages, only it will keep sending these messages as the users move into the new User Group.
+- Automated Messages: It works similarly to Direct Messages, only it will keep sending these messages as the users move into the new User Group.
 
-- Channels
-Channels are way to get code to respond to a SNS push notification, and act accordingly. Read more about Channels and push notifications here.
+- Channels: Channels are way to get code to respond to a SNS push notification, and act accordingly. Read more about Channels and push notifications here.
 
 
 Push message will also be distributed at the following conditions.
@@ -151,14 +148,15 @@ Open a new thread operated by the developer, and distribute app information to t
 	- You can create the official forum from the `Forum` tab.
 
 #### <a name="SocialShare">- Social Share</a>
- End-users can share the following contents to major social medias. URL to the store will automatically be attached when an user shares a content. Default sharing message can be modified on the Web Console by the developer.
- 
-Contents that can be shared:	 
-- App Info<br>
-- Event<br>- Videos
+End-users can share the following contents to major social medias. URL to the store will automatically be attached when an user shares a content. Default sharing message can be modified on the Web Console by the developer.
+
+- Contents that can be shared
+	- App Info
+	- Event
+	- Videos
 
 - What can be done on the Web Console
-  - Localization setting can be done in `Localization` tab.
+	- Localization setting can be done in `Localization` tab.
 
 #### <a name="EventManagement">- Event Promotion</a>
 Developers can promote an ongoing Event or upcoming Events to the community.
