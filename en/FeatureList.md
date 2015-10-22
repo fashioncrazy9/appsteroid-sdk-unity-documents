@@ -13,8 +13,12 @@
 		- [Play Video](#PlayVideo)
 		- [Push Notification](#PushNotificationForSetting)
 	- [App Promotion Service](#PromotionService)
+    - [App Info](#AppsInfo)
 		- [Official Forum](#OfficialForum)
+    - [Social Share](#SocialShare)
+    - [Event Promotion](#EventManagement)
 		- [Push Notification](#PushNotificationForPromotion)
+    - [App Gallery](#AppGallery)
 	- [Game Management Support Service](#SupportService)
 		- [Leaderboard](#Leaderboard)
 		- [Matchmake](#Matchmaking)
@@ -96,15 +100,25 @@ Please check the related API for method to use video recording GUI or video shar
 	- [FASPlayVideo](./Specs/Spec-FASPlayVideo.md)
 
 #### <a name="PushNotificationForSetting">- Push Notification</a>
-Push message will be distributed at the following conditions.
+- Direct Message
+This can be used to announce event and important game information to the entire user community from the Web Console.
+
+- Automated Messages
+Works similarly to Direct Messages, only it will keep sending these messages as the users move into the new User Group.
+
+- Channels
+Channels are way to get code to respond to a SNS push notification, and act accordingly. Read more about Channels and push notifications here.
+
+
+Push message will also be distributed at the following conditions.
 
 * Notify users when there is an update on a subscribed thread.
 * Notify users when there is a new Group Message.
 * Notify users with a new friend request/accept.
-* Developers can deliver/schedule direct messages to a specific segment of users, which can also be automated.
 * Notify users when their friend is requesting a match.
-* Notification can also be trigger by a in-game Event.
-* Working together with event can cause a synergy effect increasing user retention and engagement.
+
+Related information: [About Push Event](https://github.com/fresvii/appsteroid-documents/blob/master/en/EventList.md)
+
 
 To use push notification, you must set it up specifically for iOS and Android.
 
@@ -121,20 +135,66 @@ To use push notification, you must set it up specifically for iOS and Android.
 - Push Message Specification
 	- [About Push Event](https://github.com/fresvii/appsteroid-documents/blob/master/ja/EventList.md)
 
-### <a name="PromotionService">App Promotion Service</a>
-Features to promote applications. It increase user engagement and make a big user traffic between multiple apps.
+
+### <a name="PromotionService">- App Promotion Service</a>
+Features to promote applications. It helps increase user retention and user traffic between multiple apps.
+
+#### <a name="AppsInfo">- App Info</a>
+Developers can introduce other applications to their existing community.  End-users can check new apps, share the app with friends on social media or download the app you have introduced.
+
+If the introduced application has implemented AppSteroid, Forum information and video's of the game will also be shared in the info page.  Even if the application did not implemented AppSteroid, developers will be able to introduce the App by registering it on the Web Console. (In this case, Forum info and videos will not be shared.)
 
 #### <a name="OfficialForum">- Official Forum</a>
-Open a new thread operated by the developer, and distribute app information to the user community. When the developer create a new thread, all users will receive a push message whether they are subscribed to the thread or not.
+Open a new thread operated by the developer, and distribute app information to the user community. When the developer creates a new thread, all users will receive a push message once.  Afterward, only users who have followed the thread will receive update notifications.
 
 - What can be done on the web console
 	- You can create the official forum from the `Forum` tab.
 
+#### <a name="SocialShare">- Social Share</a>
+ End-users can share the following contents to major social medias. URL to the store will automatically be attached when an user shares a content. Default sharing message can be modified on the Web Console by the developer.
+ 
+Contents that can be shared:	 
+- App Info
+- Event
+- Videos
+
+- What can be done on the Web Console
+  - Localization setting can be done in `Localization` tab.
+
+#### <a name="EventManagement">- Event Promotion</a>
+Developers can promote an ongoing Event or upcoming Events to the community.
+Event can be promoted in both AppSteroid community and App Gallery. Developers can direct end-users to a specific URL, and End-users will be able to share exiting events to friends via social media.
+
+Collaborate this feature with Push Notification to boost user traffic, and introduce existing users to the next App.
+
+- What can be don on the Web Console
+  - Create and manage Events on the event tan.
+
 #### <a name="PushNotificationForPromotion">- Push Notification</a>
 Developers can either target a specific player, segment players or address to the entire game community with their announcement.
 
-- What can be done on the web console
-	- You can shoot messages from the `Message` tab.
+- What can be done on the web Console
+	- Shoot messages from the `Message` tab.
+
+
+#### <a name="AppGallery">- AppGallery</a>
+App Gallery is a space to either promote your apps in an enclosed (Private) community, or share with others in an open (Public) community to earn advertising revenue. App Gallery is an opportunity for everyone to earn additional revenue and user.
+ 		 
+Public: Earn additional revenue by placing other developers application info.
+Private: Do not place any ads, instead use it for cross promoting own applications.
+
+AppSteroid features user generated contents to draw more user intrest towards the App. Promotion will be done seamlessly within the user community, with user generated contents. Thus, we highly recommend developers placing Ad in AppGallery to implement AppSteroid to maximize their profit.
+
+
+Currently, We provide space for advertisers to place the following Ads on public AppGallery.
+ 		 
+- Video Ads (User generated game video or interstitial ad can be placed)
+- Banner Ads (It will be placed in the community and App Gallery)
+- Event Ads (Announce your game event on App Gallery)
+- Community Ads (Show Forum information)
+
+AppGallery has a potential to double the promotion profit by "running it privately on the house App, and placeing Ads on a public AppGallery".
+
 
 
 ### <a name="SupportService">Game Management Support Service</a>
@@ -217,6 +277,7 @@ Enable data migration between devices with the same OS.
 
 ### <a name="WebConsole">WEB Console Service</a>
 Ability for your entire team to access and manage users, push message, app analytics, leaderboard, forum and many other data.
+For more information, please see [About WebConsole](./9_WebConsole.md).
 
 
 ## <a name="Install">How to Implement AppSteroid SDK</a>
