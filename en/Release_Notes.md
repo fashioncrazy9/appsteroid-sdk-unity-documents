@@ -1,5 +1,24 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.0.7
+- New Feature
+    - Follow function for threads
+    - Add option to stay on the same page (scene) after sharing recorded video
+
+- Fixed
+    - Minor bugs on Voice Chat
+    - Error occurs when posting a comment with only blank spaces or returns.
+    
+- Performance improvements
+    - Voice chat GUI and animation
+    - Modified user search GUI
+    - Disable commnets with more the 10 blank lines
+    
+- Existing problem
+    - iOS Devices will crash when using Group Conference (Voice Chat) with Unity 5.  Please use the SDK without Voice Chat. Android devices will operate correctly.
+    - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 10/20/2015
+
+
 ## 1.0.6
 - Fixed
     - Badge count for unread message is incorrect
