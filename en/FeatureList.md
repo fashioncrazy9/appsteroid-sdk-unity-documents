@@ -13,12 +13,12 @@
 		- [Play Video](#PlayVideo)
 		- [Push Notification](#PushNotificationForSetting)
 	- [App Promotion Service](#PromotionService)
-    - [App Info](#AppsInfo)
+    	- [App Info](#AppsInfo)
 		- [Official Forum](#OfficialForum)
-    - [Social Share](#SocialShare)
-    - [Event Promotion](#EventManagement)
+    	- [Social Share](#SocialShare)
+    	- [Event Promotion](#EventManagement)
 		- [Push Notification](#PushNotificationForPromotion)
-    - [App Gallery](#AppGallery)
+    	- [App Gallery](#AppGallery)
 	- [Game Management Support Service](#SupportService)
 		- [Leaderboard](#Leaderboard)
 		- [Matchmake](#Matchmaking)
@@ -154,8 +154,8 @@ Open a new thread operated by the developer, and distribute app information to t
  End-users can share the following contents to major social medias. URL to the store will automatically be attached when an user shares a content. Default sharing message can be modified on the Web Console by the developer.
  
 Contents that can be shared:	 
-- App Info
-- Event
+- App Info<br>
+- Event<br>
 - Videos
 
 - What can be done on the Web Console
