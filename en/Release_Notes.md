@@ -1,6 +1,8 @@
 # AppSteroid for Unity Release Notes
 ------
+
 ## 1.0.7
+
 - New Feature
   - Follow function for threads
   - Add option to stay on the same page (scene) after sharing recorded video
@@ -20,6 +22,7 @@
 
 
 ## 1.0.6
+
 - Fixed
   - Badge count for unread message is incorrect
   - Localized alert message would not be shown
@@ -36,6 +39,7 @@
   - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 10/05/2015
 
 ## 1.0.5
+
 - Fixed
   - Very slow performance at network error
   - Bug occurs when playing a deleted video
@@ -50,6 +54,7 @@
 	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 1.0.4
+
 - Performance improvements
   - Improved thread, comment and message GUI behavior of when deleting an uploaded video
   - Add steps to fix video capture bug [iOS] on FAQ document
@@ -63,6 +68,7 @@
 	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 1.0.3
+
 - New Feature
   - Group hiding. App users can hide groups.
   - Ability to setup default context for SNS sharing.
@@ -80,6 +86,7 @@
 	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 1.0.2
+
 - Performance improvements
   - GUI layout on certain pages are tweaked
 
@@ -90,7 +97,8 @@
 - Existing problem
   - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
-#1.0.1
+## 1.0.1
+
 - Performance improvements
   - GUI layout on certain pages are tweaked
 
@@ -100,11 +108,13 @@
 - Existing problem
 	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
-#1.0.0
+## 1.0.0
+
 - Performance improvements
   - New GUI
 
 ## 0.7.3
+
 - Fix
 	- GUI bug occurs when canceling image selection on iOS.
 
@@ -112,6 +122,7 @@
 	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 0.7.2
+
 - New Feature
   - Ability to control user name duplication.
 
@@ -119,6 +130,7 @@
 	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 0.7.1
+
 - New Feature
   - App launch count and play time tracker.
 
@@ -130,6 +142,7 @@
 	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 0.7.0
+
 - New Feature
 	- CSR Chat (Live Help, Customer Support).
 	- Ability to continue voice chat even after the app moves to the background. Please check the document ["Use Group Conference(VoiceChat)"](Use Group Conference(VoiceChat).md) for details.
@@ -144,6 +157,7 @@
   - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 0.6.1
+
 - New Feature
 	- EULA (end user license agreement), for first time AppSteroid GUI user, is now available. This can be setup from the Fresvii Web Console.
 - Performance improvements
@@ -155,6 +169,7 @@
 	- Player who sent a match invitation crashes on certain circumstance.
 
 ## 0.6.0
+
 - New Feature
 	- Ability to open a link when an URL was included in a comment.
 	- Flagging and reporting an inappropriate comment.
@@ -170,6 +185,7 @@
 	- Error message text.
 
 ## 0.4.2
+
 - Performance improvements
 	- Add FASGui.ShowGUIWithLogin method, shorten load time to display the GUI
 - Fixed
@@ -178,6 +194,7 @@
 	- Layout in the forum sometime does not switch from landscape to portrait.
 
 ## 0.4.1
+
 - New Feature
   - GUI for Direct Message
   - Call back for video share and upload GUI
@@ -190,6 +207,7 @@
   - In Unity 4.6.3, make sure that you force graphics to be OpenGL ES in the player settings. (For iOS)
 
 ## 0.4.0
+
 - Performance improvements
   - Show unread messages on group messenger.
   - Retry button on matchmaking.
@@ -198,12 +216,14 @@
   - Can not post a new thread with image and text.
 
 ## 0.3.1
+
 - Performance improvements
   - Show GUI with tab on MyVideo page after uploading the game video.
   - Fixed error when sharing video on Twitter
   - Game title will automatically be added to the game video title when sharing them on Youtube
 
 ## 0.3.0
+
 - New Feature
   - [iOS] Game play video recorder, and share.
 - Performance improvements
@@ -375,4 +395,5 @@
 
 
 ## 0.1.0
+
 First Release
