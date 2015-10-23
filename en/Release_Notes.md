@@ -2,146 +2,146 @@
 ------
 ## 1.0.7
 - New Feature
-    - Follow function for threads
-    - Add option to stay on the same page (scene) after sharing recorded video
+  - Follow function for threads
+  - Add option to stay on the same page (scene) after sharing recorded video
 
 - Fixed
-    - Minor bugs on Voice Chat
-    - Error occurs when posting a comment with only blank spaces or returns.
+  - Minor bugs on Voice Chat
+  - Error occurs when posting a comment with only blank spaces or returns.
     
 - Performance improvements
-    - Voice chat GUI and animation
-    - Modified user search GUI
-    - Disable commnets with more the 10 blank lines
+  - Voice chat GUI and animation
+  - Modified user search GUI
+  - Disable commnets with more the 10 blank lines
     
 - Existing problem
-    - iOS Devices will crash when using Group Conference (Voice Chat) with Unity 5.  Please use the SDK without Voice Chat. Android devices will operate correctly.
-    - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 10/20/2015
+  - iOS Devices will crash when using Group Conference (Voice Chat) with Unity 5.  Please use the SDK without Voice Chat. Android devices will operate correctly.
+  - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 10/20/2015
 
 
 ## 1.0.6
 - Fixed
-    - Badge count for unread message is incorrect
-    - Localized alert message would not be shown
-    - Call icon on voice chat do not behave properly during voice call 
-    - No store URL when sharing an event on SNS
-    - GUI bug on match making screen
+  - Badge count for unread message is incorrect
+  - Localized alert message would not be shown
+  - Call icon on voice chat do not behave properly during voice call 
+  - No store URL when sharing an event on SNS
+  - GUI bug on match making screen
 
 - Performance improvements
-    - Layout fix and GUI improvements
-    - Ability to access initialization method for video recording
+  - Layout fix and GUI improvements
+  - Ability to access initialization method for video recording
 
 - Existing problem
-    - iOS Devices will crash when using Group Conference (Voice Chat).  Please use the SDK without Voice Chat. Android devices will operate correctly.
-    - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 10/05/2015
+  - iOS Devices will crash when using Group Conference (Voice Chat).  Please use the SDK without Voice Chat. Android devices will operate correctly.
+  - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 10/05/2015
 
 ## 1.0.5
 - Fixed
-    - Very slow performance at network error
-    - Bug occurs when playing a deleted video
+  - Very slow performance at network error
+  - Bug occurs when playing a deleted video
     
 - Performance improvements
-    - when tapping the user icon on group message, the destination is changed to user profile
-    - GUI usability
-    - Updated SNS share context and URL
-    - Updated Object hideFlags created by AppSteroid
+  - when tapping the user icon on group message, the destination is changed to user profile
+  - GUI usability
+  - Updated SNS share context and URL
+  - Updated Object hideFlags created by AppSteroid
     
 - Existing problem
 	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 1.0.4
 - Performance improvements
-    - Improved thread, comment and message GUI behavior of when deleting an uploaded video
-    - Add steps to fix video capture bug [iOS] on FAQ document
+  - Improved thread, comment and message GUI behavior of when deleting an uploaded video
+  - Add steps to fix video capture bug [iOS] on FAQ document
 
 - Fixed
-    - When opening AppSteroid GUI on low memory, there is a small chance of app crashing
-    - Menu does not show up properly when long pressing on a comment
-    - GUI layout fix
+  - When opening AppSteroid GUI on low memory, there is a small chance of app crashing
+  - Menu does not show up properly when long pressing on a comment
+  - GUI layout fix
     
 - Existing problem
-	  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 1.0.3
 - New Feature
-    - Group hiding. App users can hide groups.
-    - Ability to setup default context for SNS sharing.
-    - Leaderboard filtering. Developer can specify which leaderboard to show.
+  - Group hiding. App users can hide groups.
+  - Ability to setup default context for SNS sharing.
+  - Leaderboard filtering. Developer can specify which leaderboard to show.
     
 - Performance improvements
-    - Layout fix and GUI improvements
+  - Layout fix and GUI improvements
     
 - Fixed
-    - Error on Play Stats metric.
-    - Can not save image on certain threads.
-    - [Android] App do not launch when tapping on a push notification. Changed Manifest file settings.
+  - Error on Play Stats metric.
+  - Can not save image on certain threads.
+  - [Android] App do not launch when tapping on a push notification. Changed Manifest file settings.
 
 - Existing problem
-	  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 1.0.2
 - Performance improvements
-    - GUI layout on certain pages are tweaked
+  - GUI layout on certain pages are tweaked
     
 - Fixed
-    - Page view bugs on few more pages.
-    - App icon do not show up on Apps tab when launching the app at the very first time.
+  - Page view bugs on few more pages.
+  - App icon do not show up on Apps tab when launching the app at the very first time.
     
 - Existing problem
-    - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 #1.0.1
 - Performance improvements
-    - GUI layout on certain pages are tweaked
+  - GUI layout on certain pages are tweaked
     
 - Fixed
-    - Page view bug
+  - Page view bug
     
 - Existing problem
-	  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 #1.0.0
 - Performance improvements
-    - New GUI
+  - New GUI
 
 ## 0.7.3
 - Fix
-	  - GUI bug occurs when canceling image selection on iOS.
+	- GUI bug occurs when canceling image selection on iOS.
   
 - Existing problem
-	  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 0.7.2
 - New Feature
-    - Ability to control user name duplication. 
+  - Ability to control user name duplication. 
 
 - Existing problem
-	  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 0.7.1
 - New Feature
-    - App launch count and play time tracker. 
+  - App launch count and play time tracker. 
   
 - Performance improvements
-	  - Function to determine whether the [iOS] APNS certificate is for Development or Production.
-	  - Replaced message button on the official user profile page.
+	- Function to determine whether the [iOS] APNS certificate is for Development or Production.
+	- Replaced message button on the official user profile page.
 
 - Existing problem
-	  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+	- iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 0.7.0
 - New Feature
-	  - CSR Chat (Live Help, Customer Support).
-	  - Ability to continue voice chat even after the app moves to the background. Please check the document ["Use Group Conference(VoiceChat)"](Use Group Conference(VoiceChat).md) for details.
+	- CSR Chat (Live Help, Customer Support).
+	- Ability to continue voice chat even after the app moves to the background. Please check the document ["Use Group Conference(VoiceChat)"](Use Group Conference(VoiceChat).md) for details.
 
 - Performance improvements
-	  - Ability to set timeframe for ranking on leaderboard on the WebConsole.
+	- Ability to set timeframe for ranking on leaderboard on the WebConsole.
 
 - Fix
-	  - Cannot post video on thread comment.
+	- Cannot post video on thread comment.
 
 - Existing problem
-    - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
+  - iOS Devices will crash when using Group Conference (Voice Chat) on Unity5. For those who are using Unity 5, please use the SDK without Voice Chat. Android devices will operate correctly.
 
 ## 0.6.1
 - New Feature
