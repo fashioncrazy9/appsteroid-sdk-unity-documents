@@ -270,9 +270,9 @@ Enable data migration between devices with the same OS.
 
 ### <a name="WebConsole">WEB Console Service</a>
 Ability for your entire team to access and manage users, push message, app analytics, leaderboard, forum and many other data.
-For more information, please see [About WebConsole](./9_WebConsole.md).
+For more information, please see [About WebConsole](./WebConsole.md).
 
 
 ## <a name="Install">How to Implement AppSteroid SDK</a>
-Please refer to [Get Started](./GettingStarted.md) for details.
+Please refer to [Get Started](./GetStarted.md) for details.
 
