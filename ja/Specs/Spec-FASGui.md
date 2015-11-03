@@ -1,13 +1,13 @@
 # FASGui Specifications
 
-last update at 2014/10/15
+last update at 2015/11/03
 
 ----------
 
 ## Introduction
 
 ## <a name ="FASGui">FASGui Class</a>
-GUI シーンの表示操作をするクラスです。GUI はシーンとして読み込まれます。ゲーム中に呼び出す場合は、シーンデータをセーブ後に呼び出してください。引数で表示するGUIを選択します。
+GUI シーンの表示操作をするクラスです。
 
 ----------
 
@@ -35,24 +35,28 @@ GUI シーンの表示操作をするクラスです。GUI はシーンとして
 
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
 
-GUIを表示するシーンをロードします。 selectedMode を使用した最初に表示されるタブを指定する機能は、バージョン 0.7.3 以下で有効です。
+GUIを表示するシーンをロードします。 引数として、isModal = true の場合は、シーンを追加ロードするため、シーンの遷移は行いません。
 
-    public static void ShowGUI(FASGui.Mode modeFlgs)
-    public static void ShowGUI(string returnSceneName)
-    public static void ShowGUI(FASGui.Mode modeFlgs, string returnSceneName)
-    public static void ShowGUI(FASGui.Mode guiMode, FASGui.Mode selectedMode)
-    public static void ShowGUI(FASGui.Mode guiMode, string returnSceneName, FASGui.Mode selectedMode)
+            public static void ShowGUI(FASGui.Mode guiMode = Mode.All, string returnSceneName = "", FASGui.Mode selectedMode = Mode.LastSelected, bool isModal = false, Action appSteroidModalGuiEnded = null)
+
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |modeFlgs|FASGui.Mode|Forum, Leaderboards, MyProfile, GroupMessage, All から選択。GroupMessage と MatchMaking 以外は複数選択ができます。|
-|returnSceneName|string|GUI終了時（アプリアイコン押下時）に復帰するシーン名称。復帰するシーンが未設定の場合は、呼び出し元のシーンに戻ります。|
+|returnSceneName|string|(isModal = true の場合はシーン遷移をしませんので、設定は不要) GUI終了時（アプリアイコン押下時）に復帰するシーン名称。復帰するシーンが未設定の場合は、呼び出し元のシーンに戻ります。|
 |selectedMode|FASGui.Mode|複数GUIモード表示選択時に最初に表示するタブを設定します。|
+|isModal|bool|モーダル表示を行う是非を指定します。isModal = false の場合は、シーン遷移を行い、GUIを表示します。 isModal = true の場合は、シーン遷移を行わずに、シーンを追加ロードします。|
+|appSteroidModalGuiEnded|Action|GUIが表示終了時に呼び出されるコールバックです。isModal = true でGUIを表示した場合に、ゲームの操作を抑制する際に利用します。|
 
 #### Example
 
-    FASGui.ShowGUI(FASGui.Mode.Forum | FASGui.Mode.MyProfile, "startScene");
+##### デフォルト設定で表示する
+    FASGui.ShowGUI();
+
+##### モーダル表示をする
+    FASGui.ShowGUI(isModal:true, appSteroidModalGuiEnded:() => { Debug.Log("AppSteroid GUI Done"); });
+
 
 ### <a name ="FASGui.ShowGUIWithLogin">FASGui.ShowGUIWithLogin</a>
 

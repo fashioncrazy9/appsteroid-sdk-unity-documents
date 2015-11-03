@@ -7,7 +7,7 @@ last update at　2015/10/21
 ## Introduction
 
 ## <a name ="FASPlayVideo">FASPlayVideo Class</a>
-**<font color='red'>このクラスは、Ver.1.0.7 現在、iOS のみ利用可能です。Android は未対応です。</font>**
+**<font color='red'>このクラスは、Ver.1.0.8 現在、iOS のみ利用可能です。Android は未対応です。</font>**
 
 ゲームプレイビデオの録画、再生、アップロードなどを操作するクラスです。
 
