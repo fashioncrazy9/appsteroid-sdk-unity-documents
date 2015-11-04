@@ -10,7 +10,7 @@ last update at　2015/11/04
 Player Setting -> Other Settings -> Graphics API を Open GL ES 3.0 に設定してください。
 
 - Unity 4.6.*
-- 
+
 ![](Images/VideoRecordingSetting.png)
 
 - Unity 5.1.*
