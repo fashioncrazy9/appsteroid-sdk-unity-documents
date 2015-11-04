@@ -47,6 +47,7 @@ AppIdとSecretKeyはWebコンソールより取得できます。詳しくは[We
 |Data|Type|Description|
 |-------|------|-----|
 |Video feature|bool|ビデオの録画、投稿機能を利用するか、否か。ビデオ録画を利用する場合は、Graphic API = Open GL ES 3.0 を選択してください。|
+|Initialize video recording|bool|アプリ起動時に自動で初期化処理を行うか、否か。|
 
 #### Android Settings
 |Data|Type|Description|

@@ -50,3 +50,12 @@ Unityでビルド後のXcodeプロジェクトにて、`GLESHelper. mm` ファ�
 また、`GLESHelper. mm` ファイルに以下を追加してください。
     
     extern "C" void _FASCaptureScreenshot();
+
+## ビデオ録画機能の初期化について
+ビデオ録画機能を利用する前に、[初期化処理](Specs/Spec-FASPlayVideo.md#FASPlayVideo.InitializeRecording)をする必要があります。
+
+また、初期化後、端末を回転した場合、録画が正常に行われなくなります。端末の回転を許可している場合は、端末の回転後の適切なタイミングで録画開始前に初期化を行ってください。また、ビデオ録画中は端末の回転を行わないように設定してください。
+
+初期化処理には多少時間がかかります。そのため、ゲームプレイ中などに初期化を行うと遅延が発生します。適切なタイミングで初期化を行うようにご注意ください。
+
+メニューの Fresvii->FAS Setting で表示されるインスペクターにて、iOS Settings / Initialize video recording をチェック On にしている場合は、アプリ起動時に自動で初期化処理を行います。自動で行いたくない場合は、チェックを Off にしてください。
