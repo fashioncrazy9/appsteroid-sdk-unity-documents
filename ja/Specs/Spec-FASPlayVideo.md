@@ -47,12 +47,17 @@ Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings 
 初期化後、端末を回転した場合、録画が正常に行われなくなります。端末の回転を許可している場合は、端末の回転後の適切なタイミングで録画開始前に初期化を行ってください。また、ビデオ録画中は端末の回転を行わないように設定してください。
 初期化処理には多少時間がかかります。そのため、ゲームプレイ中などに初期化を行うと遅延が発生します。適切なタイミングで初期化を行うようにご注意ください。
 
-    public static bool InitializeRecording()
+    public static bool InitializeRecording(bool withAudio = true)
 
 #### Return
 |Type|内容|
 |------|-----|
 |bool| 録画機能の初期化処理の成否|
+
+#### Parameters
+|Name|Type|内容|
+|------|------|-----|
+|withAudio|bool|オーディオの録音の有無を指定します。デフォルト true|
 
 ### <a name ="FASPlayVideo.StartRecording">FASPlayVideo.StartRecording</a>
 ビデオ録画を開始します。ビデオ録画最大時間に達するか、`StopRecording`　を呼び出すと、ビデオ録画は終了します。録画したビデオは、アプリの一時保存領域に保存されます。録画処理終了後、`ShowLatestVideoSharingGUI` を呼び出してビデオをAppSteroidサーバにアップロードします。録画したビデオはアプリを閉じるとOSが任意のタイミングで削除します。
