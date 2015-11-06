@@ -26,7 +26,6 @@
 * [Group Conference(VoiceChat) Manual](Use Group Conference(VoiceChat).md)
 * [About Development Mode](Development_Mode.md)
 * [MatchMaking Manual](Use MatchMaking.md)
-* [Customizing GUI](GUI_Color_Setting.md)
 * [Leaderboard Manual](Use Leaderboard.md)
 * [Use In-Game Voice Chat](Use In-Game Voice Chat.md)
 * [Use In-Game Text Chat](Use In-Game Text Chat.md)
