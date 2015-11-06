@@ -1,6 +1,20 @@
 # AppSteroid for Unity Release Notes
 ------
 
+## 1.0.8
+- New Feature
+    - App sharing on community top page
+    - Option to use modal AppSteroid GUI
+    - Backup function using [iOS] iCloud
+    - Option to turn audio recording on/off when video recording on [iOS]
+- Fixed
+    - Black margin appears when recording video on [iOS] iPhone 6+
+    - Sort order of event list
+    - Minor bug fixes
+- Existing problem
+    - iOS Devices will crash when using Group Conference (Voice Chat) with Unity 5.  Please use the SDK without Voice Chat. Android devices will operate correctly.
+    - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 2015/11/04 
+
 ## 1.0.7
 
 - New Feature

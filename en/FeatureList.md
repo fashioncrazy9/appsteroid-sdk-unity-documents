@@ -96,6 +96,7 @@ Users can record their game play and share it with the AppSteroid community or o
  
 Please check the related API for method to use video recording GUI or video share GUI.
 
+- [Use Video Recording](UseVideoRecording.md)
 - Related API
 	- [FASPlayVideo](./Specs/Spec-FASPlayVideo.md)
 

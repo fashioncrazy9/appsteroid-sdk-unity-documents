@@ -48,6 +48,7 @@ You can get the AppId and SecretKey on the Web Console. Please check the documen
 |-------|------|-----|
 |APNS Certificate| Production or Development |Provisioning settings of APNS. When the Server Environment and APNS Certificate are both in Production and the build is in release, or, when the Server Environment and APNS Certificate are both in Development and the build is in debug, the device token for push notification will be registered.|
 |Video feature|bool|Whether to use video record and share function or not. If you are going to use video record, select the Graphic API = Open GL ES 3.0 |
+|Initialize video recording|bool|Whether to execute initialize video recording at App launch or not.|
 
 ### Android Settings
 |Data|Type|Description|
