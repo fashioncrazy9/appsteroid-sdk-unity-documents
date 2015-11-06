@@ -47,12 +47,18 @@ If you are using Unity 4.6.2p2 or later, go to Player Setting -> Other Settings 
 To work the video recording function properly, you must initialize it before recording.
 If you allow the screen to rotate during game play, you must initialize the function before the video recording is done. If the user rotate the device after initialization, the recording will not work properly. To avoid this problem, please initialize the video recording function every time after screen rotation is done. Also, make sure you do not allow the screen to rotate during video recording. 
 
-    public static bool InitializeRecording()
+    public static bool InitializeRecording(bool withAudio = true)
 
 #### Return
 |Type|Description|
 |------|-----|
 |bool| Success and failure of initializing video recording |
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|withAudio|bool|Select whether to turn audio recording on or off. Default is true (on)|
+
 
 ### <a name ="FASPlayVideo.StartRecording">FASPlayVideo.StartRecording</a>
 Start video recording. Video recording will stop if the length reaches the maximum time, or by calling `StopRecording`.  Recorded video will be saved in the app temporally storage area. Call `ShowLatestVideoSharingGUI` to upload the video on AppSteroid server after recording the game. Recorded video will automatically be deleted after closing the app.
