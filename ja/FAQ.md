@@ -5,7 +5,7 @@
 
 #### Unity の対応バージョンはいくつですか？
 
-AppSteroid が利用している Unity の API の対応バージョンは、4.6.7 以上です。Pro は必要ありません。
+AppSteroid が利用している Unity の API の対応バージョンは、4.6.9 以上です。Pro は必要ありません。
 Unity 5 用をご利用になる場合は、Unity 5.1.3 以上をご利用ください。
 **ただし、2015/10/05 現在の最新版の Unity 5.2.* には既知の問題が多く存在しますので、Unity 5.2.* のご利用はお避けください。**
 
@@ -75,7 +75,6 @@ AppSteroidはAWS上で動作しています。またAPI呼び出しにより作�
 
 基本的にAppSteroid利用者の全てのデータは同一のデータベースで管理され、個別データはアプリまたはユーザに紐付ける事でデータの判別を行います。データベースを専用にしたい場合、別途サポートするプランもご用意しています。
 
-
 #### <a name="commonsystem">- 自社のシステムと共存する場合、どういった形でおこなうべきですか？</a>
 AppSteroidのユーザは全体で一意である事が保証されており、IDで特定が可能です。仮に自社システムで管理しているユーザが存在する場合、自社ユーザとAppSteroidユーザ間での関連付けを保持する必要があります。
 更にサードパーティ製の他のサービスを利用する場合も考慮すると、いずれかのユーザをマスターユーザとして扱い、それに他のシステムのユーザを紐付ける形で行うのが良いかと考えられます。
@@ -88,3 +87,19 @@ AppSteroidのユーザは全体で一意である事が保証されており、I
 AppSteroidが提供しているフォーラム機能などのデータについては基本的に無制限に保存する事が可能です。
 APIのレスポンス性能については通常のWEBサービスと同様の構成をとっており、アクセスが集中する事により多少性能が低下する事があります。しかし負荷状況を判断し、サーバ側を自動的に増強する事で可能な限り性能の低下を抑えるようにしております。
 また、これまでの運用で負荷によるダウン、実用上問題になるレベルでの性能低下は起きておりません。
+
+#### - Android の実機で起動後に下記の Exception が出力されました。どうしたらよいですか？
+    NullReferenceException: Object reference not set to an instance of an object
+    at Fresvii.AppSteroid.Services.NotificationService.Process () [0x00000] in <filename unknown>:0
+    at Fresvii.AppSteroid.FASClient+<UpdateNotification>c__Iterator0.MoveNext () [0x00000] in <filename unknown>:0
+
+
+既知の問題として、Andoird にてプッシュ通知を利用せず、FASSettingにて、`GCM Project Number` と `GCM Api key` が空の場合に発生することが確認されています。動作上は無視して問題ありません。バージョン 1.0.9 で修正されます。
+
+#### - 下記の Exception が出力されました。どうしたらよいですか？
+    NullReferenceException: WWW class has already been disposed.
+    Fresvii.AppSteroid.Util.WWWRunner+<DoRequestCoroutine>c__Iterator1B.MoveNext ()
+
+  サーバとの通信がタイムアウトした場合に発生するエラー後、この Exception が発生することが確認されています。
+  動作上は無視して問題ありません。バージョン 1.0.9 で修正されます。
+  また、Timeout エラーが出力された場合は、実行環境のネットワーク状況を再度ご確認ください。
