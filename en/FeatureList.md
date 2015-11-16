@@ -14,7 +14,7 @@
 		- [Push Notification](#PushNotificationForSetting)
 	- [App Promotion Service](#PromotionService)
     	- [App Info](#AppsInfo)
-      	- [Official Forum](#OfficialForum)
+      	- [Forum](#OfficialForum)
     	- [Social Share](#SocialShare)
     	- [Event Promotion](#EventManagement)
       	- [Push Notification](#PushNotificationForPromotion)
@@ -149,11 +149,11 @@ Developers can introduce other applications to their existing community.  End-us
 
 If the introduced application has implemented AppSteroid, Forum information and video's of the game will also be shared in the info page.  Even if the application did not implemented AppSteroid, developers will be able to introduce the App by registering it on the Web Console. (In this case, Forum info and videos will not be shared.)
 
-#### <a name="OfficialForum">- Official Forum</a>
+#### <a name="OfficialForum">- Forum</a>
 Open a new thread operated by the developer, and distribute app information to the user community. When the developer creates a new thread, all users will receive a push message once.  Afterward, only users who have followed the thread will receive update notifications.
 
 - What can be done on the web console
-	- You can create the official forum from the `Forum` tab.
+	- You can create a forum from the `Forum` tab.
 
 #### <a name="SocialShare">- Social Share</a>
 End-users can share the following contents to major social medias. URL to the store will automatically be attached when an user shares a content. Default sharing message can be modified on the Web Console by the developer.
