@@ -5,7 +5,7 @@
 
 #### Which versions of Unity are supported?
 
-The supported versions of Unity are 4.6.7 and later. Unity Pro is not required.
+The supported versions of Unity are 4.6.9 and later. Unity Pro is not required.
 If you are using Unity 5, please use version 5.1.3 or higher. However, there are many existing problems found on Unity 5.2.​*. today. Please avoid using Unity 5.2.*​. 10/20/2015
 
 #### What do I need to do to update the AppSteroid SDK?
@@ -84,3 +84,20 @@ The data used in each service should be held by each service.  If you want to li
 #### <a name="loadtest">- How much load can it handle？</a>
 All data related to feature provided by AppSteroid, such as recorded videos, text logs and more, can be stored unlimitedly.
 It is basically same as any other WEB service for perfomance on API responses. The performance may drop when there are rush on access, however, we put our best effort to prevent it by enhancing the server at high loading.  Up to date, we never had a server down or big issue on performance drop. (September 23, 2015)
+
+
+#### - The following Exception has been output after launching the app on Android device. What should I do?
+    NullReferenceException: Object reference not set to an instance of an object
+    at Fresvii.AppSteroid.Services.NotificationService.Process () [0x00000] in <filename unknown>:0
+    at Fresvii.AppSteroid.FASClient+<UpdateNotification>c__Iterator0.MoveNext () [0x00000] in <filename unknown>:0
+
+
+This occurs when the app does not use push notification on Android, and when the `GCM Project Number`, `GCM Api key` under FASSetting is empty.  Since it does not effect the behavior of the SDK, please ignore the output message.  This will be fixed on ver 1.0.9.
+
+#### - The following Exception has been output. What should I do?
+    NullReferenceException: WWW class has already been disposed.
+    Fresvii.AppSteroid.Util.WWWRunner+<DoRequestCoroutine>c__Iterator1B.MoveNext ()
+
+  This shows up when communication with the server has timed out.
+Since it does not effect the behavior of the SDK, please ignore the output message.  This will also be fixed on ver 1.0.9.
+  Also, if you do confirm a Timeout error, please check the network status around the execution environment.
