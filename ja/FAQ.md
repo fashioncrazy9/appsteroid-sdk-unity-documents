@@ -88,6 +88,11 @@ AppSteroidが提供しているフォーラム機能などのデータについ�
 APIのレスポンス性能については通常のWEBサービスと同様の構成をとっており、アクセスが集中する事により多少性能が低下する事があります。しかし負荷状況を判断し、サーバ側を自動的に増強する事で可能な限り性能の低下を抑えるようにしております。
 また、これまでの運用で負荷によるダウン、実用上問題になるレベルでの性能低下は起きておりません。
 
+#### - FASSettings の Server Environemt の切替後、iOS の実機にてログインできなくなりました。どうしたらよいですか？
+v.1.0.8 の不具合により、FASSettings ->Server Environemt の Develoment/Production の切替時に iOS の実機にて、ユーザーIDが切り替えられずに、切替後のサーバにログインできない状態となることが確認されています。
+この不具合を v.1.0.9 にて修正をしました。異なるサーバ環境におけるユーザーIDの切替は、実行環境にて前回ログインしたサーバ環境が異なる場合に行われます。
+このため、Server Environment を切り替えた後に、ログインできない状況になった場合、以前の Server Environment　設定に戻し、端末にて実行後、再度、Server Environment を変更してください。
+
 #### - Android の実機で起動後に下記の Exception が出力されました。どうしたらよいですか？
     NullReferenceException: Object reference not set to an instance of an object
     at Fresvii.AppSteroid.Services.NotificationService.Process () [0x00000] in <filename unknown>:0
