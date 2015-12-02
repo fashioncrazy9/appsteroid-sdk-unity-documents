@@ -116,3 +116,9 @@ Unity のインポートに不具合があったことが考えられます。Re
 #### Fresvii のメニューが表示されません。どうしたらよいですか？
 Unity にてエラーが存在している場合、正常にコンパイルされないと Editor のメニューは表示されません。
 Unity にて存在するエラーを解決してください。
+
+#### インポート後、下記のエラーが表示されました。どうしたらよいですか？
+
+    Assets/Fresvii/iTween/Plugins/iTween.cs(47,14): error CS0101: The namespace `global::' already contains a definition for `iTween'
+
+AppSteroid v1.0.9 以下の利用もしくはアップデート時に、iTween をご利用の場合、 iTween が重複してインポートされた状態になっています。 `Assets/Fresvii/iTween/Plugins/iTween.cs`ファイルを削除してください。
