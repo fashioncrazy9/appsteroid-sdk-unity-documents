@@ -2,9 +2,7 @@
 
 
 ----------
-
 #### Unity の対応バージョンはいくつですか？
-
 AppSteroid が利用している Unity の API の対応バージョンは、4.6.9 以上です。Pro は必要ありません。
 Unity 5 用をご利用になる場合は、Unity 5.1.3 以上をご利用ください。
 **ただし、2015/10/05 現在の最新版の Unity 5.2.* には既知の問題が多く存在しますので、Unity 5.2.* のご利用はお避けください。**
@@ -112,3 +110,16 @@ v.1.0.8 の不具合により、FASSettings ->Server Environemt の Develoment/P
   サーバとの通信がタイムアウトした場合に発生するエラー後、この Exception が発生することが確認されています。
   動作上は無視して問題ありません。バージョン 1.0.9 で修正されます。
   また、Timeout エラーが出力された場合は、実行環境のネットワーク状況を再度ご確認ください。
+
+#### 日本語環境で文字化けしてしまいます。どうしたらよいですか？
+Unity のインポートに不具合があったことが考えられます。Reimport All で再インポートを試してみてください。
+
+#### Fresvii のメニューが表示されません。どうしたらよいですか？
+Unity にてエラーが存在している場合、正常にコンパイルされないと Editor のメニューは表示されません。
+Unity にて存在するエラーを解決してください。
+
+#### インポート後、下記のエラーが表示されました。どうしたらよいですか？
+
+    Assets/Fresvii/iTween/Plugins/iTween.cs(47,14): error CS0101: The namespace `global::' already contains a definition for `iTween'
+
+AppSteroid v1.0.9 以下の利用もしくはアップデート時に、iTween をご利用の場合、 iTween が重複してインポートされた状態になっています。 `Assets/Fresvii/iTween/Plugins/iTween.cs`ファイルを削除してください。

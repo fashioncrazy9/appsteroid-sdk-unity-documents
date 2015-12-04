@@ -2,6 +2,8 @@
 last update at　2015/11/04
 
 ----------
+以下はビデオ録画機能を利用する場合の設定です。ビデオ録画機能を利用を利用しない場合は下記の対応はすべて不要です。
+
 コード内での各機能の利用については、[Spec-FASPlayVideo](Specs/Spec-FASPlayVideo.md)をご参照ください。
 
 ## Graphics API の設定
@@ -50,7 +52,7 @@ Unityでビルド後のXcodeプロジェクトにて、`GLESHelper. mm` ファ�
     }
 
 また、`GLESHelper. mm` ファイルに以下を追加してください。
-    
+
     extern "C" void _FASCaptureScreenshot();
 
 ## ビデオ録画機能の初期化について
