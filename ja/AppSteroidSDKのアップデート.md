@@ -35,10 +35,8 @@ AppSteroid のアップデート方法について説明します。新規でイ
  
 ### Unity 5 でインポート直後にエラーが出た場合
 
-    Assets/Fresvii/AppSteroid/GUI/Scripts/FresviiGUIChat.cs(406,161): error CS0234: The type or namespace name `Error' does not exist in the namespace `Fresvii.AppSteroid.Models'. Are you missing an assembly reference?
+    Assets/Fresvii/AppSteroid/Scripts/FASSettings.cs(9,32): error CS0433: The imported type `Fresvii.AppSteroid.FASConfig' is defined multiple times
     .....
-
-![DLL Duplicate](./Images/ImportDuplicateError.png)
 
 Unity 5 にて、unitypackage からアセットがインポートされたときの挙動が変更されました。Asset の GUIDが一致しない場合、Unity が " 1" をファイル名に追加して重複したファイルを生成します。AppSteroid をアップデートした際、GUIDが一致しない場合があります。この場合は以下の対応を行ってください。
 
