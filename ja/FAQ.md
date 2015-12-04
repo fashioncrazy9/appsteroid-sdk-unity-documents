@@ -6,9 +6,9 @@
 AppSteroid が利用している Unity の API の対応バージョンは、4.6.9 以上です。Pro は必要ありません。
 Unity 5 用をご利用になる場合は、Unity 5.1.3 以上をご利用ください。
 
-
-#### iOS/Android の対応バージョンはいくつですか？
-iOS は 8.1 以上、Andoird は 4.0.4 以上です。
+#### プラットフォーム の対応バージョンはいくつですか？
+iOS 8.1以上。Android 4.0.4以上を推奨しています。  
+Android 6.0 Marshmallow につきましては近日正式対応予定です。
 
 #### AppSteroid SDKをアップデートするにはどうすればいいですか？
 AppSteroidをアップデートする場合は、[SDKのアップデート](AppSteroidSDKのアップデート.md) をご参照ください。
