@@ -13,10 +13,6 @@ Mac OS El capitan をご利用の場合、Unity のバージョンによって�
 iOS 8.1以上。Android 4.0.4以上を推奨しています。  
 Android 6.0 Marshmallow につきましては近日正式対応予定です。
 
-#### プラットフォーム の対応バージョンはいくつですか？
-iOS 8.1以上。Android 4.0.4以上を推奨しています。  
-Android 6.0 Marshmallow につきましては近日正式対応予定です。
-
 #### AppSteroid SDKをアップデートするにはどうすればいいですか？
 AppSteroidをアップデートする場合は、[SDKのアップデート](AppSteroidSDKのアップデート.md) をご参照ください。
 
