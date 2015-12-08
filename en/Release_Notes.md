@@ -1,5 +1,29 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.0.10
+- New Feature
+    - Back key on Android devices now allow to go back to the game scene.
+    - Alert message will be shown when the settings for GraphicAPI and app icon aren't correct.
+- Performance Improvements
+    - AppSteroid now support Unity 5.2.*
+    - Controle experience with high DPI display has improved.
+    - Default setting for CSR function changed to "Off".
+- Existing problem
+    - iOS Devices will crash when using Group Conference (Voice Chat) with Unity 5.  Please use the SDK without Voice Chat. Android devices will operate correctly.
+
+## 1.0.9
+- New Feature
+    - AppSteroid GUI tutorial.  Tutorial will be shown at the initial and second launch of the app. 
+    - Banner Ad space in Hot Apps page
+- Fixed
+    - Removed unnecessary log error message
+    - [iOS] App crashed in some condition, when tapping on push message from the CSR.
+    - User stats duplicates when moving one user profile page to another.
+    - Difficulty scrolling on Voice Chat GUI page
+- Existing problem
+    - On v.1.0.8, switching Development/Production in FASSettings ->Server Environment caused users to not be able to login to the server on iOS devices. This problem was fixed on v.1.0.9.  If you fail to log in after switching the Server Environment, switch back to the previous environment, than execute it on the device, switch back to the new Server Environment again.
+    - iOS Devices will crash when using Group Conference (Voice Chat) with Unity 5.  Please use the SDK without Voice Chat. Android devices will operate correctly.
+    - Currently, there are many existing problems found on Unity 5.2.​*. Please avoid using Unity 5.2.*​. 2015/11/04 
 
 ## 1.0.8
 - New Feature
