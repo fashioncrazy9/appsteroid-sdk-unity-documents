@@ -82,10 +82,6 @@ FresviiAppSteroid Unity版 SDK の iOS では、キーチェーンにてユー�
 
 ![Security.framework](./Images/AddFrameworks.png)
 
-また、グループカンファレンス機能を利用する場合は、「グループカンファレンス（ボイスチャット）の利用方法」の手順を行い、「libc++.dylib」を追加してください。
-
-![Security.framework](./Images/libcpp.png)
-
 Objective-C Exceptions を YES に設定してください。
 
 ![](Images/BuildSetting-Objectvie-exception.png)
@@ -111,7 +107,7 @@ Assets/Plugins/Android/res/drawable-*dpi フォルダ内の "ic_stat_notify.png"
 
 AppSteroidSDKの機能一覧は[こちら](機能一覧.md)を参照してください。
 
-## サンプルGUIを表示する
+## サンプルでGUIを表示する
 
 サンプルGUIを利用する場合は、"FresviiSample-uGUI" シーンを開いてください。  
 サンプルGUIは各機能の実装方法の参考になります。AppSteroid SDK の機能一覧に関しては[こちら](機能一覧.md)を参照してください。

@@ -80,17 +80,6 @@ Chat system which works inside the game.
 	- [FASEvent](./Specs/Spec-FASEvent.md)
 	- [FASGroup](./Specs/Spec-FASGroup.md)
 
-#### <a name="VoiceChat">- Voice Chat/In Game Voice Chat</a>
-Fresvii voice chat will support up to 4 players to have a conversation at the same time. Players can talk with friends within the game, during their game play. (Useful for FPS games, Board games, MMO games, and more.)
-Players can also start a voice session from the user profile inside AppSteroid GUI.
-
-- [How to use Group Conference (Voice Chat)](./Use Group Conference(VoiceChat).md)
-- [How to use in-game voice chat](./Use In-Game Voice Chat.md)
-- Related API 
-	- [FASConference](./Specs/Spec-FASConference.md)
-	- [FASEvent](./Specs/Spec-FASEvent.md)
-	- [FASGroup](./Specs/Spec-FASGroup.md)
-
 #### <a name="PlayVideo">- Play Video</a>
 Users can record their game play and share it with the AppSteroid community or other major social media (Facebook, Twitter, email). Users who watched the video can also share it with the community or other major social medias. Keep track of playback count and like count. 
  

@@ -7,7 +7,6 @@
 * [AppSteroidSDKのアップデート方法](AppSteroidSDKのアップデート.md)
 * [AppSteroidSDK機能一覧](機能一覧.md)
 * AppSteroidSDK for Unity 仕様書
-  * [FASConference Class　グループカンファレンス（ボイスチャット）操作関連クラス ](Specs/Spec-FASConference.md)
   * [FASCustomMessage Class　カスタムメッセージ操作クラス](Specs/Spec-FASCustomMessage.md)
   * [FASEvent Class プッシュ通知イベント関連クラス](Specs/Spec-FASEvent.md)
   * [FASFriendship Class フレンド操作関連クラス](Specs/Spec-FASFriendship.md)
@@ -27,9 +26,7 @@
 * [チャンネルの利用方法](チャンネルの利用方法.md)
 * [リーダーボードの利用方法](リーダーボードの利用方法.md)
 * [マッチメイキングの利用方法](マッチメイキングの利用方法.md)
-* [インゲームボイスチャットの利用方法](インゲームボイスチャットの利用方法.md)
 * [インゲームテキストチャットの利用方法](インゲームテキストチャットの利用方法.md)
-* [グループカンファレンスの利用について](グループカンファレンス（ボイスチャット）の利用方法.md)
 * [AndroidManifestの設定について]([Unity-Android]AndroidManifestの設定.md)
 * [Android プッシュ通知の設定方法]([Unity-Android]プッシュ通知の設定方法.md)
 * [iOS プッシュ通知の設定方法]([Unity-iOS]プッシュ通知の設定方法.md)

@@ -20,15 +20,19 @@ AppSteroid のアップデート方法について説明します。新規でイ
 8.  インポート後にエラーが出た場合は、以下の**Unity 5 でインポート直後にエラーが出た場合**をご確認ください。
 
 ## ボイスチャット機能の「あり」「なし」の AppSteroid SDK の変更を行う方法
+
+AppSteroid v1.0.10 にて、ボイスチャット機能は廃止されました。
+ボイスチャット機能「あり」→「なし」に変更する場合は下記の手順を行ってください。
+
 1. **<span style="color:red">作業の前にプロジェクトのバックアップを行ってください。</span>**
 2. `Assets/Fresvii/AppSteroid/Resources/FASSettings.asset`ファイルを`Assets/Fresvii`フォルダ以外にコピーして保存してください。`FASSettings.asset`ファイルは AppID や Secret Key などの AppSteroid の設定情報が保存されたファイルです。`Assets/Fresvii/AppSteroid/Scripts/FASSettings.cs`ではないのでご注意ください。
 3. `Assets/Fresvii`フォルダを削除してください。
-4. `Assets/Plugins`フォルダ内に、`Android/AppSteroidAndroid.dll`,`Android/AppSteroidWithVoiceChatAndroid.dll`,`iOS/AppSteroidIOS.dll`,`iOS/AppSteroidWithVoiceChatIOS.dll`のいずれかがありますので、それらをすべて削除してください。また、ボイスチャット機能を「あり」→「なし」に変更する場合は、`Assets/Plugins/Android/libvoicechat.so`と `Assets/Plugins/iOS/libvoicechat.a` の２つを削除してください。
+4. `Assets/Plugins`フォルダ内の AppSteroid でインポートしたファイルをすべて削除してください。
 6.  AppSteroid の該当パッケージをインストールしてください。インポート後、エラーが出ていなければ正常に作業が完了です。
 保存した`FASSettings.asset`を元のフォルダに戻すか、上書きしてください。
-7. ボイスチャット「あり」に変更した場合は、[カスタム コンパイル フラグ「GROUP_CONFERENCE」を定義](%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%EF%BC%88%E3%83%9C%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%83%E3%83%88%EF%BC%89%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95.md#2-%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0-%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB-%E3%83%95%E3%83%A9%E3%82%B0-%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%99%E3%82%8B) してください。「なし」に変更した場合は、「GROUP_CONFERENCE」の定義を削除してください。
+7. ボイスチャット「なし」に変更した場合、カスタム コンパイル フラグ「GROUP_CONFERENCE」の定義を削除してください。
 
-ボイスチャット機能の「あり」「なし」の AppSteroid SDK の変更を行った場合、FASSettigns.asset を元のフォルダに戻したときに、設定ファイルが正常に認識されず、設定情報が初期状態になってしまうことが稀にあります。
+ボイスチャット機能の「あり」→「なし」の AppSteroid SDK の変更を行った場合、FASSettigns.asset を元のフォルダに戻したときに、設定ファイルが正常に認識されず、設定情報が初期状態になってしまうことが稀にあります。
 この症状が起こってしまった場合には、お手数ですが Fresvii->FASSettings のメニューより設定情報を再度入力ください。
 
 ## インポート直後にエラーが出た場合

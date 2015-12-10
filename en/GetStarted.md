@@ -82,10 +82,6 @@ Add "Social.framework" for video share feature.
 
 ![Security.framework](./Images/AddFrameworks.png)
 
-Also, to use group conference feature, please follow the steps on "GroupConferenceGetStarted" and add `libc++.dylib`.
-
-![Security.framework](./Images/libcpp.png)
-
 Set Objective-C Exceptions as YES.
 
 ![](Images/BuildSetting-Objectvie-exception.png)
