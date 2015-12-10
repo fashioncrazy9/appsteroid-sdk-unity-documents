@@ -9,7 +9,6 @@
 		- [Friend Management](#FriendManagement)
 		- [Group Message](#GroupMessage)
 		- [In Game Chat](#InGameChat)
-		- [Voice Chat/In Game Voice Chat](#VoiceChat)
 		- [Play Video](#PlayVideo)
 		- [Push Notification](#PushNotificationForSetting)
 	- [App Promotion Service](#PromotionService)
