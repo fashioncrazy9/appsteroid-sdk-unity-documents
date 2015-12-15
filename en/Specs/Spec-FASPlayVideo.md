@@ -1,13 +1,13 @@
 # FASPlayVideo Specifications
 
-last update at　2015/10/21
+last update at　2015/10/02
 
 ----------
 
 ## Introduction
 
 ## <a name ="FASPlayVideo">FASPlayVideo Class</a>
-**<font color='red'>This class can only be used in iOS for Ver.1.0.7. Android is not supported.</font>**
+**<font color='red'>This class can only be used in iOS for Ver.1.0.6. Android is not supported.</font>**
 
 Class to operate record, play and upload game play video.
 
@@ -47,18 +47,12 @@ If you are using Unity 4.6.2p2 or later, go to Player Setting -> Other Settings 
 To work the video recording function properly, you must initialize it before recording.
 If you allow the screen to rotate during game play, you must initialize the function before the video recording is done. If the user rotate the device after initialization, the recording will not work properly. To avoid this problem, please initialize the video recording function every time after screen rotation is done. Also, make sure you do not allow the screen to rotate during video recording. 
 
-    public static bool InitializeRecording(bool withAudio = true)
+    public static bool InitializeRecording()
 
 #### Return
 |Type|Description|
 |------|-----|
 |bool| Success and failure of initializing video recording |
-
-#### Parameters
-|Name|Type|Description|
-|------|------|-----|
-|withAudio|bool|Select whether to turn audio recording on or off. Default is true (on)|
-
 
 ### <a name ="FASPlayVideo.StartRecording">FASPlayVideo.StartRecording</a>
 Start video recording. Video recording will stop if the length reaches the maximum time, or by calling `StopRecording`.  Recorded video will be saved in the app temporally storage area. Call `ShowLatestVideoSharingGUI` to upload the video on AppSteroid server after recording the game. Recorded video will automatically be deleted after closing the app.
@@ -79,8 +73,8 @@ End video recording
 Show GUI to share the latest recorded video
 
   public static bool ShowLatestVideoSharingGUI(string returnSceneName)
+
   public static bool ShowLatestVideoSharingGUI(string returnSceneName, Action guiEndedCallback)
-  public static bool ShowLatestVideoSharingGUI(string returnSceneName, Action guiEndedCallback, bool sceneTransition)
 
 #### Return
 |Type|Description|
@@ -92,7 +86,6 @@ Show GUI to share the latest recorded video
 |------|------|-----|
 |returnSceneName| string | Scene name to return when the GUI screen ends. If no scene is set, it will return to the caller scene. |
 |guiEndedCallback| Action | GUI is called at the end. Video share and upload will be shown on uGUI.  If you are preforming an operation other than legacy GUI or uGUI under modal GUI of uGUI, please use it to suppress the game input process until the callback is called. |
-|sceneTransition| bool | Select whether to move to the AppSteroid GUI or not after completing the video sharing.  Default = true. If true, upload completion GUI will be shown after the video share, and the user will have a choice to either move to the AppSteroid community GUI scene or stay in the same game scene. If false, completion dialog will be shown after video share without giving a choice to the user to move the scene. Instead, the user is forced to stay in the same game scene |
 
 
 ### <a name ="FASPlayVideo.LatestVideoExists">FASPlayVideo.LatestVideoExists</a>
