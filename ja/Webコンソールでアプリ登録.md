@@ -1,6 +1,8 @@
 # Webコンソールでアプリ登録
 
-----------AppSteroid SDKを利用するための事前準備として、[Fresviiサイト](https://fresvii.com/)でのアカウント作成、ログイン、アプリ登録までの方法を説明します。
+----------
+
+AppSteroid SDKを利用するための事前準備として、[Fresviiサイト](https://fresvii.com/)でのアカウント作成、ログイン、アプリ登録までの方法を説明します。
 ## [Fresviiサイト](https://fresvii.com/)へのアクセス
 1. 任意のWebブラウザから、[Fresviiサイト](https://fresvii.com/) に接続します。
 サインアップを選択します。
@@ -23,3 +25,5 @@
 
 4. 以上でWeb上での初期設定は完了です。
 ユーザーの情報はダッシュボード上から随時確認することができます。
+
+5. AppSteroidで最低限必要になる設定については、[こちら](https://github.com/fresvii/appsteroid-documents/blob/master/ja/WebConsole.md)を参照してください。
