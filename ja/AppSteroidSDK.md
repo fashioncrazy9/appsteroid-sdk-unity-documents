@@ -22,6 +22,7 @@ AppSteroid SDKを利用するために、下記の２つの手順を行ってい
 ## <a name="Features">AppSteroid SDKの機能一覧</a>
 機能一覧は[こちら](機能一覧.md)を参照してください。
 
-
+## <a name="Settings">AppSteroidで最低限必要な設定について</a>
+AppSteroidで最低限必要になる設定については、[こちら](https://github.com/fresvii/appsteroid-documents/blob/master/ja/WebConsole.md)を参照してください。
 
 
