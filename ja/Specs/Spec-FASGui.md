@@ -1,6 +1,6 @@
 # FASGui Specifications
 
-last update at 2015/11/03
+last update at 2016/01/04
 
 ----------
 
@@ -32,6 +32,7 @@ GUI シーンの表示操作をするクラスです。
 |[FASGui.ShowGUIWithLogin](#FASGui.ShowGUIWithLogin)| 指定したユーザーでログインを行い、GUIを表示します。このメソッドを利用する際は、ビルド設定に "AppSteroidUI" を加えてください。 |
 |[FASGui.ShowMatchMakingGui](#FASGui.ShowMatchMakingGui)| マッチメイキングパラメータを指定してマッチメイキングGUIを表示します。|
 |[FASGui.ShowMatchMakingGuiWithLogin](#FASGui.ShowMatchMakingGuiWithLogin)| 指定したユーザーでログインを行い、マッチメイキングパラメータを指定してマッチメイキングGUIを表示します。|
+|[FASGui.ShowLeaderboard](#FASGui.ShowLeaderboard)| リーダーボードのIDを指定してリーダーボード GUI を表示します。|
 
 
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
@@ -78,7 +79,7 @@ GUIを表示するシーンをロードします。 引数として、isModal = 
 |appSteroidModalGuiEnded|Action|（オプション）GUIが表示終了時に呼び出されるコールバックです。isModal = true でGUIを表示した場合に、ゲームの操作を抑制する際に利用します。|
 
 #### Example
-	
+
     FASGui.ShowGUIWithLogin(userId, userToken);
 
 ---
@@ -131,3 +132,24 @@ GUIを表示するシーンをロードします。 引数として、isModal = 
 #### Example
 
     FASGui.ShowMatchMakingGuiWithLogin(userId, userToken);
+
+### <a name ="FASGui.ShowLeaderboard">FASGui.ShowLeaderboard</a>
+
+リーダーボードを表示します。 引数として、isModal = true の場合は、シーンを追加ロードするため、シーンの遷移は行いません。
+ユーザーがログインしていない場合は、最後にログインしたユーザーで自動的にログインして GUI を表示します。
+
+    public static void ShowLeaderboard(string leaderboardId, string returnSceneName = "", bool isModal = false, Action appSteroidModalGuiEnded = null)
+
+#### Parameters
+|Name|Type|内容|
+|------|------|-----|
+|leaderboardId|string|リーダーボードID|
+|returnSceneName|string|（オプション）isModal = true の場合はシーン遷移をしないので、設定は不要です。 GUI終了時（アプリアイコン押下時）に復帰するシーン名称。復帰するシーンが未設定の場合は、呼び出し元のシーンに戻ります。|
+|isModal|bool|（オプション）モーダル表示を行う是非を指定します。isModal = false の場合は、シーン遷移を行い、GUIを表示します。 isModal = true の場合は、シーン遷移を行わずに、シーンを追加ロードします。|
+|appSteroidModalGuiEnded|Action|（オプション）GUIが表示終了時に呼び出されるコールバックです。isModal = true でGUIを表示した場合に、ゲームの操作を抑制する際に利用します。|
+
+#### Example
+
+    string leaderboardId = "50d8d7095ca940c6bce7dfdf1df80d44";
+
+    FASGui.ShowLeaderboard(leaderboardId);
