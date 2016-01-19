@@ -1,6 +1,6 @@
 # FASLeaderboard Specifications
 
-last update at 2014/10/15
+last update at 2016/01/18
 
 ----------
 
@@ -87,18 +87,17 @@ last update at 2014/10/15
 
 リーダーボードの一覧を取得します。
 
-    public static void GetLeaderboardList(Action<IList<Leaderboard>, Error> callback)
-    public static void GetLeaderboardList(uint page, Action<IList<Leaderboard>, Error> callback)
+    public static void GetLeaderboardList(uint page, Action < IList < Leaderboard > , Error> callback)
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |page|uint|（オプション）取得するページ番号|
-|callback|Action\<IList\<Leaderboard>, Error>|リーダーボードのリスト取得処理完了時に、Leaderboard モデルのリスト、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action < IList < Leaderboard >, Error>|リーダーボードのリスト取得処理完了時に、Leaderboard モデルのリスト、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
-    FASLeaderboard.GetLeaderboardList(delegate(IList<Leaderboard> leaderboards, Error error)
+    FASLeaderboard.GetLeaderboardList((leaderboards, error)=>
     {
         if(error == null)
         {
@@ -110,18 +109,17 @@ last update at 2014/10/15
 
 リーダーボードを取得します。
 
-    public static void GetLeaderboard(string leaderboardId, Action<Leaderboard, Error> callback)
-    public static void GetLeaderboard(string leaderboardId, uint page, Action<Leaderboard, Error> callback)
+    public static void GetLeaderboard(string leaderboardId, Action < Leaderboard, Error > callback)
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |leaderboardId|string|取得するリーダーボードのID|
-|page|uint|（オプション）取得するページ番号|
-|callback|Action\<Leaderboard, Error>|リーダーボード取得処理完了時に、Leaderboard モデル、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action < Leaderboard, Error > |リーダーボード取得処理完了時に、Leaderboard モデル、エラー情報を引数に呼び出されるデリゲート|
+
 #### Example
 
-    FASLeaderboard.GetLeaderboard(　leaderboardId, delegate(Leaderboard leaderboard, Error error)
+    FASLeaderboard.GetLeaderboard(leaderboardId, (leaderboard, error)=>
     {
         if(error == null)
         {
@@ -134,8 +132,8 @@ last update at 2014/10/15
 
 スコアを送信します。
 
-    public static void ReportScore(string leaderboardId, int value, Action<Score, Error> callback)
-    public static void ReportScore(string leaderboardId, int value, System.DateTime createdAt, Action<Score, Error> callback)
+    public static void ReportScore(string leaderboardId, int value, Action < Score, Error > callback)
+    public static void ReportScore(string leaderboardId, int value, System.DateTime createdAt, Action < Score, Error > callback)
 
 #### Parameters
 |Name|Type|内容|
@@ -143,24 +141,24 @@ last update at 2014/10/15
 |leaderboardId|string|取得するリーダーボードのID|
 |value|int|送信するスコア|
 |createdAt|System.DateTime|（オプション）作成日時|
-|callback|Action\<Score, Error>|スコア送信処理完了時に、Score モデル、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action < Score, Error >|スコア送信処理完了時に、Score モデル、エラー情報を引数に呼び出されるデリゲート|
 
 ### <a name ="FASLeaderboard.GetScore">FASLeaderboard.GetScore</a>
 
 スコアを取得します。
 
-    public static void GetScore(string leaderboardId, string scoreId, Action<Score, Error> callback)
+    public static void GetScore(string leaderboardId, string scoreId, Action < Score, Error > callback)
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |leaderboardId|string|取得するリーダーボードのID|
 |scoreId|string|取得するスコアのID|
-|callback|Action\<Score, Error>|スコア取得処理完了時に、Score モデル、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action < Score, Error >|スコア取得処理完了時に、Score モデル、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
-    FASLeaderboard.GetScore(　leaderboardId, scoreId,　delegate(Score score, Error error)
+    FASLeaderboard.GetScore(leaderboardId, scoreId, (score, error)=>
     {
         if(error == null)
         {
@@ -180,11 +178,11 @@ last update at 2014/10/15
 |------|------|-----|
 |leaderboardId|string|削除するリーダーボードのID|
 |scoreId|string|削除するスコアのID|
-|callback|Action\<Error>|スコア削除処理完了時に、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action < Error >|スコア削除処理完了時に、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
-    FASLeaderboard.DeleteScore(　leaderboardId, scoreId,　(error)=>
+    FASLeaderboard.DeleteScore(leaderboardId, scoreId, (error)=>
     {
         if(error != null)
         {
@@ -197,7 +195,7 @@ last update at 2014/10/15
 
 ユーザーのスコアの一覧を取得します。
 
-    public static void GetUserScores(string leaderboardId, string userId, System.DateTime startTime, Leaderboard.SubmissionType sortBy, uint page, Action<IList<Score>, Error> callback)
+    public static void GetUserScores(string leaderboardId, string userId, System.DateTime startTime, Leaderboard.SubmissionType sortBy, uint page, Action<IList<Score>, ListMeta, Error> callback)
 
 #### Parameters
 |Name|Type|内容|
@@ -209,15 +207,15 @@ last update at 2014/10/15
 |sortBy|Leaderboard.SubmissionType|（オプション）BestScore もしくは RecentScore のどちらかで設定する。デフォルトは BestScore。最も良いスコア順か最後にサブミットされた順によって並べる。最も良いスコアが最も高いものか低いものかは Leaderboard の設定に依存する。|
 |page|uint|リストを取得するユーザーのID|
 |userId|string|（オプション）取得するページ番号|
-|callback| Action\<IList\<Score>, Error>|スコアリスト取得処理完了時に、Score モデルリスト、エラー情報を引数に呼び出されるデリゲート|
+|callback| Action < IList < Score >, ListMeta, Error >|スコアリスト取得処理完了時に、Score モデルリスト、メタ情報、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
-    FASLeaderboard.GetUserScores(　leaderboardId, userId,　(scores, error)=>
+    FASLeaderboard.GetUserScores(leaderboardId, userId, (scores, meta, error)=>
     {
         if(error == null)
         {
-            //　処理を行う
+            // 処理を行う
         }
     });
 
@@ -226,7 +224,8 @@ last update at 2014/10/15
 
 ランキング（スコアリスト）を取得します。
 
-    public static void GetRanking(string leaderboardId, System.DateTime startTime, bool onlyFriends, Action<IList<Score>, Error> callback)
+    public static void GetRanking(string leaderboardId, Action < IList < Fresvii.AppSteroid.Models.Score >, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > callback)
+
 
 #### Parameters
 |Name|Type|内容|
@@ -235,15 +234,15 @@ last update at 2014/10/15
 |span|FASLeaderboard.TotalizeSpan|（オプション）リストを取得する間隔 { Daily, Weekly, Total }|
 |startTime|System.DateTime|（オプション）リストを取得する開始基準時刻|
 |onlyFriends|bool|（オプション）友達のみの結果を表示する（デフォルトは false ）|
-|callback| Action\<IList\<Score>, Error>|スコアリスト取得処理完了時に、Score モデルリスト、エラー情報を引数に呼び出されるデリゲート|
+|callback| Action < IList < Fresvii.AppSteroid.Models.Score >, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > |スコアリスト取得処理完了時に、Score モデルリスト、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
-    FASLeaderboard.GetRanking(leaderboardId, startTime, delegate(IList<Score> ranking, Error error)
+    FASLeaderboard.GetRanking(leaderboardId, startTime, (ranking, meta, error)=>
     {
         if(error == null)
         {
-            //　処理を行う
+            // 処理を行う
         }
     });
 
@@ -261,15 +260,15 @@ last update at 2014/10/15
 |span|FASLeaderboard.TotalizeSpan|（オプション）リストを取得する間隔 { Daily, Weekly, Total }|
 |startTime|System.DateTime|（オプション）リストを取得する開始基準時刻|
 |onlyFriends|bool|（オプション）友達のみの結果を表示する（デフォルトは false ）|
-|callback| Action\<Rank, Error>|スコア取得処理完了時に、Score モデル、エラー情報を引数に呼び出されるデリゲート|
+|callback| Action < Rank, Error >|スコア取得処理完了時に、Score モデル、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
-    FASLeaderboard.GetUserRank(leaderboardId, userId, startTime, delegate(Rank rank, Error error)
+    FASLeaderboard.GetUserRank(leaderboardId, userId, startTime, (rank, error) =>
     {
         if(error == null)
         {
-            //　処理を行う
+            // 処理を行う
         }
     });
 
@@ -278,14 +277,14 @@ last update at 2014/10/15
 イベントの一覧を取得します。
 
     public static void GetEventList(Fresvii.AppSteroid.Models.GameEvent.Status status, Action<IList<Fresvii.AppSteroid.Models.GameEvent>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
-    public static void GetEventList(uint page, Fresvii.AppSteroid.Models.GameEvent.Status status, Action<IList<Fresvii.AppSteroid.Models.GameEvent>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventList(uint page, Fresvii.AppSteroid.Models.GameEvent.Status status, Action < IList < Fresvii.AppSteroid.Models.GameEvent >, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > callback)
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |page|uint|（オプション）取得するページ番号|
 |status|Fresvii.AppSteroid.Models.GameEvent.Status|ゲームイベントの状態（Upcoming, Ongoing, Past）|
-|callback|Action \<IList \<Leaderboard>,  Fresvii.AppSteroid.Models.ListMeta, Error>|ゲームイベントのリスト取得処理完了時に、GameEvent モデルのリスト、リストのメタ情報、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action  < IList  < Leaderboard >,  Fresvii.AppSteroid.Models.ListMeta, Error >|ゲームイベントのリスト取得処理完了時に、GameEvent モデルのリスト、リストのメタ情報、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
@@ -301,13 +300,13 @@ last update at 2014/10/15
 
 ゲームイベントの詳細を取得します。
 
-    public static void GetEvent(string eventId, Action<Fresvii.AppSteroid.Models.GameEvent, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEvent(string eventId, Action < Fresvii.AppSteroid.Models.GameEvent, Fresvii.AppSteroid.Models.Error > callback)
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |eventId|string|詳細を取得するGameEventのID|
-|callback|Action \<GameEvent, Error>|ゲームイベント詳細取得処理完了時に、GameEvent モデル、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action < GameEvent, Error > |ゲームイベント詳細取得処理完了時に、GameEvent モデル、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
@@ -332,11 +331,11 @@ last update at 2014/10/15
 |------|------|-----|
 |page|uint|（オプション）取得するページ番号|
 |gameEventId|string|ゲームイベントのID|
-|callback|Action \<IList \<Eventboard>,  Fresvii.AppSteroid.Models.ListMeta, Error>|イベントボードリスト取得処理完了時に、Eventboard モデルのリスト、リストのメタ情報、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action < IList < Eventboard >,  ListMeta, Error > |イベントボードリスト取得処理完了時に、Eventboard モデルのリスト、リストのメタ情報、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
-    FASLeaderboard.GetEventboardList(gameEvent.Id, (eventboards, listMeta, error) =>
+    FASLeaderboard.GetEventboardList(gameEvent.Id, (eventboards, meta, error) =>
     {
         if(error == null)
         {
@@ -348,19 +347,19 @@ last update at 2014/10/15
 
 ゲームイベントの指定をせずに、すべてのイベントボード一覧を取得します。
 
-    public static void GetAllEventboardList(Action<IList<Fresvii.AppSteroid.Models.Eventboard>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetAllEventboardList(Action < IList < Fresvii.AppSteroid.Models.Eventboard >, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > callback)
 
-    public static void GetAllEventboardList(uint page, Action<IList<Fresvii.AppSteroid.Models.Eventboard>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)    
+    public static void GetAllEventboardList(uint page, Action < IList < Fresvii.AppSteroid.Models.Eventboard > , Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > callback)    
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |page|uint|（オプション）取得するページ番号|
-|callback|Action \<IList \<Eventboard>,  Fresvii.AppSteroid.Models.ListMeta, Error>|イベントボードリスト取得処理完了時に、Eventboard モデルのリスト、リストのメタ情報、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action  < IList < Eventboard >,  ListMeta, Error >|イベントボードリスト取得処理完了時に、Eventboard モデルのリスト、リストのメタ情報、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
-    FASLeaderboard.GetEventboardList(gameEvent.Id, (eventboards, listMeta, error) =>
+    FASLeaderboard.GetEventboardList(gameEvent.Id, (eventboards, meta, error) =>
     {
         if(error == null)
         {
@@ -374,12 +373,12 @@ last update at 2014/10/15
 イベントボードを取得します。
 
     public static void GetEventboard(string eventboardId, Action<Fresvii.AppSteroid.Models.Eventboard, Fresvii.AppSteroid.Models.Error> callback)
-    
+
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |leaderboardId|string|取得するイベントボードのID|
-|callback|Action\<Eventboard, Error>|イベントボード取得処理完了時に、Eventboard モデル、エラー情報を引数に呼び出されるデリゲート|
+|callback|Action < Eventboard, Error > |イベントボード取得処理完了時に、Eventboard モデル、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
@@ -392,14 +391,14 @@ last update at 2014/10/15
     });
 
 
-### <a name ="FASLeaderboard.GetRanking">FASLeaderboard.GetEventboardRanking</a>
+### <a name ="FASLeaderboard.GetEventboardRanking">FASLeaderboard.GetEventboardRanking</a>
 
 イベントボードのランキング（スコアリスト）を取得します。
 
-    public static void GetEventboardRanking(string eventboardId, Action<IList<Fresvii.AppSteroid.Models.Score>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
-    public static void GetEventboardRanking(string eventboardId, uint page, Action<IList<Fresvii.AppSteroid.Models.Score>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
-    public static void GetEventboardRanking(string eventboardId, bool onlyFriends, Action<IList<Fresvii.AppSteroid.Models.Score>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
-    public static void GetEventboardRanking(string eventboardId, bool onlyFriends, uint page, Action<IList<Fresvii.AppSteroid.Models.Score>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventboardRanking(string eventboardId, Action < IList < Fresvii.AppSteroid.Models.Score >, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > callback)
+    public static void GetEventboardRanking(string eventboardId, uint page, Action < IList < Fresvii.AppSteroid.Models.Score >, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > callback)
+    public static void GetEventboardRanking(string eventboardId, bool onlyFriends, Action < IList < Fresvii.AppSteroid.Models.Score >, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > callback)
+    public static void GetEventboardRanking(string eventboardId, bool onlyFriends, uint page, Action < IList < Fresvii.AppSteroid.Models.Score >, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error > callback)
 
 #### Parameters
 |Name|Type|内容|
@@ -407,7 +406,7 @@ last update at 2014/10/15
 |eventboardId|string|ランキングを取得するイベントボードのID|
 |page|uint|（オプション）取得するページ番号|
 |onlyFriends|bool|（オプション）友達のみの結果を表示する（デフォルトは false ）|
-|callback| Action\<IList\<Score>, Error> |スコアリスト取得処理完了時に、Score モデルリスト、エラー情報を引数に呼び出されるデリゲート|
+|callback| Action < IList < Score >, Error > |スコアリスト取得処理完了時に、Score モデルリスト、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
@@ -423,15 +422,15 @@ last update at 2014/10/15
 
 イベントボードでの指定ユーザーのランクを取得します。
 
-    public static void GetEventboardUserRank(string eventboardId, string userId, Action<Fresvii.AppSteroid.Models.Rank, Fresvii.AppSteroid.Models.Error> callback)
-    public static void GetEventboardUserRank(string eventboardId, string userId, bool onlyFriends, Action<Fresvii.AppSteroid.Models.Rank, Fresvii.AppSteroid.Models.Error> callback)
+    public static void GetEventboardUserRank(string eventboardId, string userId, Action < Fresvii.AppSteroid.Models.Rank, Fresvii.AppSteroid.Models.Error > callback)
+    public static void GetEventboardUserRank(string eventboardId, string userId, bool onlyFriends, Action < Fresvii.AppSteroid.Models.Rank, Fresvii.AppSteroid.Models.Error > callback)
 
 #### Parameters
 |Name|Type|内容|
 |------|------|-----|
 |leaderboardId|string|ランクを取得するイベントのID|
 |userId|string|ランクを取得するユーザーのID|
-|callback| Action\<Rank, Error>|スコア取得処理完了時に、Score モデル、エラー情報を引数に呼び出されるデリゲート|
+|callback| Action < Rank, Error > |スコア取得処理完了時に、Score モデル、エラー情報を引数に呼び出されるデリゲート|
 
 #### Example
 
@@ -439,6 +438,6 @@ last update at 2014/10/15
     {
         if(error == null)
         {
-            //　処理を行う
+            // 処理を行う
         }
     });
