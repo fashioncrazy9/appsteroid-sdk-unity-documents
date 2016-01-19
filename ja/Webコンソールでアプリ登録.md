@@ -26,4 +26,6 @@ AppSteroid SDKを利用するための事前準備として、[Fresviiサイト]
 4. 以上でWeb上での初期設定は完了です。
 ユーザーの情報はダッシュボード上から随時確認することができます。
 
+ユーザーの情報はダッシュボード上から随時確認することができます。
+
 5. AppSteroidで最低限必要になる設定については、[こちら](https://github.com/fresvii/appsteroid-documents/blob/master/ja/WebConsole.md)を参照してください。
