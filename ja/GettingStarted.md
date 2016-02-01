@@ -78,7 +78,9 @@ Unityエディター上で確認ができたら次は各端末ごとの設定を
 FresviiAppSteroid Unity版 SDK の iOS では、キーチェーンにてユーザー情報を保存しています。
 そのため、Xcodeでのビルド時は、(Build Phases -> Link Binary With Libraries)にて、「Security.framework」を追加してください。
 
-また、ビデオシェア機能のため「Social.framework」を追加してください。
+ビデオシェア機能のため「Social.framework」を追加してください。
+
+広告表示機能のため「AdSupport.framework」を追加してください。
 
 ![Security.framework](./Images/AddFrameworks.png)
 
