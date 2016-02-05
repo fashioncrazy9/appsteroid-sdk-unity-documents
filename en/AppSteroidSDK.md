@@ -20,3 +20,6 @@ You must follow these two steps indicated below before using the AppSteroid SDK.
 
 ## <a name="Features">AppSteroid SDK Feature List</a>
 Please refer to [feature list document](FeatureList.md).
+
+## <a name="Settings">Highly Recommended Settings for AppSteroid</a>
+Please check [this document](https://github.com/fresvii/appsteroid-documents/blob/master/en/WebConsole.md) for settings to maximize the profit from AppSteroid.

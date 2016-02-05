@@ -1,13 +1,19 @@
 # AppSteroid for Unity Release Notes
 ------
+
 ## 1.1.0
+- This is the last version to support Unity 4.6.x.
+- An error will occur in IL2CPP on Unity 5.3.2, when a project is build in iOS.  Please wait for the patch from Unity or use Unity 5.3.1 and version under 5.3.1.
+
 - Stop Support
     - Legacy GUI feature
     - Voice Chat feature
 - New Feature
+    - Advertisement API
     - Skinning feature. Customize AppSteroid GUI color.
     - Share feature now support Web video player.
     - Auto signup
+    - Show thumbnail image: Posting URL with image info (Youtube and more,) on thread and group message.
 - Fixed
     - Bold font doesn't show on Unity 5.3.*.
     - Same video will be posted when posting a comment with video several time on a particular thread. 
