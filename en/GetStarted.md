@@ -80,6 +80,8 @@ Thus, when building with Xcode, open (Build Phases -> Link Binary With Libraries
 
 Add "Social.framework" for video share feature.
 
+Add "AdSupport.framework" for advertisement feature.
+
 ![Security.framework](./Images/AddFrameworks.png)
 
 Set Objective-C Exceptions as YES.

@@ -1,6 +1,6 @@
 # FASGui Specifications
 
-last update at 2015/3/15
+last update at 2016/01/04
 
 ----------
 
@@ -31,8 +31,8 @@ Class to operate display GUI Scene. GUI will be load as a scene. Save the scene 
 |[FASGui.ShowGUI](#FASGui.ShowGUI)| Method to Show GUI. Call this method and load GUI scene. To use this method, add "AppSteroidUI" to build setting. |
 |[FASGui.ShowGUIWithLogin](#FASGui.ShowGUIWithLogin)| Process login with a specific user and show GUI. Call this method and than load the "AppSteroidUI" scene. To use this method, please add "AppSteroidUI" to build settings. |
 |[FASGui.ShowMatchMakingGui](#FASGui.ShowMatchMakingGui)| Specify a matchmaking parameter to show GUI for matchmaking.|
-|[FASGui.ShowMatchMakingGuiWithLogin](#FASGui.ShowMatchMakingGuiWithLogin)| Process logn with a specified user, specify matchmaking parameter and show matchmaking GUI.
-|
+|[FASGui.ShowMatchMakingGuiWithLogin](#FASGui.ShowMatchMakingGuiWithLogin)| Process logn with a specified user, specify matchmaking parameter and show matchmaking GUI.|
+|[FASGui.ShowLeaderboard](#FASGui.ShowLeaderboard)| Specify a leaderboard ID to show that leaderboard GUI.|
 
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
 
@@ -131,3 +131,23 @@ Select matchmaking parameter and show matchmaking GUI.
 #### Example
 
     FASGui.ShowMatchMakingGuiWithLogin(userId, userToken); 
+
+### <a name ="FASGui.ShowLeaderboard">FASGui.ShowLeaderboard</a>
+
+Show leaderboard. If the argument isModal = true, the scene will be loaded without scene transition. If the user is not logged in, automatically login with the previous user ID.
+
+    public static void ShowLeaderboard(string leaderboardId, string returnSceneName = "", bool isModal = false, Action appSteroidModalGuiEnded = null)
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|leaderboardId|string|Leaderboard ID|
+|returnSceneName|string|(Optional) No need to use this if isModal = true, since the scene will not transit. If not, select a scene name to return when the AppSteroid GUI ends. If scene name isn't selected, it will return to the last scene out of AppSteroid.|
+|isModal|bool|(Optional) Choose whether to use the modal mode. If isModal = false, show the AppSteroid GUI with scene transit. If isModal = true, load the scene without transit.|
+|appSteroidModalGuiEnded|Action|(Optional) A Callback to be called when the AppSteroid GUI ends. If AppSteroid GUI was shown with isModal = true, the game controll can be inhibited.|
+
+#### Example
+
+    string leaderboardId = "50d8d7095ca940c6bce7dfdf1df80d44";
+
+    FASGui.ShowLeaderboard(leaderboardId);
