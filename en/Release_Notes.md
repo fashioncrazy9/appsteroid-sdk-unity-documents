@@ -1,5 +1,17 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.1.0
+- Stop Support
+    - Legacy GUI feature
+    - Voice Chat feature
+- New Feature
+    - Skinning feature. Customize AppSteroid GUI color.
+    - Share feature now support Web video player.
+    - Auto signup
+- Fixed
+    - Bold font doesn't show on Unity 5.3.*.
+    - Same video will be posted when posting a comment with video several time on a particular thread. 
+
 ## 1.0.10
 - New Feature
     - Back key on Android devices now allow to go back to the game scene.
