@@ -1,6 +1,15 @@
 # AppSteroid for Unity Release Notes
 ------
 
+## 1.1.1
+- An error will occur in IL2CPP on Unity 5.3.2, when a project is build in iOS.  Please wait for the patch from Unity or use Unity 5.3.1 and version under 5.3.1.
+
+- New Feature
+    - pp name editor. Ability to update app name shown on the AppSteroid GUI anytime from the Web Console.
+    - Support link button for posted URL in comments and group message.
+- Fixed
+    - Ongoing event doesn't show on the community page.
+
 ## 1.1.0
 - This is the last version to support Unity 4.6.x.
 - An error will occur in IL2CPP on Unity 5.3.2, when a project is build in iOS.  Please wait for the patch from Unity or use Unity 5.3.1 and version under 5.3.1.
