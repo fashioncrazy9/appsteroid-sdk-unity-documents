@@ -7,8 +7,8 @@
 - New Feature
     - pp name editor. Ability to update app name shown on the AppSteroid GUI anytime from the Web Console.
     - Support link button for posted URL in comments and group message.
-- Fixed
-    - Ongoing event doesn't show on the community page.
+- Improve
+    - Not finished events are shown on the community page.
 
 ## 1.1.0
 - This is the last version to support Unity 4.6.x.
