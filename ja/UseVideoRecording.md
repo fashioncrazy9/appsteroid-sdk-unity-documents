@@ -15,7 +15,7 @@ Player Setting -> Other Settings -> Graphics API を Open GL ES 3.0 に設定し
 
 ![](Images/VideoRecordingSetting.png)
 
-- Unity 5.1.*
+- Unity 5.2.4以降の場合
 
 ![](Images/VideoRecordingSettingUnity5.png)
 
@@ -30,7 +30,7 @@ Unityでビルド後のXcodeプロジェクトにて、`GLESHelper. mm` ファ�
 
     [NSNumber numberWithBool:TRUE], kEAGLDrawablePropertyRetainedBacking,
 
-### Unity 5.1.* の場合
+### Unity 5.2.4 以降の場合
 Unityでビルド後のXcodeプロジェクトにて、`GLESHelper. mm` ファイルの下記の該当箇所を
 
     if(surface->allowScreenshot && UnityIsCaptureScreenshotRequested())
