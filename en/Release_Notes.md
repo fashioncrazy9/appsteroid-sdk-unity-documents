@@ -1,13 +1,26 @@
 # AppSteroid for Unity Release Notes
 ------
-
+## 1.1.2
+ - When a project is build in iOS, an error will occur in IL2CPP on Unity 5.3.2.  Please wait for the patch from Unity, use Unity 5.3.1 or version under 5.3.1.
+ 
+ - Push notification with Unity 5.3.1 on iOS dosen't work properly.  Please wait for the fix by Unity or please use Unity 5.2.4 to use Push Notification.
+ 
+ - Performance Improvements
+     - App page now caches data. Faster loading speed.
+     - Show Sandbox on my page while Sandbox environment is in used.
+     - Add process to function properly when an end-user unable permission on Android 6.
+ - Fixed
+     - Layout fixes
+     - Share text setup on the web console doesn't show on the client properly.
+ 
+ 
 ## 1.1.1
-- An error will occur in IL2CPP on Unity 5.3.2, when a project is build in iOS.  Please wait for the patch from Unity or use Unity 5.3.1 and version under 5.3.1.
+- When a project is build in iOS, an error will occur in IL2CPP on Unity 5.3.2.  Please wait for the patch from Unity, use Unity 5.3.1 or version under 5.3.1.
 
 - New Feature
     - pp name editor. Ability to update app name shown on the AppSteroid GUI anytime from the Web Console.
     - Support link button for posted URL in comments and group message.
-- Improve
+- Performance Improvements
     - Not finished events are shown on the community page.
 
 ## 1.1.0
