@@ -115,12 +115,12 @@ Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings 
 |bool| true = ビデオ録画中 |
 
 ### <a name ="FASPlayVideo.SetMaxRecordingSecondsLength">FASPlayVideo.SetMaxRecordingSecondsLength</a>
-ビデオ録画を最大時間（秒）を設定します。ただし、最大録画時間は３０秒以下です。
+ビデオ録画最大時間（秒）を設定します。ただし、最大録画時間は３０秒以下です。
 
     public static void SetMaxRecordingSecondsLength(float sec)
 
 ### <a name ="FASPlayVideo.GetMaxRecordingSecondsLength">FASPlayVideo.GetMaxRecordingSecondsLength</a>
-ビデオ録画を最大時間（秒）を取得します。
+ビデオ録画最大時間（秒）を取得します。
 
     public static float GetMaxRecordingSecondsLength()
 
