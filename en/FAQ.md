@@ -101,3 +101,8 @@ This occurs when the app does not use push notification on Android, and when the
   This shows up when communication with the server has timed out.
 Since it does not effect the behavior of the SDK, please ignore the output message.  This will also be fixed on ver 1.0.9.
   Also, if you do confirm a Timeout error, please check the network status around the execution environment.
+  
+#### The following error occurs in Android build. How do I fix it?
+    CommandInvokationFailure: Failed to re-package resources. See the Console for details.
+
+Importing the asset may have failed. Right click the Unity Asset folder and select `Reimport All`.

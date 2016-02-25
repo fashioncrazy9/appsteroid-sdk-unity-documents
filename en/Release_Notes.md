@@ -1,5 +1,12 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.1.3
+- Fixed
+    - Miss count on advertisement analysis function
+    - Text sticks out from the message balloon on iPhone5 and 5S.
+    - Performance and UI layout issue at offline.
+    - Minor bugs in skin settings
+
 ## 1.1.2
  - When a project is build in iOS, an error will occur in IL2CPP on Unity 5.3.2.  Please wait for the patch from Unity, use Unity 5.3.1 or version under 5.3.1.
  

@@ -7,7 +7,7 @@ last update at　2015/10/02
 ## Introduction
 
 ## <a name ="FASPlayVideo">FASPlayVideo Class</a>
-**<font color='red'>This class can only be used in iOS for Ver.1.0.6. Android is not supported.</font>**
+**<font color='red'>This class can only be used in iOS for Ver.1.1.2. Android is not supported.</font>**
 
 Class to operate record, play and upload game play video.
 
