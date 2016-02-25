@@ -125,3 +125,8 @@ Unity にて存在するエラーを解決してください。
     Assets/Fresvii/iTween/Plugins/iTween.cs(47,14): error CS0101: The namespace `global::' already contains a definition for `iTween'
 
 AppSteroid v1.0.9 以下の利用もしくはアップデート時に、iTween をご利用の場合、 iTween が重複してインポートされた状態になっています。 `Assets/Fresvii/iTween/Plugins/iTween.cs`ファイルを削除してください。
+
+#### Android ビルド時に以下のエラーが出ます。どうしたよいですか？
+    CommandInvokationFailure: Failed to re-package resources. See the Console for details.
+
+アセットのインポートが正常に行われなかった可能性があります。Unity のAsset フォルダの右クリックメニューから `Reimport All` を試してください。
