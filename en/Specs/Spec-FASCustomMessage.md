@@ -30,8 +30,8 @@ Class to operate custom message.
 ### <a name ="FASCustomMessage.SendCustomMessage">FASCustomMessage.SendCustomMessage</a>
 Send custom message.
 
-  public static void SendCustomMessage(string channelName, string action, Action<CustomMessage, Error> callback)
-  public static void SendCustomMessage(string channelName, string action, string channelParams, string parameters, string subject, string sound, bool apnsEnabled, bool gcmEnabled, Action<CustomMessage, Error> callback)
+    public static void SendCustomMessage(string channelName, string action, Action<CustomMessage, Error> callback)
+    public static void SendCustomMessage(string channelName, string action, string channelParams, string parameters, string subject, string sound, bool apnsEnabled, bool gcmEnabled, Action<CustomMessage, Error> callback)
 
 
 #### Parameters
@@ -51,8 +51,8 @@ Send custom message.
 ### <a name ="FASCustomMessage.GetCustomMessageList">FASCustomMessage.GetCustomMessageList</a>
 Get list of custom message
 
-  public static void GetCustomMessageList(Action<IList<CustomMessage>, ListListMeta, Error> callback)
-  public static void GetCustomMessageList(uint? page, System.DateTime startTime, Action<IList<CustomMessage>, ListListMeta, Error> callback)
+    public static void GetCustomMessageList(Action<IList<CustomMessage>, ListListMeta, Error> callback)
+    public static void GetCustomMessageList(uint? page, System.DateTime startTime, Action<IList<CustomMessage>, ListListMeta, Error> callback)
 
 
 #### Parameters

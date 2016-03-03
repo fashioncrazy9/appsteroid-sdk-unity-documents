@@ -36,17 +36,17 @@ Class to receive event caused by PushNotification. Add a event to receive a noti
 
 #### Example
 
-  void OnEnable()
-  {
+    void OnEnable()
+    {
     FASEvent.OnGroupMessageInGameCreated += OnGroupMessageInGameCreated;
-  }
-
-  void OnDisable()
-  {
+    }
+    
+    void OnDisable()
+    {
     FASEvent.OnGroupMessageInGameCreated -= OnGroupMessageInGameCreated;
-  }
-
-  void OnGroupMessageInGameCreated(GroupMessage groupMessage)
-  {
+    }
+    
+    void OnGroupMessageInGameCreated(GroupMessage groupMessage)
+    {
             // Execute evenet process
-  }
+    }

@@ -21,7 +21,6 @@ Class to operate Leaderboard
 
 ### Methods
 
-
 #### Leaderboard
 |Name|Description|
 |------|-----|
@@ -52,7 +51,7 @@ Class to operate Leaderboard
 
 Setup UTC offset for time to tally Leaderboard. (Default = 0)
 
-  public static void FASLeaderboard.SetTotalizationClockUtcOffset(int utcOffset)
+    public static void FASLeaderboard.SetTotalizationClockUtcOffset(int utcOffset)
 
 #### Parameters
 |Name|Type|Description|
@@ -63,7 +62,7 @@ Setup UTC offset for time to tally Leaderboard. (Default = 0)
 
 Setup Daily Starting time to tally Leaderboard. (Default = 00:00)
 
-  public static void FASLeaderboard.SetDailyTotalizationStartTime(int hour, int minute)
+    public static void FASLeaderboard.SetDailyTotalizationStartTime(int hour, int minute)
 
 #### Parameters
 |Name|Type|Description|
@@ -75,7 +74,7 @@ Setup Daily Starting time to tally Leaderboard. (Default = 00:00)
 
 Setup Weekly starting time to tally Leaderboard. (Default = Sunday, 00:00)
 
-  public static void FASLeaderboard.SetWeeklyTotalizationStartTime(System.DayOfWeek dayOfWeek, int hour, int minute)
+    public static void FASLeaderboard.SetWeeklyTotalizationStartTime(System.DayOfWeek dayOfWeek, int hour, int minute)
 
 #### Parameters
 |Name|Type|Description|
@@ -88,9 +87,8 @@ Setup Weekly starting time to tally Leaderboard. (Default = Sunday, 00:00)
 
 Get Leaderboard List
 
-   public static void GetLeaderboardList(Action<IList<Leaderboard>, Error> callback)
-   public static void GetLeaderboardList(uint page, Action<IList<Leaderboard>, Error> callback)
-
+     public static void GetLeaderboardList(uint page, Action < IList < Leaderboard > , Error> callback)
+   
 #### Parameters
 |Name|Type|Description|
 |------|------|-----|
@@ -99,44 +97,43 @@ Get Leaderboard List
 
 #### Example
 
-   FASLeaderboard.GetLeaderdList(delegate(IList<Leaderboard> leaderboards, Error error)
-   {
-     if(error == null)
-     {
-       // To go through process for Leaderboard List
-     }
-   });
+    FASLeaderboard.GetLeaderboardList((leaderboards, error)=>
+    {
+        if(error == null)
+        {
+            //	リーダーボードのリストの処理を行う
+        }
+    });
 
 ### <a name ="FASLeaderboard.GetLeaderboard">FASLeaderboard.GetLeaderboard</a>
 
 Get Leaderboard
 
- public static void GetLeaderboard(string leaderboardId, Action<Leaderboard, Error> callback)
- public static void GetLeaderboard(string leaderboardId, uint page, Action<Leaderboard, Error> callback)
+    public static void GetLeaderboard(string leaderboardId, Action < Leaderboard, Error > callback)
 
 #### Parameters
 |Name|Type|Description|
 |------|------|-----|
 |leaderboardId|string|The Leaderboard ID you will get|
-|page|uint|The Page number you will get (optional)|
 |callback|Action\<Leaderboard, Error>|This is a Delegate with an argument of Leaderboard model and error info that will be called when the process to get leaderboard is completed.|
+
 #### Example
 
-   FASLeaderboard.GetLeaderboard(　leaderboardId, delegate(Leaderboard leaderboard, Error error)
-   {
-     if(error == null)
-     {
-       // To go through process for Leaderboard
-     }
-   });
+    FASLeaderboard.GetLeaderboard(leaderboardId, (leaderboard, error)=>
+    {
+        if(error == null)
+        {
+            //	リーダーボードの処理を行う
+        }
+    });
 
 
 ### <a name ="FASLeaderboard.ReportScore">FASLeaderboard.ReportScore</a>
 
 Transmit Score
 
- public static void ReportScore(string leaderboardId, int value, Action<Score, Error> callback)
- public static void ReportScore(string leaderboardId, int value, System.DateTime createdAt, Action<Score, Error> callback)
+     public static void ReportScore(string leaderboardId, int value, Action<Score, Error> callback)
+     public static void ReportScore(string leaderboardId, int value, System.DateTime createdAt, Action<Score, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -146,12 +143,11 @@ Transmit Score
 |createdAt|System.DateTime|Creation date (optional)|
 |callback|Action\<Score, Error>|This is a Delegate with an argument of Score model and error info that will be called when the process to transmit score is completed.|
 
-
 ### <a name ="FASLeaderboard.GetScore">FASLeaderboard.GetScore</a>
 
 Get Score
 
- public static void GetScore(string leaderboardId, string scoreId, Action<Score, Error> callback)
+    public static void GetScore(string leaderboardId, string scoreId, Action<Score, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -162,20 +158,20 @@ Get Score
 
 #### Example
 
-   FASLeaderboard.GetScore(　leaderboardId, scoreId,　delegate(Score score, Error error)
-   {
-     if(error == null)
-     {
-       // To go through process for Score
-     }
-   });
+    FASLeaderboard.GetScore(leaderboardId, scoreId, (score, error)=>
+    {
+        if(error == null)
+        {
+            //	スコアの処理を行う
+        }
+    });
 
 
 ### <a name ="FASLeaderboard.DeleteScore">FASLeaderboard.DeleteScore</a>
 
 Delete Score
 
- public static void DeleteScore(string leaderboardId, string scoreId, Action<Error> callback)
+    public static void DeleteScore(string leaderboardId, string scoreId, Action<Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -186,20 +182,19 @@ Delete Score
 
 #### Example
 
-   FASLeaderboard.DeleteScore(　leaderboardId, scoreId,　delegate(Error error)
-   {
-     if(error != null)
-     {
-      // To go through process for Error
-     }
-   });
-
+    FASLeaderboard.DeleteScore(leaderboardId, scoreId, (error)=>
+    {
+        if(error != null)
+        {
+            //	エラー処理を行う
+        }
+    });
 
 ### <a name ="FASLeaderboard.GetUserScores">FASLeaderboard.GetUserScores</a>
 
 Get user score list
 
- public static void GetUserScores(string leaderboardId, string userId, System.DateTime startTime, Leaderboard.SubmissionType sortBy, uint page, Action<IList<Score>, Error> callback)
+    public static void GetUserScores(string leaderboardId, string userId, System.DateTime startTime, Leaderboard.SubmissionType sortBy, uint page, Action<IList<Score>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -215,20 +210,20 @@ Get user score list
 
 #### Example
 
-   FASLeaderboard.GetUserScores(　leaderboardId, userId,　delegate(IList<Score> scores, Error error)
-      {
-         if(error == null)
+    FASLeaderboard.GetUserScores(leaderboardId, userId, (scores, meta, error)=>
+    {
+        if(error == null)
         {
-           //　To go through process
+            // 処理を行う
         }
-     });
+    });
 
 
 ### <a name ="FASLeaderboard.GetRanking">FASLeaderboard.GetRanking</a>
 
 Get Ranking
 
- public static void GetRanking(string leaderboardId, System.DateTime startTime, bool onlyFriends, Action<IList<Rank>, Error> callback)
+    public static void GetRanking(string leaderboardId, System.DateTime startTime, bool onlyFriends, Action<IList<Rank>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -241,20 +236,20 @@ Get Ranking
 
 #### Example
 
-   FASLeaderboard.GetRanking(leaderboardId, startTime, delegate(IList<Rank> ranking, Error error)
-   {
-      if(error == null)
-      {
-        //　To go through process
-     }
-   });
+    FASLeaderboard.GetRanking(leaderboardId, startTime, (ranking, meta, error)=>
+    {
+        if(error == null)
+        {
+            // 処理を行う
+        }
+    });
 
 
 ### <a name ="FASLeaderboard.GetUserRank">FASLeaderboard.GetUserRank</a>
 
 Get User Rank
 
- public static void GetUserRank(string leaderboardId, string userId, System.DateTime startTime, bool onlyFriends, Action<Rank, Error> callback)
+    public static void GetUserRank(string leaderboardId, string userId, System.DateTime startTime, bool onlyFriends, Action<Rank, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -268,13 +263,13 @@ Get User Rank
 
 #### Example
 
-   FASLeaderboard.GetUserRank(leaderboardId, userId, startTime, delegate(Rank rank, Error error)
-   {
-      if(error == null)
-     {
-      //　To go through process
-   }
-   });
+    FASLeaderboard.GetUserRank(leaderboardId, userId, startTime, (rank, error) =>
+    {
+        if(error == null)
+        {
+            // 処理を行う
+        }
+    });
 
 ### <a name ="FASLeaderboard.GetEventList">FASLeaderboard.GetEventList</a>
 
@@ -349,7 +344,7 @@ Get eventboard list
 
 ### <a name ="FASLeaderboard.GetAllEventboardList">FASLeaderboard.GetAllEventboardList</a>
 
-Get all eventboard list
+Get all eventboard list without specifying a game event
 
     public static void GetAllEventboardList(Action<IList<Fresvii.AppSteroid.Models.Eventboard>, Fresvii.AppSteroid.Models.ListMeta, Fresvii.AppSteroid.Models.Error> callback)
 
@@ -445,3 +440,4 @@ Get rank from a specific user on eventboard
             //　To go through process
         }
     });
+  

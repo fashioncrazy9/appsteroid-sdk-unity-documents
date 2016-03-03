@@ -42,10 +42,10 @@ Class to operate Group functions
 
 Create a group
 
-  public static void CreateGroup(Action<Group, Error> callback)
-  public static void CreateGroup(string name, Action<Group, Error> callback)
-  public static void CreateGroup(string[] userIds, Action<Group, Error> callback
-  public static void CreateGroup(string name, string[] userIds, Action<Group, Error> callback)
+    public static void CreateGroup(Action<Group, Error> callback)
+    public static void CreateGroup(string name, Action<Group, Error> callback)
+    public static void CreateGroup(string[] userIds, Action<Group, Error> callback
+    public static void CreateGroup(string name, string[] userIds, Action<Group, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -59,10 +59,10 @@ Create a group
 
 Get list of group
 
-  public static void GetGroupList(Action<IList<Group>, Error> callback)
-  public static void GetGroupList(uint page, Action<IList<Group>, Error> callback)
-  public static void GetGroupList(Action<IList<Group>, ListListMeta, Error> callback)
-  public static void GetGroupList(uint page, Action<IList<Group>, ListMeta, Error> callback)
+    public static void GetGroupList(Action<IList<Group>, Error> callback)
+    public static void GetGroupList(uint page, Action<IList<Group>, Error> callback)
+    public static void GetGroupList(Action<IList<Group>, ListListMeta, Error> callback)
+    public static void GetGroupList(uint page, Action<IList<Group>, ListMeta, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -76,7 +76,7 @@ Get list of group
 
 Get Group
 
-  public static void GetGroup(string groupId, Action<Group, Error> callback)
+    public static void GetGroup(string groupId, Action<Group, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -89,7 +89,7 @@ Get Group
 
 Edit Group name
 
-  public static void EditGroup(string groupId, string name, Action<Group, Error> callback)
+    public static void EditGroup(string groupId, string name, Action<Group, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -102,7 +102,7 @@ Edit Group name
 
 Delete a group
 
-  public static void DeleteGroup(string groupId, Action<Error> callback)
+    public static void DeleteGroup(string groupId, Action<Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -115,7 +115,7 @@ Delete a group
 
 Subscribe to a group to receive notification about group message.
 
-  public static void Subscribe(string groupId, Action<Group, Error> callback)
+    public static void Subscribe(string groupId, Action<Group, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -128,7 +128,7 @@ Subscribe to a group to receive notification about group message.
 
 Unsubscribe from a group to cancel receiving notification about the group.
 
-  public static void Unsubscribe(string groupId, Action<Group, Error> callback)
+    public static void Unsubscribe(string groupId, Action<Group, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -141,10 +141,10 @@ Unsubscribe from a group to cancel receiving notification about the group.
 
 Get member list of a group
 
-  public static void GetGroupMemberList(string groupId, Action<IList<Member>, Error> callback)
-  public static void GetGroupMemberList(string groupId, Action<IList<Member>, ListMeta, Error> callback)
-  public static void GetGroupMemberList(string groupId, uint page, Action<IList<Member>, Error> callback)
-  public static void GetGroupMemberList(string groupId, uint page, Action<IList<Member>, ListMeta, Error> callback)
+    public static void GetGroupMemberList(string groupId, Action<IList<Member>, Error> callback)
+    public static void GetGroupMemberList(string groupId, Action<IList<Member>, ListMeta, Error> callback)
+    public static void GetGroupMemberList(string groupId, uint page, Action<IList<Member>, Error> callback)
+    public static void GetGroupMemberList(string groupId, uint page, Action<IList<Member>, ListMeta, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -158,7 +158,7 @@ Get member list of a group
 
 Add member to a group
 
-  public static void AddMember(string groupId, string userId, Action<Member, Error> callback)
+    public static void AddMember(string groupId, string userId, Action<Member, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -172,8 +172,8 @@ Add member to a group
 
 Delete member from a group
 
-  public static void DeleteMember(string groupId, string userId, Action<Error> callback)
-
+    public static void DeleteMember(string groupId, string userId, Action<Error> callback)
+  
 #### Parameters
 |Name|Type|Description|
 |------|------|-----|
@@ -186,7 +186,7 @@ Delete member from a group
 
 Create pair group
 
-  public static void CreatePair(string userId, Action<Group, Error> callback)
+    public static void CreatePair(string userId, Action<Group, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -199,8 +199,8 @@ Create pair group
 
 Send group message
 
-  public static void SendGroupMessage(string groupId, string text, Action<GroupMessage, Error> callback)
-  public static void SendGroupMessage(string groupId, Texture2D clipImage, Action<GroupMessage, Error> callback)
+    public static void SendGroupMessage(string groupId, string text, Action<GroupMessage, Error> callback)
+    public static void SendGroupMessage(string groupId, Texture2D clipImage, Action<GroupMessage, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -215,10 +215,10 @@ Send group message
 
 Get list of group message.
 
-  public static void GetGroupMessageList(string groupId, Action<IList<GroupMessage>, Error> callback)
-  public static void GetGroupMessageList(string groupId, Action<IList<GroupMessage>, ListMeta, Error> callback)
-  public static void GetGroupMessageList(string groupId, uint page, Action<IList<GroupMessage>, Error> callback)
-  public static void GetGroupMessageList(string groupId, uint page, Action<IList<GroupMessage>, ListMeta, Error> callback)
+    public static void GetGroupMessageList(string groupId, Action<IList<GroupMessage>, Error> callback)
+    public static void GetGroupMessageList(string groupId, Action<IList<GroupMessage>, ListMeta, Error> callback)
+    public static void GetGroupMessageList(string groupId, uint page, Action<IList<GroupMessage>, Error> callback)
+    public static void GetGroupMessageList(string groupId, uint page, Action<IList<GroupMessage>, ListMeta, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -233,7 +233,7 @@ Get list of group message.
 
 Send text for in-game chat.
 
-  public static void SendGroupMessageInGames(string groupId, string text, Action<GroupMessage, Error> callback)
+    public static void SendGroupMessageInGames(string groupId, string text, Action<GroupMessage, Error> callback)
 
 #### Parameters
 |Name|Type|Description|

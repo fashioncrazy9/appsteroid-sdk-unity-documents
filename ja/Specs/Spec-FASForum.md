@@ -241,7 +241,7 @@ last update at 2014/10/15
 ### <a name ="FASForum.LikeComment">FASForum.LikeComment</a>
 コメントを Like します。
 
-  public static void LikeComment(string commentId, Action<Comment, Error> callback)
+    public static void LikeComment(string commentId, Action<Comment, Error> callback)
 
 
 #### Parameters

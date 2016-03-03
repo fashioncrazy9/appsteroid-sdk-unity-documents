@@ -38,8 +38,8 @@ Class to operate Forum
 ### <a name ="FASForum.GetForumThreads">FASForum.GetForumThreads</a>
 Get the thread list.
 
-  public static void GetForumThreads(Action<IList<Thread>, Error> callback)
-  public static void GetForumThreads(uint page, Action<IList<Thread>, Error> callback)
+    public static void GetForumThreads(Action<IList<Thread>, Error> callback)
+    public static void GetForumThreads(uint page, Action<IList<Thread>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -49,27 +49,19 @@ Get the thread list.
 
 #### Example
 
-    {
-        ....
-         FASForum.GetForumThreads(OnGetForumThreads);
-    }
-
-    void OnGetForumThreads(IList<Thread> threads, Error error)
+    FASForum.GetForumThreads((threads, error)=>
     {
         if (error != null)
         {
-            logMessage = error.ToString();
-            Debug.LogError(logMessage);
+            Debug.LogError(error.ToString());
         }
-
-        this.threads = threads;
-    }
+    });
 
 -----------------
 ### <a name ="FASForum.CreateThread">FASForum.CreateThread</a>
 Create a new thread.
 
-  public static void CreateThread(string text, Action<Thread, Error> callback)
+    public static void CreateThread(string text, Action<Thread, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -79,20 +71,13 @@ Create a new thread.
 
 #### Example
 
-    {
-        ....
-        FASForum.CreateThread("thread created " + System.DateTime.Now.ToString(), OnCreateForumThread);
-    }
-
-    void OnCreateForumThread(Thread thread, Error error)
+    FASForum.CreateThread("thread created " + System.DateTime.Now.ToString(), (thread, error)=>
     {
         if (error != null)
         {
-            logMessage = error.ToString();
-
-            Debug.LogError(logMessage);
+            Debug.LogError(error.ToString());
         }
-    }
+    });
 
 -----------------
 ### <a name ="FASForum.DeleteThread">FASForum.DeleteThread</a>
@@ -107,27 +92,19 @@ Delete a thread. Only the user who created the thread can delete it.
 
 #### Example
 
-    {
-        ....
-        FASForum.CreateThread("thread created " + System.DateTime.Now.ToString(), OnCreateForumThread);
-    }
-
-    void OnCreateForumThread(Thread thread, Error error)
+    FASForum.CreateThread("thread created " + System.DateTime.Now.ToString(), (thread, error)=>
     {
         if (error != null)
-        {
-            logMessage = error.ToString();
-
-            Debug.LogError(logMessage);
+        {            
+            Debug.LogError(error.ToString());
         }
-    }
-
+    });
 
 -----------------
 ### <a name ="FASForum.GetThreadComments">FASForum.GetThreadComments</a>
 Get comment list on thread.
 
-  public static void GetThreadComments(string threadId, Action<IList<Comment>, Error> callback)
+    public static void GetThreadComments(string threadId, Action<IList<Comment>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -137,27 +114,19 @@ Get comment list on thread.
 
 #### Example
 
+    FASForum.GetThreadComments(selectedThread.Id, (comments, error)=>
     {
-        ....
-        FASForum.GetThreadComments(selectedThread.Id, OnGetThreadComments);
-    }
-
-    void OnGetThreadComments(IList<Comment> comments, Error error)
-    {
-        if (error != null)
-        {
-            logMessage = "Code : " + error.Code + ", Detail : " + error.Detail;
-            Debug.LogError(logMessage);
-        }
-
-        this.comments = comments;
-    }
+     if (error != null)
+     {
+         Debug.LogError(error.ToString());
+     }
+     });
 
 -----------------
 ### <a name ="FASForum.Subscribe">FASForum.Subscribe</a>
 Subscribe to a thread.
 
-  public static void Subscribe(string threadId, Action<Thread, Error> callback)
+    public static void Subscribe(string threadId, Action<Thread, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -167,17 +136,11 @@ Subscribe to a thread.
 
 #### Example
 
-    FASForum.Subscribe(selectedThread.Id, delegate(Thread _thread, Error _error)
+    FASForum.Subscribe(selectedThread.Id, (thread, error)=>
     {
-        if (_error != null)
+        if (error != null)
         {
-            logMessage = "Subscribe Error\n";
-            logMessage += _error.ToString();
-            Debug.LogError(logMessage);
-        }
-        else
-        {
-            logMessage = "Success subscribe";
+            Debug.LogError(error.ToString());
         }
     });
 
@@ -185,7 +148,7 @@ Subscribe to a thread.
 ### <a name ="FASForum.Unsubscribe">FASForum.Unsubscribe</a>
 Unsubscribe from a thread.
 
-  public static void Unsubscribe(string threadId, Action<Error> callback)
+    public static void Unsubscribe(string threadId, Action<Error> callback)
 
 
 #### Parameters
@@ -196,25 +159,19 @@ Unsubscribe from a thread.
 
 #### Example
 
-  FASForum.Unsubscribe(selectedThread.Id, delegate(Error _error)
-  {
-      if (_error != null)
-      {
-          logMessage = "Unsubscribe Error\n";
-          logMessage += _error.ToString();
-          Debug.LogError(logMessage);
-      }
-      else
-      {
-          logMessage = "Success unsubscribe";
-      }
-  });
+    FASForum.Unsubscribe(selectedThread.Id, (error)=>
+    {
+        if (error != null)
+        {
+            Debug.LogError(error.ToString());
+        }
+    });
 
 -----------------
 ### <a name ="FASForum.AddComment">FASForum.AddComment</a>
 Add a comment to a thread.
 
-  public static void AddComment(string threadId, string text, Action<Comment, Error> callback)
+    public static void AddComment(string threadId, string text, Action<Comment, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -225,15 +182,13 @@ Add a comment to a thread.
 
 #### Example
 
-  FASForum.AddComment(selectedThread.Id, "Add comment : " + System.DateTime.Now.ToString(), delegate(Comment _comment, Error _error)
-  {
-      if (_error != null)
-      {
-          logMessage = "Add comment Error\n";
-          logMessage += logMessage += _error.ToString();
-          Debug.LogError(logMessage);
-      }
-  });
+    FASForum.AddComment(selectedThread.Id, "Add comment : " + System.DateTime.Now.ToString(), (comment, error)=>
+    {
+        if (error != null)
+        {
+            Debug.LogError(error.ToString());
+        }
+    });
 
 -----------------
 ### <a name ="FASForum.EditComment">FASForum.EditComment</a>
@@ -251,21 +206,19 @@ Edit a comment.
 
 #### Example
 
-  FASForum.EditComment(comment.Id, "Edit comment : " + System.DateTime.Now.ToString(), delegate(Comment _comment, Error _error)
+    FASForum.EditComment(comment.Id, "Edit comment : " + System.DateTime.Now.ToString(), (comment, error) =>
+    {
+        if (error != null)
         {
-            if (_error != null)
-            {
-                logMessage = "EditComment Error\n";
-                logMessage += _error.ToString();
-                Debug.LogError(logMessage);
-            }
-        });
+            Debug.LogError(error.ToString());
+        }
+    });
 
 -----------------
 ### <a name ="FASForum.DeleteComment">FASForum.DeleteComment</a>
 Delete a comment.
 
-  public static void DeleteComment(string commentId, Action<Error> callback)
+    public static void DeleteComment(string commentId, Action<Error> callback)
 
 
 #### Parameters
@@ -276,24 +229,19 @@ Delete a comment.
 
 #### Example
 
-   FASForum.DeleteComment(comment.Id, delegate(Error _error)
+    FASForum.DeleteComment(comment.Id, (error)=>
+    {
+        if (error != null)
         {
-            if (_error != null)
-            {
-                logMessage = "Delete Comment Error\n";
-                logMessage += _error.ToString();
-                Debug.LogError(logMessage);
-            }
-
-            FAS.GetThreadComments(selectedThread.Id, OnGetThreadComments);
-
-        });
+            Debug.LogError(error.ToString());
+        }
+    });
 
 -----------------
 ### <a name ="FASForum.LikeComment">FASForum.LikeComment</a>
 Like a comment.
 
-  public static void LikeComment(string commentId, Action<Comment, Error> callback)
+    public static void LikeComment(string commentId, Action<Comment, Error> callback)
 
 
 #### Parameters
@@ -304,19 +252,13 @@ Like a comment.
 
 #### Example
 
-  {
-    ....
-    FASForum.LikeComment(comment.Id, OnLikeComment);
-  }
-
-  void OnLikeComment(Comment comment, Error error){
-
-    if(error != null){
-      Debug.LogError(error.ToString());
-      return;
-    }
-
-  }
+    FASForum.LikeComment(comment.Id, (comment, error) =>
+    {    
+        if(error != null)
+        {
+            Debug.LogError(error.ToString());
+        }    
+    });
 
 -----------------
 ### <a name ="FASForum.UnlikeComment">FASForum.UnlikeComment</a>
@@ -333,17 +275,10 @@ Remove like on a comment.
 
 #### Example
 
-  {
-    ....
-    FASForum.UnlikeComment(comment.Id, OnUnlikeComment);
-  }
-
-  void OnUnlikeComment(Error error){
-
-    if(error != null)
+    FASForum.UnlikeComment(comment.Id, (error)=>
     {
-      Debug.LogError(error.ToString());
-      return;
-    }
-
-  }
+        if(error != null)
+        {
+            Debug.LogError(error.ToString());
+        }
+    });

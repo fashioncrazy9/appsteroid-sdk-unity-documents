@@ -39,8 +39,8 @@ Class to operate function related to Friend management.
 
 Get friend list of logged in user.
 
-  public static void GetAccountFriendList(Action<IList<Friend>, ListMeta, Error> callback)
-  public static void GetAccountFriendList(uint page, Action<IList<Friend>, ListMeta, Error> callback)
+    public static void GetAccountFriendList(Action<IList<Friend>, ListMeta, Error> callback)
+    public static void GetAccountFriendList(uint page, Action<IList<Friend>, ListMeta, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -54,8 +54,8 @@ Get friend list of logged in user.
 
 Get users friend list
 
-  public static void GetUserFriendList(string userId, Action<IList<Friend>, ListMeta, Error> callback)
-  public static void GetUserFriendList(string userId, uint page, Action<IList<Friend>, Error> callback)
+    public static void GetUserFriendList(string userId, Action<IList<Friend>, ListMeta, Error> callback)
+    public static void GetUserFriendList(string userId, uint page, Action<IList<Friend>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -68,7 +68,7 @@ Get users friend list
 
 Send friend request
 
-  public static void SendFriendshipRequest(string userId, Action<FriendshipRequest, Error> callback)
+    public static void SendFriendshipRequest(string userId, Action<FriendshipRequest, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -81,7 +81,7 @@ Send friend request
 
 Accept Friend Request
 
-  public static void AcceptFriendshipRequest(string userId, Action<FriendshipRequest, Error> callback)
+    public static void AcceptFriendshipRequest(string userId, Action<FriendshipRequest, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -94,7 +94,7 @@ Accept Friend Request
 
 Hide Friend Request
 
-  public static void HideFriendshipRequest(string userId, Action<FriendshipRequest, Error> callback)
+    public static void HideFriendshipRequest(string userId, Action<FriendshipRequest, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -107,8 +107,8 @@ Hide Friend Request
 
 Get list of users sending friend request
 
-  public static void GetFriendshipRequestingUsersList(string userId, Action<IList<Friend>, ListMeta, Error> callback)
-  public static void GetFriendshipRequestingUsersList(string userId, uint page, Action<IList<Friend>, Error> callback)
+    public static void GetFriendshipRequestingUsersList(string userId, Action<IList<Friend>, ListMeta, Error> callback)
+    public static void GetFriendshipRequestingUsersList(string userId, uint page, Action<IList<Friend>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -122,8 +122,8 @@ Get list of users sending friend request
 
 Get list of users receiving friend request
 
-  public static void GetFriendshipRequestedUsersList(string userId, Action<IList<Friend>, ListMeta, Error> callback)
-  public static void GetFriendshipRequestedUsersList(string userId, uint page, Action<IList<Friend>, Error> callback)
+    public static void GetFriendshipRequestedUsersList(string userId, Action<IList<Friend>, ListMeta, Error> callback)
+    public static void GetFriendshipRequestedUsersList(string userId, uint page, Action<IList<Friend>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -137,7 +137,7 @@ Get list of users receiving friend request
 
 Unfriend a friendship
 
-  public static void UnFriend(string userId, Action<Error> callback)
+    public static void UnFriend(string userId, Action<Error> callback)
 
 #### Parameters
 |Name|Type|Description|

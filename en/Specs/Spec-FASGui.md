@@ -34,6 +34,7 @@ Class to operate display GUI Scene. GUI will be load as a scene. Save the scene 
 |[FASGui.ShowMatchMakingGuiWithLogin](#FASGui.ShowMatchMakingGuiWithLogin)| Process logn with a specified user, specify matchmaking parameter and show matchmaking GUI.|
 |[FASGui.ShowLeaderboard](#FASGui.ShowLeaderboard)| Specify a leaderboard ID to show that leaderboard GUI.|
 
+
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
 
 Load a scene to show GUI. If isModal = ture, the scene will be loaded in stead of transition.
@@ -104,7 +105,6 @@ Specify a matchmaking parameter to show GUI for matchmaking.
 
     FASGui.ShowMatchMakingGui(minNumberOfPlaysers:2, maxNumberOfPlaysers: 4);
 
-
 ---
 ### <a name ="FASGui.ShowMatchMakingGuiWithLogin">FASGui.ShowMatchMakingGuiWithLogin</a>
 
@@ -134,7 +134,8 @@ Select matchmaking parameter and show matchmaking GUI.
 
 ### <a name ="FASGui.ShowLeaderboard">FASGui.ShowLeaderboard</a>
 
-Show leaderboard. If the argument isModal = true, the scene will be loaded without scene transition. If the user is not logged in, automatically login with the previous user ID.
+Show leaderboard. If the argument isModal = true, the scene will be loaded without scene transition.
+If the user is not logged in, automatically login with the previous user ID.
 
     public static void ShowLeaderboard(string leaderboardId, string returnSceneName = "", bool isModal = false, Action appSteroidModalGuiEnded = null)
 

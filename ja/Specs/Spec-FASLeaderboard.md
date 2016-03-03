@@ -51,7 +51,7 @@ last update at 2016/01/18
 
 リーダーボードの集計時間時刻のUTCオフセットを設定します。（デフォルト＝０）
 
-  public static void FASLeaderboard.SetTotalizationClockUtcOffset(int utcOffset)
+    public static void FASLeaderboard.SetTotalizationClockUtcOffset(int utcOffset)
 
 #### Parameters
 |Name|Type|内容|
@@ -189,7 +189,6 @@ last update at 2016/01/18
             //	エラー処理を行う
         }
     });
-
 
 ### <a name ="FASLeaderboard.GetUserScores">FASLeaderboard.GetUserScores</a>
 
