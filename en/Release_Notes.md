@@ -1,6 +1,31 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.1.4
+- Build error occur when a project is build in Xcode with Unity 5.3.3. Please wait for a patch release from Unity or use version under 5.3.1.
+
+- When a project is build in iOS, an error will occur in IL2CPP on Unity 5.3.2.  Please wait for the patch from Unity, use Unity 5.3.1 or version under 5.3.1.
+
+- Push notification with Unity 5.3.1 on iOS dosen't work properly.  Please wait for the fix by Unity or please use Unity 5.2.4 to use Push Notification.
+
+
+- New Feature
+    - Add button to transit users to the app store in video advertisement.
+    - Add an UI for CSR message, friend request, or hidden group when it does not exist. 
+    - Error dialog when an user is offline
+
+
+- Fixed issue
+    - Bug with like button in video player
+    - Minor graphic, UI fix
+    - Video player doesn't rotate in Android 5
+    - Text color bug in my profile editing page
+    - Touch screen doesn't work sometimes in Android when Unity 5.3.x is used.
+    
 ## 1.1.3
+- When a project is build in iOS, an error will occur in IL2CPP on Unity 5.3.2.  Please wait for the patch from Unity, use Unity 5.3.1 or version under 5.3.1.
+
+- Push notification with Unity 5.3.1 on iOS dosen't work properly.  Please wait for the fix by Unity or please use Unity 5.2.4 to use Push Notification.
+
 - Fixed
     - Miss count on advertisement analysis function
     - Text sticks out from the message balloon on iPhone5 and 5S.
