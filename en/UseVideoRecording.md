@@ -2,6 +2,8 @@
 last update at　2015/11/04
 
 ----------
+This settings is for apps with video recording implemented. If you do not decide to use video recording, you do not have to apply any changes described below.
+
 Please see [Spec-FASPlayVideo](Specs/Spec-FASPlayVideo.md) for more details about functions in the sample code.
 
 ## Graphics API Settings
@@ -10,9 +12,11 @@ AppSteroid currently support video recording with Open GL ES 3.0.
 Please set Player Setting -> Other Settings -> Graphics API to Open GL ES 3.0.
 
 - Unity 4.6.*
+
 ![](Images/VideoRecordingSetting.png)
 
-- Unity 5.1.*
+- Unity 5.2.4 and later
+
 ![](Images/VideoRecordingSettingUnity5.png)
 
 ## Steps After the Build
@@ -28,7 +32,7 @@ to
 
 FALSE --> TRUE.
 
-### On Unity 5.1.*
+### With Unity 5.2.4 and later
 In the generated Xcode project, in `GLESHelper. mm` file, find the following code,
 
     if(surface->allowScreenshot && UnityIsCaptureScreenshotRequested())

@@ -96,7 +96,7 @@ Show GUI to share the latest recorded video
 ### <a name ="FASPlayVideo.LatestVideoExists">FASPlayVideo.LatestVideoExists</a>
 Check whether the recorded video exists or not
 
-  public static bool LatestVideoExists()
+    public static bool LatestVideoExists()
 
 #### Return
 |Type|Description|
