@@ -12,8 +12,7 @@ last update at　2015/10/02
 Class to operate record, play and upload game play video.
 
 **AppSteroid currently support Open GL ES 3.0 for recording function.
-If you are using Unity 4.6.2p2 or later, go to Player Setting -> Other Settings and change the Graphics API to Open GL ES 3.0.
-**
+If you are using Unity 4.6.2p2 or later, go to Player Setting -> Other Settings and change the Graphics API to Open GL ES 3.0.**
 
 
 ![](../Images/VideoRecordingSetting.png)
@@ -49,15 +48,21 @@ If you allow the screen to rotate during game play, you must initialize the func
 
     public static bool InitializeRecording()
 
+
 #### Return
 |Type|Description|
 |------|-----|
 |bool| Success and failure of initializing video recording |
 
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|withAudio|bool|Select whether to record with audio or not. default is true.|
+
 ### <a name ="FASPlayVideo.StartRecording">FASPlayVideo.StartRecording</a>
 Start video recording. Video recording will stop if the length reaches the maximum time, or by calling `StopRecording`.  Recorded video will be saved in the app temporally storage area. Call `ShowLatestVideoSharingGUI` to upload the video on AppSteroid server after recording the game. Recorded video will automatically be deleted after closing the app.
 
-  public static bool StartRecording()
+    public static bool StartRecording()
 
 #### Return
 |Type|Description|
@@ -67,14 +72,14 @@ Start video recording. Video recording will stop if the length reaches the maxim
 ### <a name ="FASPlayVideo.StopRecording">FASPlayVideo.StopRecording</a>
 End video recording
 
-  public static void StopRecording()
+    public static void StopRecording()
 
 ### <a name ="FASPlayVideo.ShowLatestVideoSharingGUI">FASPlayVideo.ShowLatestVideoSharingGUI</a>
 Show GUI to share the latest recorded video
 
-  public static bool ShowLatestVideoSharingGUI(string returnSceneName)
-
-  public static bool ShowLatestVideoSharingGUI(string returnSceneName, Action guiEndedCallback)
+    public static bool ShowLatestVideoSharingGUI(string returnSceneName)
+    public static bool ShowLatestVideoSharingGUI(string returnSceneName, Action guiEndedCallback)
+    public static bool ShowLatestVideoSharingGUI(string returnSceneName, Action guiEndedCallback, bool sceneTransition)
 
 #### Return
 |Type|Description|
@@ -86,7 +91,7 @@ Show GUI to share the latest recorded video
 |------|------|-----|
 |returnSceneName| string | Scene name to return when the GUI screen ends. If no scene is set, it will return to the caller scene. |
 |guiEndedCallback| Action | GUI is called at the end. Video share and upload will be shown on uGUI.  If you are preforming an operation other than legacy GUI or uGUI under modal GUI of uGUI, please use it to suppress the game input process until the callback is called. |
-
+|sceneTransition| bool | Select whether to transit to AppSteroid GUI after video share is completed. (Default = true). If it is set to true, completion GUI apeares and user will have a choice to transit to the AppSteroid community. If it is set to false, completion dialog will be shown without a choice for the user to transit to the AppSteroid community.|
 
 ### <a name ="FASPlayVideo.LatestVideoExists">FASPlayVideo.LatestVideoExists</a>
 Check whether the recorded video exists or not
@@ -102,28 +107,27 @@ Check whether the recorded video exists or not
 ### <a name ="FASPlayVideo.IsRecording">FASPlayVideo.IsRecording</a>
 Get status for video recording
 
-  public static bool IsRecording()
+    public static bool IsRecording()
 
 #### Return
 |Type|Description|
 |------|-----|
 |bool| true = recording video |
 
-
 ### <a name ="FASPlayVideo.SetMaxRecordingSecondsLength">FASPlayVideo.SetMaxRecordingSecondsLength</a>
 Set maximum length for video recording in second. Maximum length must be under 30 second.
 
-  public static void SetMaxRecordingSecondsLength(float sec)
+    public static void SetMaxRecordingSecondsLength(float sec)
 
 ### <a name ="FASPlayVideo.GetMaxRecordingSecondsLength">FASPlayVideo.GetMaxRecordingSecondsLength</a>
 Get maximum length for video recording (sec)
 
-  public static float GetMaxRecordingSecondsLength()
+    public static float GetMaxRecordingSecondsLength()
 
 ### <a name ="FASPlayVideo.GetLatestRecordedVideoPath">FASPlayVideo.GetLatestRecordedVideoPath</a>
 Get pass for the latest recorded video
 
-  public static string GetLatestRecordedVideoPath()
+    public static string GetLatestRecordedVideoPath()
 
 #### Return
 |Type|Description|

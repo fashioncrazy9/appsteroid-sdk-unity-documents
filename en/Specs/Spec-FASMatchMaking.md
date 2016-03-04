@@ -10,6 +10,7 @@ This is a specification for function related to matchmaking feature.
 With this feature, players will be able to find other players to play within the game.
 AppSteroid also provide a matchmaking GUI for implementation. please check the document, [Use MatchMaking](../Use MatchMaking.md), for detail.
 
+
 ---
 
 ## Sequence
@@ -80,15 +81,15 @@ Create a matchmake request
 
 Matchmaking will be accepted even after the time out seconds, only if participants reaches the minimum requested number. FASEvent.OnMatchMakingMatchCompleted will be triggered when the match was accepted. If the match is denied, the request is canceled.
 
-  public static void CreateMatchMakingRequest(Action<MatchMakingRequest, Error> callback)
-  public static void CreateMatchMakingRequest(uint? minNumberOfPlaysers, Action<MatchMakingRequest, Error> callback)
-  public static void CreateMatchMakingRequest(string[] inviteUsers, Action<MatchMakingRequest, Error> callback)
-  public static void CreateMatchMakingRequest(string invitationMessage, Action<MatchMakingRequest, Error> callback)
-  public static void CreateMatchMakingRequest(string invitationMessage, string segment, Action<MatchMakingRequest, Error> callback)
-  public static void CreateMatchMakingRequest(string[] inviteUsers, string invitationMessage, Action<MatchMakingRequest, Error> callback)
-  public static void CreateMatchMakingRequest(string[] inviteUsers, string invitationMessage, string segment, Action<MatchMakingRequest, Error> callback)
-  public static void CreateMatchMakingRequest(uint? minNumberOfPlaysers, string[] inviteUsers, string invitationMessage, string segment, Action<MatchMakingRequest, Error> callback)
-  public static void CreateMatchMakingRequest(uint? minNumberOfPlaysers, uint? maxNumberOfPlaysers, string[] inviteUsers, string invitationMessage, string segment, Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(uint? minNumberOfPlaysers, Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(string[] inviteUsers, Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(string invitationMessage, Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(string invitationMessage, string segment, Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(string[] inviteUsers, string invitationMessage, Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(string[] inviteUsers, string invitationMessage, string segment, Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(uint? minNumberOfPlaysers, string[] inviteUsers, string invitationMessage, string segment, Action<MatchMakingRequest, Error> callback)
+    public static void CreateMatchMakingRequest(uint? minNumberOfPlaysers, uint? maxNumberOfPlaysers, string[] inviteUsers, string invitationMessage, string segment, Action<MatchMakingRequest, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -100,11 +101,13 @@ Matchmaking will be accepted even after the time out seconds, only if participan
 |invitationMessage|string|(Optional)invitation message|
 |segment|string|(Optional)match segment.|
 
+
+
 ### <a name ="FASMatchMaking.CancelMatchMakingRequest">FASMatchMaking.CancelMatchMakingRequest</a>
 
 Cancel a matchmake request
 
-  public static void CancelMatchMakingRequest(string requestId, Action<Error> callback)
+    public static void CancelMatchMakingRequest(string requestId, Action<Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -116,7 +119,7 @@ Cancel a matchmake request
 
 Get Matchmake request
 
-  public static void GetMatchMakingRequest(Action<MatchMakingRequest, Error> callback)
+    public static void GetMatchMakingRequest(Action<MatchMakingRequest, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -128,7 +131,7 @@ Get Matchmake request
 
 Accept invitation for matchmake request
 
-  public static void AcceptMatchMakingInvitation(string requestId, Action<MatchMakingRequest, Error> callback)
+    public static void AcceptMatchMakingInvitation(string requestId, Action<MatchMakingRequest, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -140,7 +143,7 @@ Accept invitation for matchmake request
 
 Get a match with a specified ID.
 
-  public static void GetMatch(string matchId, Action<Match, Error> callback)
+    public static void GetMatch(string matchId, Action<Match, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -153,8 +156,8 @@ Get a match with a specified ID.
 
 Get list of matches
 
-  public static void GetMatchList(Action<IList<Match>, Error> callback)
-  public static void GetMatchList(uint page, Action<IList<Match>, Error> callback)
+    public static void GetMatchList(Action<IList<Match>, Error> callback)
+    public static void GetMatchList(uint page, Action<IList<Match>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -167,7 +170,7 @@ Get list of matches
 
 Join a Match
 
-  public static void JoinMatch(string matchId, Action<MatchMakingRequest, Error> callback)
+    public static void JoinMatch(string matchId, Action<MatchMakingRequest, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -180,7 +183,7 @@ Join a Match
 
 Get game context.
 
-  public static void GetGameContext(string matchId, Action<GameContext, Error> callback)
+    public static void GetGameContext(string matchId, Action<GameContext, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -194,10 +197,10 @@ Get game context.
 
 Update (recreate) a game context.
 
-  public static void UpdateGameContext(string matchId, string json, uint updatedCount, Action<GameContext, Error> callback)
-  public static void UpdateGameContext(string matchId, string json, string nextPlayerId, Action<GameContext, Error> callback)
-  public static void UpdateGameContext(string matchId, string json, Action<GameContext, Error> callback)
-  public static void UpdateGameContext(string matchId, string json, string nextPlayerId, uint? updatedCount, Action<GameContext, Error> callback)
+    public static void UpdateGameContext(string matchId, string json, uint updatedCount, Action<GameContext, Error> callback)
+    public static void UpdateGameContext(string matchId, string json, string nextPlayerId, Action<GameContext, Error> callback)
+    public static void UpdateGameContext(string matchId, string json, Action<GameContext, Error> callback)
+    public static void UpdateGameContext(string matchId, string json, string nextPlayerId, uint? updatedCount, Action<GameContext, Error> callback)
 
 #### Parameters
 |Name|Type|Description|

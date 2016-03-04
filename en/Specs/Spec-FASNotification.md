@@ -34,6 +34,7 @@ PushNotification Settings
 Register PushNotification
 
     public static void RegisterRemoteNotification(Action<Error> callback)
+    public static void RegisterRemoteNotification(Action<NotificationRegistryInformation, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -59,6 +60,7 @@ Register PushNotification
 Unregister PushNotification
 
     public static void UnregisterRemoteNotification(Action<Error> callback)
+    public static void UnregisterRemoteNotification(Action<NotificationRegistryInformation, Error> callback)
 
 #### Parameters
 |Name|Type|Description|

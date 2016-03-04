@@ -26,6 +26,7 @@ Model Class for each Data
 |Fresvii.AppSteroid.Models|[Match](#Match)|Match model class |
 |Fresvii.AppSteroid.Models|[MatchMakingInvitation](#MatchMakingInvitation)|MatchMakingInvitation model class |
 |Fresvii.AppSteroid.Models|[MatchMakingRequest](#MatchMakingRequest)|MatchMakingRequest model class |
+|Fresvii.AppSteroid.Models|[NotificationRegistryInformation](#NotificationRegistryInformation)|Push notification device token info registration class|
 |Fresvii.AppSteroid.Models|[ListMeta](#ListMeta)|ListMeta model class |
 |Fresvii.AppSteroid.Models|[Player](#Player)|Player model class |
 |Fresvii.AppSteroid.Models|[Rank](#Rank)|Rank model class |
@@ -35,7 +36,6 @@ Model Class for each Data
 |Fresvii.AppSteroid.Models|[User](#UserClass)|User model class |
 |Fresvii.AppSteroid.Models|[GameEvent](#GameEventClass)| Game event model class|
 |Fresvii.AppSteroid.Models|[Eventboard](#EventboardClass)| Eventboard model class|
-
 
 ----------
 ----------
@@ -285,6 +285,17 @@ Matchmaking request Class
 |List\<MatchMakingInvitation>|Invitations|List of invitation|
 
 --------------------------
+## <a name ="NotificationRegistryInformation">NotificationRegistryInformation Class</a>
+
+Push notification device token info registration class
+
+### Properties
+|Type|Name|Description|
+|---|---|---|
+|System.DateTime|CreatedAt|Created date/time|
+|System.DateTime|UpdatedAt|Updated date/time|
+|CertificateTypes|CertificateType|Certificate type (Development or Production) ※Only for iOS|
+
 ## <a name ="Rank">Rank Class</a>
 
 Class for Rank data

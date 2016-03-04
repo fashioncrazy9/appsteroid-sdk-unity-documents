@@ -1,6 +1,5 @@
 # FASUser Specifications
 
-
 ----------
 
 ## Introduction
@@ -42,7 +41,15 @@ Basic settings and user setting class
 Creates an user associated with the app. The result is returned by the callback with the arguments of User and Error. The created user ID is encrypted and saved in the local storage.
 For the behavior of when an user name is not setup, or when an `userName` is `null` or empty, please check the "[name duplication](../DuplicatedUserName.md)" document.
 
+    ```C#
+    public static void SignUp(Action<User, Error> callback)
     public static void SignUp(string userName, Action<User, Error> callback)
+    public static void SignUp(string userName, string description, Action<User, Error> callback)
+    public static void SignUp(string userName, Texture2D profileImage, Action<User, Error> callback)
+    public static void SignUp(string userName, string description, Texture2D profileImage, Action<User, Error> callback)
+        
+
+```
 
 #### Parameters
 |Name|Type|Description|
@@ -60,28 +67,24 @@ For the behavior of when an user name is not setup, or when an `userName` is `nu
 
 #### Examples
 
-    {
-        ....
-        FASUser.SignUp(”username”, "description",  profileImage,  OnSignUp);
-    }
-
-    void OnSignUp(User user, Error error)
+    FASUser.SignUp(”username”, "description",  profileImage,  (user, error)=>
     {
         if (error != null)
         {
             Debug.LogError(error.ToString());
-            return;
         }
-
-        Debug.Log(user.name + ", " + user.friend_code + ", " + user.id + ", " + user.created_at + ", " + user.updated_at);
-    }
+        else
+        {       
+            Debug.Log(user.name + ", " + user.friend_code + ", " + user.id + ", " + user.created_at + ", " + user.updated_at);
+        }
+    });
 
 -----------------
 ### <a name ="FASUser.LogIn">FASUser.LogIn</a>
 Gets a session token necessary for the user created with SignUp to perform an operation. The acquired access token is retained in the SDK. The result is returned by the callback with the argument of Error.
 
-  public static void LogIn(string userId, string userToken, Action<Error> callback)
-  public static void LogIn(string userId, string userToken, int lifeTime, Action<Error> callback)
+    public static void LogIn(string userId, string userToken, Action<Error> callback)
+    public static void LogIn(string userId, string userToken, int lifeTime, Action<Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -93,19 +96,13 @@ Gets a session token necessary for the user created with SignUp to perform an op
 
 #### Example
 
-  FASUser.LogIn((error)=>
-  {
-    if (error != null)
+    FASUser.LogIn((error)=>
     {
-      Debug.LogError(error.ToString());
-
-      return;
-    }
-
-    string logMessage = FASUser.Instance.Client.AccessToken.Token + ", " +  FASUser.Instance.Client.AccessToken.ExpiresAt;
-
-    Debug.Log(logMessage);
-  });
+        if (error != null)
+        {
+            Debug.LogError(error.ToString());
+        }            
+    });
 
 -----------------
 ### <a name ="FASUser.LogOut">FASUser.LogOut</a>
@@ -115,13 +112,8 @@ Log out
 
 #### Example
 
-  {
-    .....
-
     FASUser.LogOut();
-    .....
-  }
-
+    
 -----------------
 ### <a name ="FASUser.LoadSignedUpUsers">FASUser.LoadSignedUpUsers</a>
 Gets the list of signed up users. Only ID and token are stored in the device.
@@ -129,15 +121,12 @@ Gets the list of signed up users. Only ID and token are stored in the device.
     public static List<User> LoadSignedUpUsers()
 
 #### Example
-
-  {
     List<User> users = FASUser.LoadSignedUpUsers();
-
+    
     if (users.Count > 0)
     {
-      currentUser = users[users.Count - 1];
+        currentUser = users[users.Count - 1];
     }
-  }
 
 -----------------
 ### <a name ="FASUser.GetSnsAccountList">FASUser.GetSnsAccountList</a>
@@ -153,34 +142,19 @@ Get the list of SNS authentication information linked to each registered user. T
 
 #### Example
 
-  {
-    FASUser.GetSnsAccountList(OnGetSnsAccountList);
-  }
-
-  void OnGetSnsAccountList(IList<SnsAccount> snsAccountList, Error error)
-  {
-    if (error != null)
+    FASUser.GetSnsAccountList(snsAccountList, error)=>
     {
-      Debug.LogError(error.ToString());
-
-      return;
-    }
-
-    stringlogMessage = "";
-
-    foreach (SnsAccount snsAccount in snsAccountList)
-      logMessage += snsAccount.Id + ", " + snsAccount.Provider + ", " + snsAccount.Uid + ", " + snsAccount.CreatedAt + ", " +
-
-    snsAccount.UpdatedAt + "\n";
-
-    Debug.Log(logMessage);
-  }
+        if (error != null)
+        {
+            Debug.LogError(error.ToString());
+        }
+    });
 
 -----------------
 ### <a name ="FASUser.SetSnsAccount">FASUser.SetSnsAccount</a>
 Save the uid, identifies users in the SNS, acquired through SNS authentication and SNS service name associating with signed in user. The result is returned by the callback with the arguments of SnsAccount and Error.
 
-  public static void SetSnsAccount(string uid, string provider, Action<SnsAccount, Error> callback)
+    public static void SetSnsAccount(string uid, string provider, Action<SnsAccount, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -191,30 +165,19 @@ Save the uid, identifies users in the SNS, acquired through SNS authentication a
 |callback|Action<SnsAccount, Error>|Delegate to be called after the process|
 
 #### Example
-
-    {
-        ....
-        FASUser.SetSnsAccount("1111", "facebook", "abcdefghijklmn", OnSetSnsAccount);
-    }
-
-    void OnSetSnsAccount(SnsAccount snsAccount, Error error)
+    FASUser.SetSnsAccount("1111", "facebook", "abcdefghijklmn", (snsAccount, error)=>
     {
         if (error != null)
         {
-            logMessage = error.ToString();
-            Debug.LogError(logMessage);
-            return;
-        }
-
-        string logMessage = snsAccount.Id + ", " + snsAccount.Provider + ", " + snsAccount.Uid + ", " + snsAccount.CreatedAt + ", " + snsAccount.UpdatedAt;
-        Debug.Log(logMessage);
-    }
+            Debug.LogError(error.ToString());
+        }    
+    });
 
 -----------------
 ### <a name ="FASUser.DeleteSnsAccount">FASUser.DeleteSnsAccount </a>
 Delete the SNS authentication information specified by the id. The result is returned by the callback with the argument of Error.
 
-  public static void DeleteSnsAccount(string id, Action<Error> callback)
+    public static void DeleteSnsAccount(string id, Action<Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -222,23 +185,18 @@ Delete the SNS authentication information specified by the id. The result is ret
 |id|string|ID to identify the user in SNS|
 |callback|Action\<Error\>|Delegate to be called after process|
 
-#### Errors
-|Fresvii.AppSteroid.Models.Error.ErrorCode|内容|
-|------|------|-----|
-|NameHasAlredyBeenTaken|User name has already been taken (When signing up or changing user name)|
-
 #### Example
-  FASUser.SetSnsAccount("1111", "facebook", (error)=>
-  {
-    if (error != null)
+    FASUser.SetSnsAccount("1111", "facebook", (error)=>
     {
-      Debug.LogError(error.ToString());
-
-      return;
-    }
-
-    Debug.Log("Delete Success");
-  });
+        if (error != null)
+        {
+            Debug.LogError(error.ToString());
+        }
+        else
+        {        
+            Debug.Log("Delete Success");
+        }
+    });
 
 -----------------
 ### <a name ="FASUser.GetAccount">FASUser.GetAccount</a>
@@ -253,23 +211,17 @@ Get the signed in users status. The result is returned by the callback with the 
 
 #### Example
 
-    {
-        FASUser.GetAccount(OnGetAccount);
-    }
-
-    void OnGetAccount(User user, Error error)
+    FASUser.GetAccount((user, error)=>
     {
         if (error != null)
         {
             Debug.LogError(logMessage);
-
-            return;
         }
-
-        logMessage = user.Name + ", " + user.FriendCode + ", " + user.Id + ", " + user.CreatedAt + ", " + user.UpdatedAt;
-
-        Debug.Log(logMessage);
-    }
+        else
+        {        
+            Debug.Log(user.Name + ", " + user.FriendCode + ", " + user.Id + ", " + user.CreatedAt + ", " + user.UpdatedAt);
+        }
+    });
 
 -----------------
 ### <a name ="FASUser.PatchAccount">FASUser.PatchAccount</a>
@@ -285,25 +237,24 @@ Please also check the "[duplicated user name](../DuplicatedUserName.md)" documen
 |------|------|-----|
 |callback|Action\<Error\>|Delegate to be called after setting|
 
+#### Errors
+|Fresvii.AppSteroid.Models.Error.ErrorCode|Description|
+|------|------|-----|
+|NameHasAlredyBeenTaken|If the user name is already been taken|
+
 #### Example
 
+    FASUser.PatchAccount("username",　profileImage, (user, error)=>
     {
-        ....
-        FASUser.PatchAccount("username",　profileImage, OnPatchAccount);
-    }
-
-    void OnPatchAccount(User user, Error error)
-    {
-        if (error != null)
+         if (error != null)
         {
-            logMessage = error.ToString();
             Debug.LogError(logMessage);
-            return;
         }
-
-        logMessage = user.Name + ", " + user.FriendCode + ", " + user.Id + ", " + user.CreatedAt + ", " + user.UpdatedAt;
-        Debug.Log(logMessage);
-    }
+        else
+        {        
+            Debug.Log(user.Name + ", " + user.FriendCode + ", " + user.Id + ", " + user.CreatedAt + ", " + user.UpdatedAt);
+        }
+    });
 
 -----------------
 ### <a name ="FASUser.GetUser">FASUser.GetUser</a>
@@ -319,25 +270,17 @@ Get the users status specified by id. The result is returned by the callback wit
 
 #### Example
 
-    {
-        FASUser.GetUser(user.id, OnGetUser);
-    }
-
-    void OnGetUser(User user, Error error)
+    FASUser.GetUser(userId, (user, error)=>
     {
         if (error != null)
         {
-            logMessage = error.ToString();
-
             Debug.LogError(logMessage);
-
-            return;
         }
-
-        logMessage = user.Name + ", " + user.FriendCode + ", " + user.Id + ", " + user.CreatedAt + ", " + user.UpdatedAt;
-
-        Debug.Log(logMessage);
-    }
+        else
+        {        
+            Debug.Log(user.Name + ", " + user.FriendCode + ", " + user.Id + ", " + user.CreatedAt + ", " + user.UpdatedAt);
+        }
+    });
 
 
 -----------------
@@ -355,23 +298,17 @@ Get the user list specified by conditions. The result is returned by the callbac
 
 #### Example
 
-    {
-        FASUser.GetUser(user.id, OnGetUser);
-    }
-
-    void OnGetUserList(IList<User> users, Error error)
+    FASUser.GetUser(userId, (users, error)=>
     {
         if (error != null)
         {
             Debug.LogError(error.ToString());
-
-            return;
         }
-
-        logMessage = "";
-
-        foreach (User user in users)
-            logMessage += user.Name + ", " + user.FriendCode + ", " + user.Id + ", " + user.CreatedAt + ", " + user.UpdatedAt + "\n";
-
-        Debug.Log(logMessage);
-    }
+        else
+        {
+            foreach (User user in users)
+            {
+                Debug.Log(user.Name + ", " + user.FriendCode + ", " + user.Id + ", " + user.CreatedAt + ", " + user.UpdatedAt);
+            }
+        }
+    });

@@ -33,8 +33,8 @@ Class to operate Key-Value Storage.
 
 Get every Key-Value data from Key Value Store
 
-  public static void GetAllKeyValueData(Action<List<KeyValue>, Error> callback)
-  public static void GetAllKeyValueData(string prefix, Action<List<KeyValue>, Error> callback)
+    public static void GetAllKeyValueData(Action<List<KeyValue>, Error> callback)
+    public static void GetAllKeyValueData(string prefix, Action<List<KeyValue>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -46,7 +46,7 @@ Get every Key-Value data from Key Value Store
 
 Get all Key from Key Value Store
 
-  public static void GetAllKeys(Action<List<string>, Error> callback)
+    public static void GetAllKeys(Action<List<string>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -57,7 +57,7 @@ Get all Key from Key Value Store
 
 Save object to Key Value Store
 
-  public static void SetObjectForKey(object value, string key, Action<List<KeyValue>, Error> callback)
+    public static void SetObjectForKey(object value, string key, Action<List<KeyValue>, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -70,7 +70,7 @@ Save object to Key Value Store
 
 Get object to Key Value Store
 
-  public static void GetObjectForKey(string key, Action<object, Error> callback)
+    public static void GetObjectForKey(string key, Action<object, Error> callback)
 
 #### Parameters
 |Name|Type|Description|
@@ -82,7 +82,7 @@ Get object to Key Value Store
 
 Delete specific object from Key Value Store
 
-  public static void RemoveObjectForKey(string key, Action<Error> callback)
+    public static void RemoveObjectForKey(string key, Action<Error> callback)
 
 #### Parameters
 |Name|Type|Description|

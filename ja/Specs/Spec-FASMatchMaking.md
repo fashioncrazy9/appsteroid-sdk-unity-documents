@@ -49,7 +49,6 @@ last update at 2015/07/07
 ## <a name ="FASMatchMaking">FASMatchMaking Class</a>
 マッチメイキングに関連する操作をするクラスです。
 
-
 ----------
 
 ## Classes
