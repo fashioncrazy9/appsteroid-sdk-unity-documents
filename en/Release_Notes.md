@@ -1,5 +1,19 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.1.5
+- Build error occur when a project is build in Xcode with Unity 5.3.3. Please wait for a patch release from Unity or use version under 5.3.1.
+
+- When a project is build in iOS, an error will occur in IL2CPP on Unity 5.3.2.  Please wait for the patch from Unity, use Unity 5.3.1 or version under 5.3.1.
+
+- Push notification with Unity 5.3.1 on iOS dosen't work properly.  Please wait for the fix by Unity or please use Unity 5.2.4 to use Push Notification.
+
+- Fixed issue
+    - 51st comments and after on the forum thread will not be loaded.
+
+- Performance Improvements
+    - Forum thread GUI performance
+    - Show friends' ranking on the Leaderboard GUI
+
 ## 1.1.4
 - Build error occur when a project is build in Xcode with Unity 5.3.3. Please wait for a patch release from Unity or use version under 5.3.1.
 
