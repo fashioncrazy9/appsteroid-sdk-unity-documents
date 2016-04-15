@@ -1,6 +1,6 @@
 # FASGui Specifications
 
-last update at 2016/01/04
+last update at 2016/04/15
 
 ----------
 
@@ -169,9 +169,9 @@ GUIを表示するシーンをロードします。 引数として、isModal = 
 
 #### Example
 
-    string[] leaderboardOrderIds = 
-    {"50d8d7095ca940c6bce7dfdf1df80d44", 
-      "0c09e56de3a148d4806e263f01fa572d", 
+    string[] leaderboardOrderIds =
+    {"50d8d7095ca940c6bce7dfdf1df80d44",
+      "0c09e56de3a148d4806e263f01fa572d",
       "5c969d304dc543acac66fb4f552e13d9"};
 
     FASGui.SetLeaderboardsOrder(leaderboardOrderIds);

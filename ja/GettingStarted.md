@@ -16,14 +16,16 @@ AppIdとSecretKeyはWebコンソールより取得できます。詳しくは[We
 
 ![SetParametersInInspector](./Images/SetParametersInInspector.png)
 
+#### AppSteroid settings
 |Data|Type|Description|
 |-------|------|-----|
 |App Icon|Texture2D|アプリのアイコン画像（AppSteroid GUI で利用）|
 |App Id|string|（必須）Fresvii AppSteroid のアプリID|
 |Secret key|string|（必須）Fresvii AppSteroid のアプリシークレットキー|
 |Server Environment| Production or Development | サーバ環境を選択します。Prodction と Development の２つのデータベースが利用できます。 |
+|Log level|FASSettings.LogLevel|ログ出力レベル。{ Verbose, Warning, Error, None } のいずれかを選択。None の場合も必須のパラメータ入力漏れなどではエラーログ出力します。|
 
-#### AppSteroid GUI settings
+#### GUI settings
 |Data|Type|Description|
 |-------|------|-----|
 |GUI type| enum |Version1 / Legacy から選択します。ただし、Legacy は今後のアップデートはサポートされません。|
@@ -33,9 +35,16 @@ AppIdとSecretKeyはWebコンソールより取得できます。詳しくは[We
 |Bold font|Font|Bold font|
 |Extrabold font|Font|Extrabold font|
 |App Steroid GUI orientation| Orientation |AppSteroid の GUI のデバイスローテーションを設定します。|
-|CSR|bool|CSR（Live Help、カスタマーサポート）機能を利用するか、否か|
-|Log level|FASSettings.LogLevel|ログ出力レベル。{ Verbose, Warning, Error, None } のいずれかを選択。None の場合も必須のパラメータ入力漏れなどではエラーログ出力します。|
+
+#### Configurations
+|Data|Type|Description|
+|-------|------|-----|
 |Auto relogin silently on resume|bool|アプリ再開時に自動で再ログインを行うか、否か。|
+|Video feature|bool|ビデオの録画、投稿機能を利用するか、否か。ビデオ録画を利用する場合は、Graphic API = Open GL ES 3.0 を選択してください。|
+|CSR|bool|CSR（Live Help、カスタマーサポート）機能を利用するか、否か|
+|Only friend can send messages|bool|フレンドのみメッセージ送信可能か否かの設定。false の場合は誰からもメッセージを送信可能|
+|Only friend can show friend list|bool|フレンドのみユーザーのフレンドリストを表示可能か否かの設定。false の場合は誰でもフレンドリストを表示可能|
+|Only friend can show video list|bool|フレンドのみユーザーのビデオリストを表示可能か否かの設定。false の場合は誰でもビデオリストを表示可能|
 
 #### Push notification
 |Data|Type|Description|
@@ -46,7 +55,6 @@ AppIdとSecretKeyはWebコンソールより取得できます。詳しくは[We
 #### iOS Settings
 |Data|Type|Description|
 |-------|------|-----|
-|Video feature|bool|ビデオの録画、投稿機能を利用するか、否か。ビデオ録画を利用する場合は、Graphic API = Open GL ES 3.0 を選択してください。|
 |Initialize video recording|bool|アプリ起動時に自動で初期化処理を行うか、否か。|
 |Video recording with audio|bool|アプリ起動時に自動で初期化処理を行う場合、オーディオの録音を行うか、否か。|
 

@@ -1,12 +1,12 @@
 # プレイ動画録画の利用方法
-last update at　2015/11/04
+last update at　2016/04/15
 
 ----------
 以下はビデオ録画機能を利用する場合の設定です。ビデオ録画機能を利用を利用しない場合は下記の対応はすべて不要です。
 
 コード内での各機能の利用については、[Spec-FASPlayVideo](Specs/Spec-FASPlayVideo.md)をご参照ください。
 
-## Graphics API の設定
+## [iOSの場合] Graphics API の設定
 
 現在、AppSteroidでは Open GL ES 3.0 の録画機能に対応しています。
 Player Setting -> Other Settings -> Graphics API を Open GL ES 3.0 に設定してください。
@@ -30,30 +30,6 @@ Unityでビルド後のXcodeプロジェクトにて、`GLESHelper. mm` ファ�
 
     [NSNumber numberWithBool:TRUE], kEAGLDrawablePropertyRetainedBacking,
 
-### Unity 5.2.4 以降の場合
-Unityでビルド後のXcodeプロジェクトにて、`GLESHelper. mm` ファイルの下記の該当箇所を
-
-    if(surface->allowScreenshot && UnityIsCaptureScreenshotRequested())
-    {
-        GLint targetFB = surface->targetFB ? surface->targetFB : surface->systemFB;
-        UnityBindFramebuffer(kReadFramebuffer, targetFB);
-        UnityCaptureScreenshot();
-    }
-
-下記に書き換えてください。
-
-    if(surface->allowScreenshot)
-    {
-        GLint targetFB = surface->targetFB ? surface->targetFB : surface->systemFB;
-        UnityBindFramebuffer(kReadFramebuffer, targetFB);
-        _FASCaptureScreenshot();
-        if (UnityIsCaptureScreenshotRequested())
-            UnityCaptureScreenshot();
-    }
-
-また、`GLESHelper. mm` ファイルに以下を追加してください。
-
-    extern "C" void _FASCaptureScreenshot();
 
 ## ビデオ録画機能の初期化について
 ビデオ録画機能を利用する前に、[初期化処理](Specs/Spec-FASPlayVideo.md#FASPlayVideo.InitializeRecording)をする必要があります。
