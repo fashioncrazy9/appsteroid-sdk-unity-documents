@@ -33,6 +33,8 @@ GUI シーンの表示操作をするクラスです。
 |[FASGui.ShowMatchMakingGui](#FASGui.ShowMatchMakingGui)| マッチメイキングパラメータを指定してマッチメイキングGUIを表示します。|
 |[FASGui.ShowMatchMakingGuiWithLogin](#FASGui.ShowMatchMakingGuiWithLogin)| 指定したユーザーでログインを行い、マッチメイキングパラメータを指定してマッチメイキングGUIを表示します。|
 |[FASGui.ShowLeaderboard](#FASGui.ShowLeaderboard)| リーダーボードのIDを指定してリーダーボード GUI を表示します。|
+|[FASGui.SetLeaderboardsOrder](#FASGui.SetLeaderboardsOrder)|リーダーボードリストの表示順を設定します。|
+|[FASGui.ClearLeaderboardsOrder](#FASGui.ClearLeaderboardsOrder)|リーダーボードリストの表示順設定をクリアします。表示順はウェブコンソールの設定順になります。|
 
 
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
@@ -152,3 +154,30 @@ GUIを表示するシーンをロードします。 引数として、isModal = 
     string leaderboardId = "50d8d7095ca940c6bce7dfdf1df80d44";
 
     FASGui.ShowLeaderboard(leaderboardId);
+
+
+### <a name ="FASGui.SetLeaderboardsOrder">FASGui.SetLeaderboardsOrder</a>
+
+リーダーボードリストの表示順を設定します。
+
+            public static void SetLeaderboardsOrder(string[] leaderboardIds)
+
+#### Parameters
+|Name|Type|内容|
+|------|------|-----|
+|leaderboardIds|string[]|リーダーボードID。配列順で上から表示されます。|
+
+#### Example
+
+    string[] leaderboardOrderIds = 
+    {"50d8d7095ca940c6bce7dfdf1df80d44", 
+      "0c09e56de3a148d4806e263f01fa572d", 
+      "5c969d304dc543acac66fb4f552e13d9"};
+
+    FASGui.SetLeaderboardsOrder(leaderboardOrderIds);
+
+### <a name ="FASGui.SetLeaderboardsOrder">FASGui.SetLeaderboardsOrder</a>
+
+リーダーボードリストの表示順設定をクリアします。表示順はウェブコンソールの設定順になります。
+
+            public static void ClearLeaderboardsOrder()
