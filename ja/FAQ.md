@@ -3,7 +3,7 @@
 
 ----------
 #### <a name="UnityVersion"> Unity の対応バージョンはいくつですか？</a>
-AppSteroid が利用している Unity の API の対応バージョンは、4.7.1 # です。Pro は必要ありません。
+AppSteroid が利用している Unity の API の対応バージョンは、4.7.1 です。Pro は必要ありません。
 Unity 5 用をご利用になる場合は、Unity 5.2.4 以上をご利用ください。
 
 Mac OS El capitan をご利用の場合、Unity のバージョンによっては不具合があることが報告されています。
