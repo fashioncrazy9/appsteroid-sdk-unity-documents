@@ -6,9 +6,9 @@ Fresvii AppSteroid の各種機能を利用するために、AndroidManifest.xml
 
 その他のプラグインの利用などにより、独自のマニフェスト設定を行っていない場合は、AndroidManifest を自動生成することが可能です。
 
-Unityのメニューの Fresvii -> FASSetting のインスペクターにて、"Generate Android.manifest" ボタン押下により、　Plugins/Android/AndroidManifest.xml ファイルが生成されます。すでに、同名マニフェストファイルが存在する場合は、同名の旧ファイルは名称を変え同フォルダにバックアップされます。
+Unityのメニューの Fresvii -> FASSettings のインスペクターにて、"Generate Android.manifest" ボタン押下により、　Plugins/Android/AndroidManifest.xml ファイルが生成されます。すでに、同名マニフェストファイルが存在する場合は、同名の旧ファイルは名称を変え同フォルダにバックアップされます。
 
-自動生成時のアプリの Bundle Identifier と FASSetting のパラメータを参照して反映しますので、Bundle Identifier や FASSetting パラメータに変更を加えた場合は、再度　Manifest ファイルを生成してください。
+自動生成時のアプリの Bundle Identifier と FASSettings のパラメータを参照して反映しますので、Bundle Identifier や FASSetting パラメータに変更を加えた場合は、再度　Manifest ファイルを生成してください。
 
 ![](Images/AndroidManifestAutoGenerate.png)
 
