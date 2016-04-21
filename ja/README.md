@@ -33,6 +33,7 @@
 * [プッシュイベントについて](https://github.com/fresvii/appsteroid-documents/blob/master/ja/EventList.md)
 * [ユーザー名重複時の挙動に関して](ユーザー名重複時の挙動に関して.md)
 * [プレイ動画録画の利用方法](UseVideoRecording.md)
+* [ゲームタイトルでの通知バッジの利用方法](UseNotificationBadgeOnGameTitle.md)
 * [エラーコード仕様書](エラー仕様書.md)
 * [FAQ](FAQ.md)
 * [リリースノート](リリースノート.md)

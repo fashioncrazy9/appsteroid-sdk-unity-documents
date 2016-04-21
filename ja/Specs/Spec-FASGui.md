@@ -35,6 +35,8 @@ GUI シーンの表示操作をするクラスです。
 |[FASGui.ShowLeaderboard](#FASGui.ShowLeaderboard)| リーダーボードのIDを指定してリーダーボード GUI を表示します。|
 |[FASGui.SetLeaderboardsOrder](#FASGui.SetLeaderboardsOrder)|リーダーボードリストの表示順を設定します。|
 |[FASGui.ClearLeaderboardsOrder](#FASGui.ClearLeaderboardsOrder)|リーダーボードリストの表示順設定をクリアします。表示順はウェブコンソールの設定順になります。|
+|[FASGui.HasNotifications](#FASGui.HasNotifications)|通知の有無を取得します。|
+
 
 
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
@@ -180,4 +182,24 @@ GUIを表示するシーンをロードします。 引数として、isModal = 
 
 リーダーボードリストの表示順設定をクリアします。表示順はウェブコンソールの設定順になります。
 
-            public static void ClearLeaderboardsOrder()
+    public static void ClearLeaderboardsOrder()
+
+### <a name ="FASGui.HasNotifications">FASGui.HasNotifications</a>
+
+通知の有無を取得します。
+    
+    public static void HasNotifcations(Action<bool> callback)
+
+#### Parameters
+|Name|Type|内容|
+|------|------|-----|
+|callback|Action<bool>|通知の有無（ true / false ）を引数に呼び出されるコールバック|
+
+#### Example
+    Fresvii.AppSteroid.FASGui.HasNotifcations((hasNotifications) =>
+    {
+        if (hasNotifications)
+        {
+            //  Has notification 通知がある場合の処理
+        }
+    });
