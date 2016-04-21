@@ -136,3 +136,16 @@ AppSteroid v1.0.9 以下の利用もしくはアップデート時に、iTween �
     CommandInvokationFailure: Failed to re-package resources. See the Console for details.
 
 アセットのインポートが正常に行われなかった可能性があります。Unity のAsset フォルダの右クリックメニューから `Reimport All` を試してください。
+
+#### ユーザーが名前を編集できないようにしたい。どうしたよいですか？
+以下の２つの手順を行うことで、ユーザーが自由に名前を編集できないようにすることが可能です。
+
+1. **AppSteroid にて、ユーザー名の自動生成および編集を禁止する**
+ Webコンソールのアプリの設定にて、"Settings" -> "User Default Settings" -> "Disable User Name generation" をチェックオンにしてください。チェックオンの場合は、自動でユーザー名を生成しないようになります。
+
+2. **SDKのAPIを用いて、ユーザー名を生成または編集する**
+　次のAPIを利用して、「名前をつけてサインアップ」します。もしくは既存のユーザー名を変更する場合は「ログインしているユーザー情報を編集」してください。
+    - [名前をつけてサインアップする](https://github.com/fresvii/appsteroid-sdk-unity-documents/blob/master/ja/Specs/Spec-FASUser.md#FASUser.SignUp)
+    - [ログインしているユーザー情報を編集する ](https://github.com/fresvii/appsteroid-sdk-unity-documents/blob/master/ja/Specs/Spec-FASUser.md#fasuserpatchaccount)
+
+また、ユーザー名の自動生成については[こちら](https://github.com/fresvii/appsteroid-documents/blob/master/ja/UserNameGeneration.md)を参照してください。
