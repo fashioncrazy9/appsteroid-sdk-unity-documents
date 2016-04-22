@@ -32,11 +32,9 @@ AppSteroid v1.0.10 にて、ボイスチャット機能は廃止されました�
 保存した`FASSettings.asset`を元のフォルダに戻すか、上書きしてください。
 7. ボイスチャット「なし」に変更した場合、カスタム コンパイル フラグ「GROUP_CONFERENCE」の定義を削除してください。
 
-ボイスチャット機能の「あり」→「なし」の AppSteroid SDK の変更を行った場合、FASSettigns.asset を元のフォルダに戻したときに、設定ファイルが正常に認識されず、設定情報が初期状態になってしまうことが稀にあります。
-この症状が起こってしまった場合には、お手数ですが Fresvii->FASSettings のメニューより設定情報を再度入力ください。
 
 ## インポート直後にエラーが出た場合
- 
+
 ### Unity 5 でインポート直後にエラーが出た場合
 
     Assets/Fresvii/AppSteroid/Scripts/FASSettings.cs(9,32): error CS0433: The imported type `Fresvii.AppSteroid.FASConfig' is defined multiple times
@@ -65,7 +63,7 @@ Unity 5 にて、unitypackage からアセットがインポートされたと�
     UnityEngine.Material.set_color (Color value) (at C:/buildslave/unity/build/artifacts/generated/common/runtime/ShaderBindings.gen.cs:183)
     Fresvii.AppSteroid.Gui.FresviiGUIThreadCard.Draw (Single cardWidth) (at Assets/Fresvii/AppSteroid/GUI/Scripts/FresviiGUIThreadCard.cs:878)
     Fresvii.AppSteroid.Gui.FresviiGUIForum.OnGUI () (at Assets/Fresvii/AppSteroid/GUI/Scripts/FresviiGUIForum.cs:843)
-    
+
 Prefab のリンクが切れて、一部のマテリアルが null になっている可能性があります。Unity 5 を利用している場合は、Unityを 5.0.1 以上にアップデートいただくと修正される場合があります。さらに不具合がある場合は、下記の手順を行ってください。
 
 1. **<span style="color:red">作業の前にプロジェクトのバックアップを行ってください。</span>**

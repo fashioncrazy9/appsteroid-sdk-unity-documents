@@ -133,6 +133,19 @@ last update at 2014/10/29
 |callback| Action\<IList\<Friend>, ListMeta, Error>|ユーザー一覧取得処理完了時に、Friend モデルリスト、メタ情報、エラー情報を引数に呼び出されるデリゲート|
 
 ----------
+### <a name ="FASFriendship.GetHiddenFriendshipRequestedUsersList">FASFriendship.GetHiddenFriendshipRequestedUsersList</a>
+
+隠したフレンドリクエスト一覧を取得します
+
+    public static void GetHiddenFriendshipRequestedUsersList(uint page, Action<IList<Friend>, Error> callback)
+
+#### Parameters
+|Name|Type|内容|
+|------|------|-----|
+|page| uint |ページ番号|
+|callback| Action\<IList\<Friend>, ListMeta, Error>|ユーザー一覧取得処理完了時に、Friend モデルリスト、メタ情報、エラー情報を引数に呼び出されるデリゲート|
+
+----------
 ### <a name ="FASFriendship.UnFriend">FASFriendship.UnFriend</a>
 
 フレンド状態を解除します。

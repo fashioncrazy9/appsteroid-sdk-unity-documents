@@ -7,11 +7,10 @@ last update at　2015/10/21
 ## Introduction
 
 ## <a name ="FASPlayVideo">FASPlayVideo Class</a>
-**<font color='red'>このクラスは、Ver.1.1.2 現在、iOS のみ利用可能です。Android は未対応です。</font>**
 
 ゲームプレイビデオの録画、再生、アップロードなどを操作するクラスです。
 
-**現在、AppSteroidでは Open GL ES 3.0 の録画機能に対応しています。
+**現在、AppSteroid iOS では Open GL ES 3.0 の録画機能に対応しています。
 Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings -> Graphics API を Open GL ES 3.0 に設定してください。**
 
 
@@ -34,7 +33,6 @@ Unity 4.6.2p2 以降をご利用の場合は、Player Setting -> Other Settings 
 |[FASPlayVideo.StartRecording](#FASPlayVideo.StartRecording)| ビデオ録画を開始する|
 |[FASPlayVideo.StopRecording](#FASPlayVideo.StopRecording)| ビデオ録画を終了する|
 |[FASPlayVideo.ShowLatestVideoSharingGUIWithUGUI](#FASPlayVideo.ShowLatestVideoSharingGUIWithUGUI)| 録画した最新ビデオをシェアするGUIを表示する。UGUIの上にダイアログを表示する。 |
-|[FASPlayVideo.ShowLatestVideoSharingGUIWithLegacyGUI](#FASPlayVideo.ShowLatestVideoSharingGUIWithLegacyGUI)|録画した最新ビデオをシェアするGUIを表示する。LegacyGUIの上にダイアログを表示する。|
 |[FASPlayVideo.LatestVideoExists](#FASPlayVideo.LatestVideoExists)| 録画したビデオが存在するか確認する |
 |[FASPlayVideo.SetMaxRecordingSecondsLength](#FASPlayVideo.SetMaxRecordingSecondsLength)| ビデオ録画を最大時間（秒）を設定する|
 |[FASPlayVideo.GetMaxRecordingSecondsLength](#FASPlayVideo.GetMaxRecordingSecondsLength)| ビデオ録画を最大時間（秒）を取得する|

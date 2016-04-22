@@ -191,6 +191,17 @@ last update at 2015/07/07
 |matchId|string|マッチID|
 |callback|Action<GameContext, Error> |ゲームコンテクスト取得完了時に GameContext, Error を引数に呼び出されるデリゲート|
 
+### <a name ="FASMatchMaking.DisposeMatch">FASMatchMaking.DisposeMatch</a>
+
+マッチを破棄します。
+
+     public static void DisposeMatch(string matchId, Action<Fresvii.AppSteroid.Models.Match, Fresvii.AppSteroid.Models.Error> callback)
+
+#### Parameters
+|Name|Type|内容|
+|------|------|-----|
+|matchId|string|マッチID|
+|callback|Action<Match, Error> |マッチ破棄処理完了時に Match, Error を引数に呼び出されるデリゲート|
 
 
 ### <a name ="FASMatchMaking.UpdateGameContext">FASMatchMaking.UpdateGameContext</a>
