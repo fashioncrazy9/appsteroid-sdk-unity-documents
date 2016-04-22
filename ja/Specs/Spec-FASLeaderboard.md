@@ -1,6 +1,6 @@
 # FASLeaderboard Specifications
 
-last update at 2016/01/18
+last update at 2016/04/22
 
 ----------
 
@@ -32,6 +32,7 @@ last update at 2016/01/18
 |[FASLeaderboard.ReportScore](#FASLeaderboard.ReportScore)| スコアを送信します。|
 |[FASLeaderboard.GetScore](#FASLeaderboard.GetScore)| スコアを取得します。|
 |[FASLeaderboard.DeleteScore](#FASLeaderboard.DeleteScore)| スコアを削除します。|
+|[FASLeaderboard.GetNumberOfPlayers](#FASLeaderboard.GetNumberOfPlayers)| リーダーボードにスコアのあるのプレイヤー数を取得します。|
 |[FASLeaderboard.GetUserScores](#FASLeaderboard.GetUserScores)| 指定したリーダーボードの指定したユーザーのスコア一覧を取得します。|
 |[FASLeaderboard.GetRanking](#FASLeaderboard.GetRanking)|スコア一覧を取得します。|
 |[FASLeaderboard.GetUserRank](#FASLeaderboard.GetUserRank)|ユーザーのランクを取得します。|
@@ -189,6 +190,37 @@ last update at 2016/01/18
             //	エラー処理を行う
         }
     });
+
+### <a name ="FASLeaderboard.GetNumberOfPlayers">FASLeaderboard.GetNumberOfPlayers</a>
+
+  リーダーボードにスコアのあるのプレイヤー数を取得します。
+
+        public static void GetNumberOfPlayers(string leaderboardId, FASLeaderboard.Period period, bool onlyFriends, Action<int> callback)
+
+#### Parameters
+|Name|Type|内容|
+|------|------|-----|
+|leaderboardId|string|リーダーボードのID|
+|period|FASLeaderboard.Period|集計期間|
+|onlyFriends|bool|フレンドのみの場合　true, 全プレイヤーの場合 false|
+|callback|Action < int >|該当リーダーボードのプレイヤー数を返すコールバック。エラー発生時には -1 を返す。|
+
+#### Example
+
+    FASLeaderboard.GetNumberOfPlayers(leaderboardId, Period.Whole, false, (numberOfPlayers)=>
+    {
+        if(numberOfPlayers < 0)
+        {
+            Debug.LogError("Error");
+        }
+        else
+        {
+            Debug.Log("Number of players = " + numberOfPlayers);
+        }
+    });
+
+
+
 
 ### <a name ="FASLeaderboard.GetUserScores">FASLeaderboard.GetUserScores</a>
 
