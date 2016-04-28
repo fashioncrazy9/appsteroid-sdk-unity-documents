@@ -5,8 +5,19 @@
 
 #### Which versions of Unity are supported?
 
-The supported versions of Unity are 4.6.9 and later. Unity Pro is not required.
-If you are using Unity 5, please use version 5.1.3 or higher. However, there are many existing problems found on Unity 5.2.​*. today. Please avoid using Unity 5.2.*​. 10/20/2015
+The supported versions of Unity API is 4.7.1. Unity Pro is not required.
+If you are using Unity 5, please use version 5.2.4 or higher. Please use AppSteroid SDK package for Unity 5.3.​x, if Unity 5.3.x is been used. 04/27/2016
+
+##### Supported version of Unity in AppSteroid v1.2.0
+|Unity Version|iOS|Android|
+|-----|-----|-----|
+|4.7.1|○|○|
+|5.2.4|○|○|
+|5.3.4|○|○|
+
+#### What is the supported version of the platform?
+iOS 8.1 and higher. Android 4.0.4 and higher is recommended.
+We will be supporting Android 6.0 Marshmallow soon. 04/27/2016
 
 #### What do I need to do to update the AppSteroid SDK?
 Please check [Updating the SDK](Updating AppSteroidSDK.md) for instructions.
@@ -49,7 +60,6 @@ to:
 
     [NSNumber numberWithBool:TRUE], kEAGLDrawablePropertyRetainedBacking,
 
-
 #### Screen transition is very slow when loading a new scene. Any solution to speed it up?
 
 AppSteroid for Unity do provide a method to speed up scene loading.  Please check [FASGui.ShowGUIWithLogin](https://github.com/fresvii/appsteroid-sdk-unity-documents/blob/master/en/Specs/Spec-FASGui.md#FASGui.ShowGUIWithLogin) for detail.
@@ -75,16 +85,20 @@ Since AppSteroid is operated on AWS, all data created through the API calls will
 
 All AppSteroid user data is basically managed on the same database, and individual data can be distinguish by linking them to the application or the user. If you want the database to be private, we also offer a separate plan to support.
 
-
 #### <a name="commonsystem">- If the system is going to co-exist with our database, how should it be done?</a>
 All AppSteroid user data are ensured to be unique and also can be identified by the ID.  If users are managed on your system, you must have a solution to relate your own user data with the AppSteroid user data.  If you are using any other third party services, we recommend you to treat one of the user data as a master, and link the other user data to it.
 
 The data used in each service should be held by each service.  If you want to link the data between each services, you can preform it by calling the API provided by the service from the app. We currently do not provide any interface to communicate directly between the servers.
 
+
 #### <a name="loadtest">- How much load can it handle？</a>
 All data related to feature provided by AppSteroid, such as recorded videos, text logs and more, can be stored unlimitedly.
 It is basically same as any other WEB service for perfomance on API responses. The performance may drop when there are rush on access, however, we put our best effort to prevent it by enhancing the server at high loading.  Up to date, we never had a server down or big issue on performance drop. (September 23, 2015)
 
+
+#### - User login doesn't work on iOS device, after switching the FASSettings' Server Environment.
+This bug was found in v.1.0.8, when switching the FASSettings -> Server Environment between Development and Production.
+The Bug was fixed in v.1.0.9. If switching the user ID per sever environment is necessary, please login to the previous server once, than switch the server environment and login.
 
 #### - The following Exception has been output after launching the app on Android device. What should I do?
     NullReferenceException: Object reference not set to an instance of an object
@@ -94,7 +108,7 @@ It is basically same as any other WEB service for perfomance on API responses. T
 
 This occurs when the app does not use push notification on Android, and when the `GCM Project Number`, `GCM Api key` under FASSetting is empty.  Since it does not effect the behavior of the SDK, please ignore the output message.  This will be fixed on ver 1.0.9.
 
-#### - The following Exception has been output. What should I do?
+#### The following Exception has been output. What should I do?
     NullReferenceException: WWW class has already been disposed.
     Fresvii.AppSteroid.Util.WWWRunner+<DoRequestCoroutine>c__Iterator1B.MoveNext ()
 
@@ -102,7 +116,33 @@ This occurs when the app does not use push notification on Android, and when the
 Since it does not effect the behavior of the SDK, please ignore the output message.  This will also be fixed on ver 1.0.9.
   Also, if you do confirm a Timeout error, please check the network status around the execution environment.
   
+#### Character corruption occur in another language. How do I fix it?
+Error may occurred at the Unity import. Please process "Reimport All" and run the project.
+
+#### Fresvii menu dosen't show up. How do I fix it?
+When there is an error on Unity, or compiling did not preform correctly, the editor menu will not show up. 
+Please solve the existing error in Unity.
+
+#### The following error appears after the import.
+
+    Assets/Fresvii/iTween/Plugins/iTween.cs(47,14): error CS0101: The namespace `global::' already contains a definition for `iTween'
+
+If AppSteroid v1.0.9 and version below v1.0.9 is used, or iTween is been used, iTween maybe got imported duplicately. Delete the `Assets/Fresvii/iTween/Plugins/iTween.cs` file.
+
 #### The following error occurs in Android build. How do I fix it?
     CommandInvokationFailure: Failed to re-package resources. See the Console for details.
 
 Importing the asset may have failed. Right click the Unity Asset folder and select `Reimport All`.
+
+#### How do I inhibit users to edit user name?
+Preform the following 2 steps, and the end users will not be able to edit their user name.
+
+1. **Inhibit user name generation and access to editing on AppSteroid**
+ Go to App Settings on Fresvii Web Console, "Settings" -> "User Default Settings" -> "Disable User Name generation", and put a check in the box. This will disable user generation.
+
+2. **Use the SDK API to generate/edit user name**
+　Use the API below to "sign up with user name". Or, to change a existing user name, user "Edit login user information".
+    - [Sign up with User name](https://github.com/fresvii/appsteroid-sdk-unity-documents/blob/master/en/Specs/Spec-FASUser.md#FASUser.SignUp)
+    - [Edit login user information ](https://github.com/fresvii/appsteroid-sdk-unity-documents/blob/master/en/Specs/Spec-FASUser.md#fasuserpatchaccount)
+
+Please check [this](https://github.com/fresvii/appsteroid-documents/blob/master/en/UserNameGeneration.md) document for user name generation.

@@ -107,7 +107,6 @@ Push message will also be distributed at the following conditions.
 * Notify users when there is an update on a subscribed thread.
 * Notify users when there is a new Group Message.
 * Notify users with a new friend request/accept.
-* Notify users when there is a voice call invitation.
 * Notify users when their friend is requesting a match.
 
 Related information: [About Push Event](https://github.com/fresvii/appsteroid-documents/blob/master/en/EventList.md)
