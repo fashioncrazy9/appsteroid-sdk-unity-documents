@@ -1,5 +1,20 @@
 # AppSteroid for Unity Release Notes
 ------
+## 1.2.0
+- Please check [here](FAQ.md#UnityVersion) for supported version of Unity.
+ 
+- New Feature
+    - Android video recording/share feature
+    - Option to restrict editing user name on AppSteroid GUI
+    - Sorting function on Leaderboard
+    - Read/Unread comment management on Forum thread
+    - Unread badge icon and count function
+    - Friend filter function on event board ranking
+    - Option to restrict messages, friend requests and displaying video inventory to non-friend users
+
+- Performance Improvements
+    - Minor GUI fix and improvements
+
 ## 1.1.5
 - Build error occur when a project is build in Xcode with Unity 5.3.3. Please wait for a patch release from Unity or use version under 5.3.1.
 
