@@ -26,6 +26,7 @@
 * [MatchMaking Manual](Use MatchMaking.md)
 * [Leaderboard Manual](Use Leaderboard.md)
 * [Use In-Game Text Chat](Use In-Game Text Chat.md)
+* [How to Use Notification Badge in Game](UseNotificationBadgeOnGameTitle.md)
 * [Setting Up Android Manifest]([Unity-Android]Setting Up AndroidManifest.md)
 * [Setting Up Push Notification for Android]([Unity-Android]Setting Up PushNotification.md)
 * [Setting Up Push Notification for iOS]([Unity-iOS]Setting Up PushNotification.md)

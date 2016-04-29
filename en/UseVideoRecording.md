@@ -6,10 +6,10 @@ This settings is for apps with video recording implemented. If you do not decide
 
 Please see [Spec-FASPlayVideo](Specs/Spec-FASPlayVideo.md) for more details about functions in the sample code.
 
-## Graphics API Settings
+## Graphics API Settings [with iOS]
 
-AppSteroid currently support video recording with Open GL ES 3.0.
-Please set Player Setting -> Other Settings -> Graphics API to Open GL ES 3.0.
+AppSteroid currently support video recording with Open GL ES.
+Please set Player Setting -> Other Settings -> Graphics API to Open GL ES 3.0 or Open GL ES 2.0.
 
 - Unity 4.6.*
 
@@ -31,31 +31,6 @@ to
     [NSNumber numberWithBool:TRUE], kEAGLDrawablePropertyRetainedBacking,
 
 FALSE --> TRUE.
-
-### With Unity 5.2.4 and later
-In the generated Xcode project, in `GLESHelper. mm` file, find the following code,
-
-    if(surface->allowScreenshot && UnityIsCaptureScreenshotRequested())
-    {
-        GLint targetFB = surface->targetFB ? surface->targetFB : surface->systemFB;
-        UnityBindFramebuffer(kReadFramebuffer, targetFB);
-        UnityCaptureScreenshot();
-    }
-
-and change to the code below.
-
-    if(surface->allowScreenshot)
-    {
-        GLint targetFB = surface->targetFB ? surface->targetFB : surface->systemFB;
-        UnityBindFramebuffer(kReadFramebuffer, targetFB);
-        _FASCaptureScreenshot();
-        if (UnityIsCaptureScreenshotRequested())
-            UnityCaptureScreenshot();
-    }
-
-Also, add the following code to `GLESHelper. mm` file.
-    
-    extern "C" void _FASCaptureScreenshot();
 
 ## About Initializing Video Recording Function
 To work the video recording function properly, you must [initialize](Specs/Spec-FASPlayVideo.md#FASPlayVideo.InitializeRecording) it before the recording starts.

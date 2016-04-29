@@ -30,9 +30,12 @@ Class to operate display GUI Scene. GUI will be load as a scene. Save the scene 
 |------|-----|
 |[FASGui.ShowGUI](#FASGui.ShowGUI)| Method to Show GUI. Call this method and load GUI scene. To use this method, add "AppSteroidUI" to build setting. |
 |[FASGui.ShowGUIWithLogin](#FASGui.ShowGUIWithLogin)| Process login with a specific user and show GUI. Call this method and than load the "AppSteroidUI" scene. To use this method, please add "AppSteroidUI" to build settings. |
-|[FASGui.ShowMatchMakingGui](#FASGui.ShowMatchMakingGui)| Specify a matchmaking parameter to show GUI for matchmaking.|
-|[FASGui.ShowMatchMakingGuiWithLogin](#FASGui.ShowMatchMakingGuiWithLogin)| Process logn with a specified user, specify matchmaking parameter and show matchmaking GUI.|
-|[FASGui.ShowLeaderboard](#FASGui.ShowLeaderboard)| Specify a leaderboard ID to show that leaderboard GUI.|
+|[FASGui.ShowMatchMakingGui](#FASGui.ShowMatchMakingGui)| Specify a matchmaking parameter to show GUI for matchmaking. |
+|[FASGui.ShowMatchMakingGuiWithLogin](#FASGui.ShowMatchMakingGuiWithLogin)| Process logn with a specified user, specify matchmaking parameter and show matchmaking GUI. |
+|[FASGui.ShowLeaderboard](#FASGui.ShowLeaderboard)| Specify a leaderboard ID to show that leaderboard GUI. |
+|[FASGui.SetLeaderboardsOrder](#FASGui.SetLeaderboardsOrder)|Define the sort order of leaderboard. |
+|[FASGui.ClearLeaderboardsOrder](#FASGui.ClearLeaderboardsOrder)|Clear the sorting settings for leaderboard list. Sort order will be the same as the sort order on the Web Console. |
+|[FASGui.HasNotifications](#FASGui.HasNotifications)|Get whether the notification was received or not. |
 
 
 ### <a name ="FASGui.ShowGUI">FASGui.ShowGUI</a>
@@ -41,6 +44,7 @@ Load a scene to show GUI. If isModal = ture, the scene will be loaded in stead o
 If a user is not logged in, automatically login the last user and show GUI.
 
             public static void ShowGUI(FASGui.Mode guiMode = Mode.All, string returnSceneName = "", FASGui.Mode selectedMode = Mode.LastSelected, bool isModal = false, Action appSteroidModalGuiEnded = null)
+
 
 #### Parameters
 |Name|Type|Description|
@@ -152,3 +156,50 @@ If the user is not logged in, automatically login with the previous user ID.
     string leaderboardId = "50d8d7095ca940c6bce7dfdf1df80d44";
 
     FASGui.ShowLeaderboard(leaderboardId);
+
+
+### <a name ="FASGui.SetLeaderboardsOrder">FASGui.SetLeaderboardsOrder</a>
+
+Define the sort order of leaderboard.
+
+            public static void SetLeaderboardsOrder(string[] leaderboardIds)
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|leaderboardIds|string[]|Leaderboard ID. Sorting the value top to down.|
+
+#### Example
+
+    string[] leaderboardOrderIds =
+    {"50d8d7095ca940c6bce7dfdf1df80d44",
+      "0c09e56de3a148d4806e263f01fa572d",
+      "5c969d304dc543acac66fb4f552e13d9"};
+
+    FASGui.SetLeaderboardsOrder(leaderboardOrderIds);
+
+### <a name ="FASGui.SetLeaderboardsOrder">FASGui.SetLeaderboardsOrder</a>
+
+Clear the sorting settings for leaderboard list. Sort order will be the same as the sort order on the Web Console.
+
+    public static void ClearLeaderboardsOrder()
+
+### <a name ="FASGui.HasNotifications">FASGui.HasNotifications</a>
+
+Get whether the notification was received or not.
+    
+    public static void HasNotifcations(Action<bool> callback)
+
+#### Parameters
+|Name|Type|Description|
+|------|------|-----|
+|callback|Action<bool>|Callback with the argument of notification (true / false)|
+
+#### Example
+    Fresvii.AppSteroid.FASGui.HasNotifcations((hasNotifications) =>
+    {
+        if (hasNotifications)
+        {
+            //  Has notification
+        }
+    });
