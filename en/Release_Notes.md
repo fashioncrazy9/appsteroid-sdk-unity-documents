@@ -1,7 +1,15 @@
 # AppSteroid for Unity Release Notes
 ------
-## 1.2.0
 - Please check [here](FAQ.md#UnityVersion) for supported version of Unity.
+
+## 1.2.1
+
+- Fixed issue
+    -  Cannot play video recorded on iOS with Android device
+    -  Error occurs when uploading video to Youtube on Android device
+    -  Minor GUI layout bugs
+
+## 1.2.0
  
 - New Feature
     - Android video recording/share feature
