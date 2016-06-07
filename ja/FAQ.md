@@ -7,12 +7,12 @@ AppSteroid が利用している Unity の API の対応バージョンは、4.7
 Unity 5 用をご利用になる場合は、Unity 5.2.4 以上をご利用ください。
 Unity 5.3　以降をご利用の場合は、Unity 5.3 用の AppSteroid SDK パッケージをご利用ください。
 
-##### AppSteroid v1.2.0 の Unity バージョンの対応状況
+##### AppSteroid v1.2.2 の Unity バージョンの対応状況
 |Unity Version|iOS|Android|
 |-----|-----|-----|
 |4.7.1|○|○|
 |5.2.4|○|○|
-|5.3.5|○|○|
+|5.3.4|○|○|
 
 
 #### プラットフォーム の対応バージョンはいくつですか？
