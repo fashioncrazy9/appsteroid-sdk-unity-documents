@@ -35,6 +35,9 @@ AppSteroid v1.0.10 にて、ボイスチャット機能は廃止されました�
 
 ## インポート直後にエラーが出た場合
 
+### 古いファイルを削除する
+メニューの Fresvii -> Remove Legacy Files を選択し、古いファイルの削除を行ってください。古いGUIのデータやレイアウトの変更になったファイルなどが削除されます。
+
 ### Unity 5 でインポート直後にエラーが出た場合
 
     Assets/Fresvii/AppSteroid/Scripts/FASSettings.cs(9,32): error CS0433: The imported type `Fresvii.AppSteroid.FASConfig' is defined multiple times
