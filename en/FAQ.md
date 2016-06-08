@@ -13,7 +13,7 @@ If you are using Unity 5, please use version 5.2.4 or higher. Please use AppSter
 |-----|-----|-----|
 |4.7.1|○|○|
 |5.2.4|○|○|
-|5.3.4|○|○|
+|5.3.5|○|○|
 
 #### What is the supported version of the platform?
 iOS 8.1 and higher. Android 4.0.4 and higher is recommended.
