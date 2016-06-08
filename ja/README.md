@@ -31,6 +31,7 @@
 * [Android プッシュ通知の設定方法]([Unity-Android]プッシュ通知の設定方法.md)
 * [iOS プッシュ通知の設定方法]([Unity-iOS]プッシュ通知の設定方法.md)
 * [プッシュイベントについて](https://github.com/fresvii/appsteroid-documents/blob/master/ja/EventList.md)
+* [KeyStorageについて](https://github.com/fresvii/appsteroid-documents/blob/master/ja/KeyStorage.md)
 * [ユーザー名重複時の挙動に関して](ユーザー名重複時の挙動に関して.md)
 * [プレイ動画録画の利用方法](UseVideoRecording.md)
 * [ゲームタイトルでの通知バッジの利用方法](UseNotificationBadgeOnGameTitle.md)

@@ -32,6 +32,7 @@
 * [Setting Up Push Notification for iOS]([Unity-iOS]Setting Up PushNotification.md)
 * [About Push Event](https://github.com/fresvii/appsteroid-documents/blob/master/en/EventList.md)
 * [About Channel](https://fresvii.zendesk.com/hc/en-us/articles/203866590-What-is-Channel-and-How-to-Use-It-)
+* [About KeyStorage](https://github.com/fresvii/appsteroid-documents/blob/master/en/KeyStorage.md)
 * [Use Video Recording](UseVideoRecording.md)
 * [Error Code Specs](ErrorCode.md)
 * [FAQ](FAQ.md)
