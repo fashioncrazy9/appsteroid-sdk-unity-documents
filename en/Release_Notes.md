@@ -2,6 +2,13 @@
 ------
 - Please check [here](FAQ.md#UnityVersion) for supported version of Unity.
 
+## 1.2.2
+  - New Feature
+    - Ability to show first and last comment in Forum/thread.
+  - Fixed issue
+    - Freeze in thread with large amount of comment
+    - Minor GUI layout bugs
+
 ## 1.2.1
 
 - Fixed issue
