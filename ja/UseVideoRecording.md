@@ -6,8 +6,11 @@ last update at　2016/04/22
 
 コード内での各機能の利用については、[Spec-FASPlayVideo](Specs/Spec-FASPlayVideo.md)をご参照ください。
 
-## [iOSの場合] Graphics API の設定
+# Android の場合
+[Android Manifest の設定]([Unity-Android]AndroidManifestの設定.md)を参考に、ビデオ録画機能の設定を行ってください。
 
+# iOSの場合
+## Graphics API の設定
 現在、AppSteroidでは Open GL ES の録画機能に対応しています。
 Player Setting -> Other Settings -> Graphics API を Open GL ES 3.0 および Open GL ES 2.0 に設定してください。
 
